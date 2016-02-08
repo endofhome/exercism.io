@@ -6,7 +6,7 @@ Bob.prototype.hey = function(input) {
       return 'Whoa, chill out!'; 
     case (input.charAt((input.length-1)) === '?'):
       return 'Sure.';
-      case (/\S/.test(input) === false):
+    case (/\S/.test(input) === false):
       return 'Fine. Be that way!';
     case (true):
       return 'Whatever.';
