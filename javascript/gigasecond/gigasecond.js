@@ -1,5 +1,5 @@
-var Gigasecond = function(input) {
-  this.startDate = input;
+var Gigasecond = function(startDate) {
+  this.startDate = startDate;
 };
 
 Gigasecond.prototype.date = function() {
