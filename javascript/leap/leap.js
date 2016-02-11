@@ -3,10 +3,10 @@ var Year = function(year) {
 };
 
 Year.prototype.isLeap = function() {
-  var year = this.testYear;
-  var isDivByFour = (year % 4 === 0);
-  var isNotDivByOneHundred = (year % 100 !== 0);
-  var isDivByFourHundred = (year % 400 === 0);
+  var year = this.testYear,
+      isDivByFour = (year % 4 === 0),
+      isNotDivByOneHundred = (year % 100 !== 0),
+      isDivByFourHundred = (year % 400 === 0);
   return (isDivByFour && isNotDivByOneHundred) || isDivByFourHundred; 
 };
 
