@@ -4,7 +4,7 @@ var DnaTranscriber = function() {
 
 DnaTranscriber.prototype.toRna = function(dna) {
   var rna = new String();
-  var i;
+      i = 0;
   for (i = 0; i < dna.length; i++) {
     rna = rna.concat(this.mapDnaToRna[dna[i]]);
   };
