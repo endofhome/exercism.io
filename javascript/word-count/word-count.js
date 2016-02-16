@@ -7,7 +7,6 @@ Words.prototype.count = function(string) {
 var convertToArray = function(string) {
   var array = [];
   array = string.trim().split(/\s+/);
-  console.log(array);
   return array;
 };
 
