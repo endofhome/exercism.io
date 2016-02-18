@@ -11,9 +11,9 @@ Pangram.prototype.isPangram = function() {
 };           
 
 var processString = function(string) {
-  var alphabet = [('a' || 'ä'), 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-                  'k', 'l', 'm', 'n', ('o' || 'ö'), 'p', 'q', 'r', ('s' || 'ß'), 't',
-                  ('u' || 'ü'), 'v', 'w', 'x', 'y', 'z'],
+  var alphabet = [('a'), 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+                  'k', 'l', 'm', 'n', ('o'), 'p', 'q', 'r', ('s'), 't',
+                  ('u'), 'v', 'w', 'x', 'y', 'z'],
       stringArray = string.trim().split(''),
       i,
       j;   
@@ -25,7 +25,7 @@ var processString = function(string) {
       }
     }
   }
-  return ((alphabet.length === 0) ? true : false);
+  return (alphabet.length === 0);
 };
 
 module.exports = Pangram;
