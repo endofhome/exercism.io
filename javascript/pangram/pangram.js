@@ -7,7 +7,7 @@ Pangram.prototype.isPangram = function() {
     return false; 
   } else {
     return processString(this.sentence.toLowerCase());
-  };
+  }
 };           
 
 var processString = function(string) {
@@ -22,9 +22,9 @@ var processString = function(string) {
       if (alphabet[i] === stringArray[j]) {
         alphabet.splice(i, 1);
         i = (i-1);
-      };
-    };
-  };
+      }
+    }
+  }
   return ((alphabet.length === 0) ? true : false);
 };
 
