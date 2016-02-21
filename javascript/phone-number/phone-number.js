@@ -20,4 +20,11 @@ PhoneNumber.prototype.areaCode = function() {
   return this.phoneNumber.slice(0,3);
 };
 
+PhoneNumber.prototype.toString = function() {
+  var num = this.phoneNumber, 
+      areaCode = '(' + this.areaCode() + ') ',
+      localNum = (num.slice(3,6)) + '-' + (num.slice(6,10));
+  return areaCode + localNum;
+};
+
 module.exports = PhoneNumber;
