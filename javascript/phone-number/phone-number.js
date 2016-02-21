@@ -16,4 +16,8 @@ PhoneNumber.prototype.number = function() {
   return result;
 };
 
+PhoneNumber.prototype.areaCode = function() {
+  return this.phoneNumber.slice(0,3);
+};
+
 module.exports = PhoneNumber;
