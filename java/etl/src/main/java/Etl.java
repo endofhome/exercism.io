@@ -6,9 +6,11 @@ public class Etl {
 
    public Map<String, Integer> transform(Map<Integer, List<String>> old) {
        Map<String, Integer> result = new HashMap<String, Integer>();
-       for (int i=0; i< old.get(1).size(); i++) {
-           String letter = old.get(1).get(i).toLowerCase();
-           result.put(letter, 1);
+       for (Integer integer : old.keySet()) {
+           for (int i = 0; i < old.get(integer).size(); i++) {
+               String letter = old.get(integer).get(i).toLowerCase();
+               result.put(letter, integer);
+           }
        }
        return result;
    }
