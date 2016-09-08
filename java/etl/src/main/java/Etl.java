@@ -6,8 +6,10 @@ public class Etl {
 
    public Map<String, Integer> transform(Map<Integer, List<String>> old) {
        Map<String, Integer> result = new HashMap<String, Integer>();
-       String one = old.get(1).get(0).toLowerCase();
-       result.put(one, 1);
+       for (int i=0; i< old.get(1).size(); i++) {
+           String letter = old.get(1).get(i).toLowerCase();
+           result.put(letter, 1);
+       }
        return result;
    }
 

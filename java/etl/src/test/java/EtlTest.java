@@ -19,7 +19,6 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = ImmutableMap.of(
