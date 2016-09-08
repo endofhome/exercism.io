@@ -6,3 +6,6 @@ build/
 /**/*.iws
 /**/out/*
 /**/*.keep
+java/**/gradle/
+java/**/gradlew
+java/**/gradlew.bat
