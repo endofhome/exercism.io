@@ -1,4 +1,5 @@
 .gradle
+.idea
 build/
 /**/build.gradle
 /**/*.iml
@@ -9,3 +10,4 @@ build/
 java/**/gradle/
 java/**/gradlew
 java/**/gradlew.bat
+java**/.idea/*
