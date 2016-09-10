@@ -14,8 +14,14 @@ public class DNA {
         this.nucleotides = asList('A', 'C', 'G', 'T');
     }
 
-    public Integer count(char nucleotide) {
-        return 0;
+    public int count(char nucleotide) {
+        int result = 0;
+        for (char character:identifier.toCharArray()) {
+            if (character == nucleotide) {
+                result++;
+            }
+        }
+        return result;
     }
 
     public Map<Character, Integer> nucleotideCounts() {
