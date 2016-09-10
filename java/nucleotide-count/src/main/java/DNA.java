@@ -1,19 +1,17 @@
-import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.util.Arrays.asList;
+
 public class DNA {
 
-    private final ArrayList<Character> nucleotides;
+    private final List<Character> nucleotides;
     private final String identifier;
 
     public DNA(String identifier) {
         this.identifier = identifier;
-        this.nucleotides = new ArrayList<>();
-        nucleotides.add('A');
-        nucleotides.add('C');
-        nucleotides.add('G');
-        nucleotides.add('T');
+        this.nucleotides = asList('A', 'C', 'G', 'T');
     }
 
     public Integer count(char nucleotide) {
