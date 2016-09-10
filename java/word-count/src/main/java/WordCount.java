@@ -3,9 +3,12 @@ import java.util.Map;
 
 public class WordCount {
 
-    public Map<String,Integer> phrase(String word) {
+    public Map<String,Integer> phrase(String phrase) {
+        String[] words = phrase.split(" ");
         Map<String, Integer> wordCount = new HashMap<>();
-        wordCount.put(word, 1);
+        for (String word:words) {
+            wordCount.put(word, 1);
+        }
         return wordCount;
     }
 
