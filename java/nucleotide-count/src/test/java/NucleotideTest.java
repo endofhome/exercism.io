@@ -1,7 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class NucleotideTest {
@@ -28,7 +27,6 @@ public class NucleotideTest {
     assertThat(dna.count('C')).isEqualTo(5);
   }
 
-  @Ignore
   @Test
   public void testRepetitiveSequenceWithOnlyGuanosine() {
     DNA dna = new DNA("GGGGGGGG");
@@ -40,14 +38,12 @@ public class NucleotideTest {
     );
   }
 
-  @Ignore
   @Test
   public void testCountsOnlyThymidine() {
     DNA dna = new DNA("GGGGGTAACCCGG");
     assertThat(dna.count('T')).isEqualTo(1);
   }
 
-  @Ignore
   @Test
   public void testCountsANucleotideOnlyOnce() {
     DNA dna = new DNA("CGATTGGG");
@@ -55,7 +51,6 @@ public class NucleotideTest {
     assertThat(dna.count('T')).isEqualTo(2);
   }
 
-  @Ignore
   @Test
   public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
     DNA dna = new DNA("GATTACA");
@@ -68,14 +63,12 @@ public class NucleotideTest {
     );
   }
 
-  @Ignore
   @Test(expected = IllegalArgumentException.class)
   public void testValidatesNucleotides() {
     DNA dna = new DNA("GACT");
     dna.count('X');
   }
 
-  @Ignore
   @Test
   public void testCountsAllNucleotides() {
     String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";

@@ -15,6 +15,7 @@ public class DNA {
     }
 
     public int count(char nucleotide) {
+        validateArguments(nucleotide);
         int result = 0;
         for (char character:identifier.toCharArray()) {
             if (character == nucleotide) {
@@ -31,4 +32,11 @@ public class DNA {
         }
         return result;
     }
+
+    private void validateArguments(char nucleotide) {
+        if (!nucleotides.contains(nucleotide)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
 }
