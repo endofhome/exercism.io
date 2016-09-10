@@ -35,7 +35,7 @@ public class DNA {
 
     private void validateArguments(char nucleotide) {
         if (!nucleotides.contains(nucleotide)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(String.format("%s is not a valid nucleotide", nucleotide));
         }
     }
 
