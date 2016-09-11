@@ -18,7 +18,7 @@ public class WordCount {
 
     private String[] reformatPhrase(String phrase) {
         String punctuationRemovedPhrase = phrase
-                .replaceAll("[:!&@$%^&]", "")
+                .replaceAll("[:!&@$%^&,]", "")
                 .replaceAll(" +", " ");
         return punctuationRemovedPhrase.split(" ");
     }
