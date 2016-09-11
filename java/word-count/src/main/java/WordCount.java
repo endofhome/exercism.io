@@ -17,10 +17,11 @@ public class WordCount {
     }
 
     private String[] reformatPhrase(String phrase) {
-        String punctuationRemovedPhrase = phrase
+        String punctuationRemovedLowerCasePhrase = phrase
                 .replaceAll("[:!&@$%^&,]", "")
-                .replaceAll(" +", " ");
-        return punctuationRemovedPhrase.split(" ");
+                .replaceAll(" +", " ")
+                .toLowerCase();
+        return punctuationRemovedLowerCasePhrase.split(" ");
     }
 
 }
