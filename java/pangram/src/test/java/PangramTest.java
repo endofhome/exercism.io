@@ -21,13 +21,11 @@ public class PangramTest {
         assertFalse(Pangrams.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
     }
 
-    @Ignore
     @Test
     public void mixedCaseAndPunctuation() {
         assertTrue(Pangrams.isPangram("\"Five quacking Zephyrs jolt my wax bed.\""));
     }
 
-    @Ignore
     @Test
     public void nonAsciiCharacters() {
         assertTrue(Pangrams.isPangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich."));
