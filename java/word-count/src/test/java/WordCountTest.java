@@ -54,7 +54,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void ignorePunctuation() {
         Map<String, Integer> actualWordCount = new HashMap<String, Integer>();

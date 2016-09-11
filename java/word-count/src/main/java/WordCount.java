@@ -4,9 +4,8 @@ import java.util.Map;
 public class WordCount {
 
     public Map<String,Integer> phrase(String phrase) {
-        String[] words = phrase.split(" ");
+        String[] words = reformatPhrase(phrase);
         Map<String, Integer> wordCount = new HashMap<>();
-
         for (String word:words) {
             if (wordCount.containsKey(word)) {
                 wordCount.put(word, wordCount.get(word) + 1);
@@ -15,6 +14,13 @@ public class WordCount {
             }
         }
         return wordCount;
+    }
+
+    private String[] reformatPhrase(String phrase) {
+        String punctuationRemovedPhrase = phrase
+                .replaceAll("[:!&@$%^&]", "")
+                .replaceAll(" +", " ");
+        return punctuationRemovedPhrase.split(" ");
     }
 
 }
