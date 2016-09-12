@@ -20,7 +20,7 @@ public class Anagram {
                 if (wordArray[i] != baseWordArray[i]) {
                     break;
                 }
-                if (i == word.length() -1) {
+                if (i == word.length() -1 && !word.equals(baseWord)) {
                     matches.add(word);
                 }
             }

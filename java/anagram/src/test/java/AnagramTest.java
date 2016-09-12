@@ -35,7 +35,6 @@ public class AnagramTest {
         assertThat(anagrams).isEmpty();
     }
 
-    @Ignore
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -43,7 +42,6 @@ public class AnagramTest {
         assertThat(anagrams).containsExactly("cron");
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
