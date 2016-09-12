@@ -48,7 +48,6 @@ public class AnagramTest {
         assertThat(detector.match(Arrays.asList("last")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
