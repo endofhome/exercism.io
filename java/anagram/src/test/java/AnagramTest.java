@@ -54,7 +54,6 @@ public class AnagramTest {
         assertThat(detector.match(Arrays.asList("dog", "goody"))).isEmpty();
     }
 
-    @Ignore
     @Test
     public void testDetectAnagrams() {
         Anagram detector = new Anagram("listen");
@@ -62,7 +61,6 @@ public class AnagramTest {
         assertThat(anagrams).contains("inlets");
     }
 
-    @Ignore
     @Test
     public void testMultipleAnagrams() {
         Anagram detector = new Anagram("allergy");

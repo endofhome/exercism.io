@@ -14,7 +14,7 @@ public class Anagram {
     public List<String> match(List<String> words) {
         ArrayList<String> matches = new ArrayList<>();
         for (String word : words) {
-            if (word.length() != baseWord.length()) { break; }
+            if (word.length() != baseWord.length()) { continue; }
             char[] wordArray = sortedArrayOf(word);
             char[] baseWordArray = sortedArrayOf(baseWord);
             for (int i=0; i < word.length(); i++) {
