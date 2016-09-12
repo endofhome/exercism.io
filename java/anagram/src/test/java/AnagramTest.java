@@ -28,7 +28,6 @@ public class AnagramTest {
         assertThat(anagrams).contains("maters", "stream");
     }
 
-    @Ignore
     @Test
     public void testDoesNotConfuseDifferentDuplicates() {
         Anagram detector = new Anagram("galea");
