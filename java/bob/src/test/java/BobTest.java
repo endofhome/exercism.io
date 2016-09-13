@@ -14,7 +14,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void shouting() {
         assertEquals(
