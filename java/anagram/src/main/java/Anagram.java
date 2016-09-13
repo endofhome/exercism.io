@@ -21,7 +21,7 @@ public class Anagram {
                 if (wordArray[i] != baseWordArray[i]) {
                     break;
                 }
-                if (i == word.length() -1 && !word.equals(baseWord)) {
+                if (i == word.length() -1 && notTheSameWord(word)) {
                     matches.add(word);
                 }
             }
@@ -29,7 +29,12 @@ public class Anagram {
         return matches;
     }
 
+    private boolean notTheSameWord(String word) {
+        return !word.toLowerCase().equals(baseWord.toLowerCase());
+    }
+
     private char[] sortedArrayOf(String word) {
+        word = word.toLowerCase();
         char[] wordArray = word.toCharArray();
         sort(wordArray);
         return wordArray;

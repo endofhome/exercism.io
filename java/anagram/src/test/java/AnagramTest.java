@@ -68,7 +68,6 @@ public class AnagramTest {
         assertThat(anagrams).contains("gallery", "largely", "regally");
     }
 
-    @Ignore
     @Test
     public void testAnagramsAreCaseInsensitive() {
         Anagram detector = new Anagram("Orchestra");
