@@ -22,7 +22,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void askingAQuestion() {
         assertEquals(
@@ -31,7 +30,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void askingANumericQuestion() {
         assertEquals(
@@ -40,7 +38,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void talkingForcefully() {
         assertEquals(
@@ -49,7 +46,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void usingAcronymsInRegularSpeech() {
         assertEquals(
@@ -57,7 +53,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void forcefulQuestions() {
         assertEquals(
@@ -65,7 +60,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void shoutingNumbers() {
         assertEquals(
