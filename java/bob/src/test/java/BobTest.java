@@ -67,7 +67,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void onlyNumbers() {
         assertEquals(
@@ -75,7 +74,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void questionWithOnlyNumbers() {
         assertEquals(
@@ -83,7 +81,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void shoutingWithSpecialCharacters() {
         assertEquals(
@@ -91,7 +88,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void shoutingWithUmlauts() {
         assertEquals(
@@ -99,7 +95,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void calmlySpeakingWithUmlauts() {
         assertEquals(
@@ -107,7 +102,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void shoutingWithNoExclamationMark() {
         assertEquals(
@@ -115,7 +109,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void statementContainingQuestionMark() {
         assertEquals(
@@ -123,7 +116,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void prattlingOn() {
         assertEquals(
