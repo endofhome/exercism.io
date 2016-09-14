@@ -36,6 +36,8 @@ public class Robot {
     }
 
     public void reset() {
+        name = "";
+        generateName();
     }
 
 }
