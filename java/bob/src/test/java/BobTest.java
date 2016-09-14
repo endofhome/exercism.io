@@ -130,7 +130,6 @@ public class BobTest {
         );
     }
 
-    @Ignore
     @Test
     public void prolongedSilence() {
         assertEquals(
