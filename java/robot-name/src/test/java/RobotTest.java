@@ -16,7 +16,6 @@ public class RobotTest {
         assertIsValidName(robot.getName());
     }
 
-    @Ignore
     @Test
     public void differentRobotsHaveDifferentNames() {
         assertThat(robot.getName(), not(equalTo(new Robot().getName())));
