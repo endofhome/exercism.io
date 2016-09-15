@@ -1,5 +1,8 @@
 import org.joda.time.DateTime;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Meetup {
 
     private final int month;
@@ -11,6 +14,16 @@ public class Meetup {
     }
 
     public DateTime day(int dayOfWeek, MeetupSchedule iteration) {
-        return new DateTime(2013, 5, 13, 0, 0);
+        List<DateTime> teens = new ArrayList<>();
+        DateTime result = new DateTime();
+        for (int i = 0; i < 7; i++) {
+            teens.add(new DateTime(year, month, 13 + i, 0, 0));
+        }
+        for (DateTime teen : teens) {
+            if (teen.dayOfWeek().get() == dayOfWeek) {
+                result = teen;
+            }
+        }
+        return result;
     }
 }
