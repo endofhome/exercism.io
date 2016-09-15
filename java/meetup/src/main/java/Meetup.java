@@ -14,16 +14,32 @@ public class Meetup {
     }
 
     public DateTime day(int dayOfWeek, MeetupSchedule iteration) {
-        List<DateTime> teens = new ArrayList<>();
+        List<DateTime> queryDates = new ArrayList<>();
+        Integer startingDay = getStartingDay(iteration);
         DateTime result = new DateTime();
-        for (int i = 0; i < 7; i++) {
-            teens.add(new DateTime(year, month, 13 + i, 0, 0));
-        }
-        for (DateTime teen : teens) {
-            if (teen.dayOfWeek().get() == dayOfWeek) {
-                result = teen;
+        buildDateList(queryDates, startingDay);
+        for (DateTime date : queryDates) {
+            if (date.dayOfWeek().get() == dayOfWeek) {
+                result = date;
             }
         }
         return result;
+    }
+
+    private Integer getStartingDay(MeetupSchedule iteration) {
+        Integer startingDay = 0;
+        if (iteration == MeetupSchedule.TEENTH) {
+            startingDay = 13;
+        }
+        if (iteration == MeetupSchedule.FIRST) {
+            startingDay = 1;
+        }
+        return startingDay;
+    }
+
+    private void buildDateList(List<DateTime> queryDates, Integer startingDay) {
+        for (int i = 0; i < 7; i++) {
+            queryDates.add(new DateTime(year, month, startingDay + i, 0, 0));
+        }
     }
 }
