@@ -1,7 +1,6 @@
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Meetup {
@@ -28,19 +27,11 @@ public class Meetup {
     }
 
     private Integer getStartingDay(MeetupSchedule iteration) {
-        Integer startingDay = 0;
         if (iteration == MeetupSchedule.LAST) {
-            if (Arrays.asList(1, 3, 5, 7, 8, 10, 12).contains(month)) {
-                startingDay = 25;
-            } else if (Arrays.asList(4, 6, 9, 11).contains(month)) {
-                startingDay = 24;
-            } else {
-                startingDay = 21;
-            }
+            return iteration.calculateLastSevenDays(month);
         } else {
-            startingDay = iteration.startingDay();
+            return iteration.startingDay();
         }
-        return startingDay;
     }
 
     private void buildDateList(List<DateTime> queryDates, Integer startingDay) {
