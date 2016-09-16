@@ -29,21 +29,6 @@ public class Meetup {
 
     private Integer getStartingDay(MeetupSchedule iteration) {
         Integer startingDay = 0;
-        if (iteration == MeetupSchedule.TEENTH) {
-            startingDay = 13;
-        }
-        if (iteration == MeetupSchedule.FIRST) {
-            startingDay = 1;
-        }
-        if (iteration == MeetupSchedule.SECOND) {
-            startingDay = 8;
-        }
-        if (iteration == MeetupSchedule.THIRD) {
-            startingDay = 15;
-        }
-        if (iteration == MeetupSchedule.FOURTH) {
-            startingDay = 22;
-        }
         if (iteration == MeetupSchedule.LAST) {
             if (Arrays.asList(1, 3, 5, 7, 8, 10, 12).contains(month)) {
                 startingDay = 25;
@@ -52,6 +37,8 @@ public class Meetup {
             } else {
                 startingDay = 21;
             }
+        } else {
+            startingDay = iteration.startingDay();
         }
         return startingDay;
     }
