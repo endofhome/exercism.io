@@ -40,6 +40,9 @@ public class Meetup {
         if (iteration == MeetupSchedule.THIRD) {
             startingDay = 15;
         }
+        if (iteration == MeetupSchedule.FOURTH) {
+            startingDay = 22;
+        }
         return startingDay;
     }
 
