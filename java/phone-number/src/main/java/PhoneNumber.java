@@ -26,7 +26,14 @@ public class PhoneNumber {
         return result.substring(0, 3);
     }
 
+    private String getLocalNumber() {
+        String result = getNumber();
+        return result.substring(3);
+    }
+
     public String pretty() {
-        return null;
+        String localNumber = getLocalNumber();
+        String prettyLocalNumber = String.format("%s-%s", localNumber.substring(0, 3), localNumber.substring(3));
+        return String.format("(%s) %s", getAreaCode(), prettyLocalNumber);
     }
 }

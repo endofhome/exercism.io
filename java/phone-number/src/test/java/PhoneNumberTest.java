@@ -65,7 +65,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void prettyPrint() {
         final String expectedPrettyNumber = "(123) 456-7890";
@@ -76,7 +75,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void prettyPrintWithFullUSPhoneNumber() {
         final String expectedPrettyNumber = "(123) 456-7890";
