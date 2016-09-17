@@ -8,8 +8,12 @@ public class PhoneNumber {
 
     public String getNumber() {
         String result = number;
-        if (result.length() == 11 && result.charAt(0) == '1') {
-            result = result.substring(1);
+        if (result.length() == 11) {
+            if (result.charAt(0) == '1') {
+                result = result.substring(1);
+            } else {
+                result = "0000000000";
+            }
         }
         return result.replaceAll("[()-/ .]", "");
     }

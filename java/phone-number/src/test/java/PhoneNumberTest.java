@@ -35,7 +35,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void invalidWhenOnly11Digits() {
         final String expectedNumber = "0000000000";
