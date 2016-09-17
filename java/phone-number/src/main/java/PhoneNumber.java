@@ -7,7 +7,7 @@ public class PhoneNumber {
     }
 
     public String getNumber() {
-        return "1234567890";
+        return number.replaceAll("[()-/ .]", "");
     }
 
     public String getAreaCode() {

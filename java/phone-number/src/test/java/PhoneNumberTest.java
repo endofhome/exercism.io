@@ -15,7 +15,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void cleansNumberWithDots() {
         final String expectedNumber = "1234567890";
