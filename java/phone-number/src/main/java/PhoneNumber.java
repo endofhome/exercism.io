@@ -8,14 +8,17 @@ public class PhoneNumber {
 
     public String getNumber() {
         String result = number;
+        result = result.replaceAll("[()-/ .]", "");
         if (result.length() == 11) {
             if (result.charAt(0) == '1') {
-                result = result.substring(1);
-            } else {
-                result = "0000000000";
+                return result.substring(1);
             }
         }
-        return result.replaceAll("[()-/ .]", "");
+        if (result.length() != 10) {
+            return "0000000000";
+        } else {
+            return result;
+        }
     }
 
     public String getAreaCode() {

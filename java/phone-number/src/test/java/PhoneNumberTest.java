@@ -45,7 +45,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void invalidWhen9Digits() {
         final String expectedNumber = "0000000000";
