@@ -55,7 +55,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void areaCode() {
         final String expectedAreaCode = "123";

@@ -22,7 +22,8 @@ public class PhoneNumber {
     }
 
     public String getAreaCode() {
-        return null;
+        String result = getNumber();
+        return result.substring(0, 3);
     }
 
     public String pretty() {
