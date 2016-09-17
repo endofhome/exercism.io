@@ -25,7 +25,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void validWhen11DigitsAndFirstIs1() {
         final String expectedNumber = "1234567890";
