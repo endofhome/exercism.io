@@ -7,8 +7,7 @@ public class PhoneNumber {
     }
 
     public String getNumber() {
-        String result = number;
-        result = cleanNumber(result);
+        String result = cleanNumber(number);
         if (result.length() == 11) {
             if (result.charAt(0) == '1') {
                 return result.substring(1);
