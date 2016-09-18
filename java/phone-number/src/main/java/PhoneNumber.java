@@ -8,7 +8,7 @@ public class PhoneNumber {
 
     public String getNumber() {
         String result = number;
-        result = result.replaceAll("[()-/ .]", "");
+        result = cleanNumber(result);
         if (result.length() == 11) {
             if (result.charAt(0) == '1') {
                 return result.substring(1);
@@ -19,6 +19,11 @@ public class PhoneNumber {
         } else {
             return result;
         }
+    }
+
+    private String cleanNumber(String result) {
+        result = result.replaceAll("[()-/ .]", "");
+        return result;
     }
 
     public String getAreaCode() {
