@@ -20,19 +20,17 @@ public class PhoneNumber {
         }
     }
 
-    private String cleanNumber(String result) {
-        result = result.replaceAll("[()-/ .]", "");
-        return result;
+    private String cleanNumber(String number) {
+        String cleanedNumber = number.replaceAll("[()-/ .]", "");
+        return cleanedNumber;
     }
 
     public String getAreaCode() {
-        String result = getNumber();
-        return result.substring(0, 3);
+        return getNumber().substring(0, 3);
     }
 
     private String getLocalNumber() {
-        String result = getNumber();
-        return result.substring(3);
+        return getNumber().substring(3);
     }
 
     public String pretty() {
