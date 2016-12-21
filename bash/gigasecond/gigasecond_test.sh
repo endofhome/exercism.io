@@ -8,7 +8,6 @@
 }
 
 @test 'June 13th, 1977' {
-  skip
   run bash gigasecond.sh '1977-06-13Z'
 
   [ "$status" -eq 0 ]
@@ -16,7 +15,6 @@
 }
 
 @test 'July 19th, 1959' {
-  skip
   run bash gigasecond.sh '1959-07-19Z'
 
   [ "$status" -eq 0 ]
@@ -24,7 +22,6 @@
 }
 
 @test 'Time specified' {
-  skip
   run bash gigasecond.sh '2015-01-24 22:00:00Z'
 
   [ "$status" -eq 0 ]
@@ -32,7 +29,6 @@
 }
 
 @test 'Time with day rollover' {
-  skip
   run bash gigasecond.sh '2015-01-24 23:59:59Z'
 
   [ "$status" -eq 0 ]
