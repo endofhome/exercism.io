@@ -24,7 +24,6 @@
 @test 'Century non-leap year should return non-leap year' {
   run ./leap.sh 1900
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "This is not a leap year." ]
 }
