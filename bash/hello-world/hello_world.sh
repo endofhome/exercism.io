@@ -1,8 +1,10 @@
 #!/bin/bash
 
-name=$1
-if [[ -n "$name" ]]; then
-    echo "Hello, ${name}!"
-else
-    echo "Hello, World!"
+args=$1
+name=World
+
+if [[ -n "$1" ]]; then
+    name=${args}
 fi
+
+echo "Hello, ${name}!"
