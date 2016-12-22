@@ -10,7 +10,6 @@
 @test 'Non-leap year should return non-leap year' {
   run ./leap.sh 1997
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "This is not a leap year." ]
 }
@@ -18,7 +17,6 @@
 @test 'Non-leap even year should return non-leap year' {
   run ./leap.sh 1998
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "This is not a leap year." ]
 }
