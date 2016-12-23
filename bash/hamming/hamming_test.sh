@@ -87,7 +87,6 @@
 @test "first string longer" {
   run bash hamming.sh AGT AG
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "The two strands must have the same length." ]
 }
@@ -95,7 +94,6 @@
 @test "second string longer" {
   run bash hamming.sh AGT AGTC
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "The two strands must have the same length." ]
 }
