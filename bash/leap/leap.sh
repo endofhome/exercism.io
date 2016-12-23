@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INPUT=$1
+INPUT=$(echo $1 | tr -d "[:alpha:]")
 RESULT="This is not a leap year."
 
 if [ $(echo $INPUT | awk '{print length}') -ne 4 ] || [ $# -ne 1 ]; then

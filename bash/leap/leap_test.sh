@@ -66,7 +66,6 @@
 @test 'Alpha input should return an error' {
   run ./leap.sh abcd
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "Usage: leap.sh <year>" ]
 }
