@@ -45,7 +45,6 @@
 @test 'No input should return an error' {
   run ./leap.sh
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "Usage: leap.sh <year>" ]
 }
