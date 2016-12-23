@@ -52,7 +52,6 @@
 @test 'Too much input should return an error' {
   run ./leap.sh 2016 4562 4566
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "Usage: leap.sh <year>" ]
 }
@@ -60,7 +59,6 @@
 @test 'Float number input should return an error' {
   run ./leap.sh 2016.54
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "Usage: leap.sh <year>" ]
 }

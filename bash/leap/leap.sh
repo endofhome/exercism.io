@@ -3,7 +3,7 @@
 INPUT=$1
 RESULT="This is not a leap year."
 
-if [ $(echo $INPUT | awk '{print length}') -ne 4 ]; then
+if [ $(echo $INPUT | awk '{print length}') -ne 4 ] || [ $# -ne 1 ]; then
   echo "Usage: leap.sh <year>"
   exit 1
 fi
