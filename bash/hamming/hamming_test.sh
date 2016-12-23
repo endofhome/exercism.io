@@ -101,7 +101,6 @@
 @test "no input" {
   run bash hamming.sh
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" = "Usage: hamming.sh <string1> <string2>" ]
 }

@@ -3,7 +3,10 @@
 FIRST_STRAND_LENGTH=$(echo $1 | awk "{print length}")
 SECOND_STRAND_LENGTH=$(echo $2 | awk "{print length}")
 
-if [ $FIRST_STRAND_LENGTH -ne $SECOND_STRAND_LENGTH ]; then
+if [ $# -eq 0 ]; then
+  echo "Usage: hamming.sh <string1> <string2>"
+  exit 1
+elif [ $FIRST_STRAND_LENGTH -ne $SECOND_STRAND_LENGTH ]; then
   echo "The two strands must have the same length."
   exit 1
 fi
