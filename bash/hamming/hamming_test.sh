@@ -24,7 +24,6 @@
 @test "Distance with all chars different in small strings" {
   run bash hamming.sh GC AT
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 2 ]
 }
@@ -32,7 +31,6 @@
 @test "small distance with small strands" {
   run bash hamming.sh GC GT
  
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 1 ]
 }
@@ -40,7 +38,6 @@
 @test "small distance" {
   run bash hamming.sh GGACG GGTCG
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 1 ]
 }
@@ -48,7 +45,6 @@
 @test "small distance in long strands" {
   run bash hamming.sh ACCAGGG ACTATGG
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 2 ]
 }
@@ -56,7 +52,6 @@
 @test "non unique char in first strand" {
   run bash hamming.sh AGA AGG
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 1 ]
 }
@@ -64,7 +59,6 @@
 @test "non unique char in second strand" {
   run bash hamming.sh AGG AGA
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 1 ]
 }
@@ -72,7 +66,6 @@
 @test "large distance" {
   run bash hamming.sh GATACA GCATAA
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 4 ]
 }
@@ -80,7 +73,6 @@
 @test "large distance in off by one strand" {
   run bash hamming.sh GGACGGATTCTG AGGACGGATTCT
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 9 ]
 }
@@ -88,7 +80,6 @@
 @test "empty strands" {
   run bash hamming.sh "" ""
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 0 ]
 }
