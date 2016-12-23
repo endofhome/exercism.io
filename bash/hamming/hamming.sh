@@ -1,4 +1,4 @@
-#¡/bin/bash
+#!/bin/bash
 
 FIRST_STRAND_LENGTH=$(echo $1 | awk "{print length}")
 SECOND_STRAND_LENGTH=$(echo $2 | awk "{print length}")
