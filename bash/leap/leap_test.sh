@@ -31,7 +31,6 @@
 @test 'Fourth century should return leap year' {
   run ./leap.sh 2400
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "This is a leap year." ]
 }
@@ -39,7 +38,6 @@
 @test 'Y2K should return leap year' {
   run ./leap.sh 2000
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "This is a leap year." ]
 }
