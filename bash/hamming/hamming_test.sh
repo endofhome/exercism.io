@@ -17,7 +17,6 @@
 @test "Single char different strings have hamming distance of one" {
   run bash hamming.sh C A
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" -eq 1 ]
 }
