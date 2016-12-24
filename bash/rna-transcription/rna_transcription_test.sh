@@ -38,7 +38,6 @@
 @test 'Handles invalid character' {
   run bash rna_transcription.sh U
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" == 'Invalid nucleotide detected.' ]
 }
@@ -46,7 +45,6 @@
 @test 'Handles completely invalid string' {
   run bash rna_transcription.sh XXXX
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" == 'Invalid nucleotide detected.' ]
 }
@@ -54,7 +52,6 @@
 @test 'Handles partially invalid string' {
   run bash rna_transcription.sh ACGTXCTTAA
 
-  skip
   [ "$status" -eq 1 ]
   [ "$output" == 'Invalid nucleotide detected.' ]
 }

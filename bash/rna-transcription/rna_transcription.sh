@@ -11,7 +11,13 @@ INPUT_LENGTH=$(echo $1 | awk "{print length}")
 
 for ((i=0; i<INPUT_LENGTH; i++)); do
   char=${1:i:1}
-  OUTPUT+=${DNA_RNA[`map $char`]}
+  LOOKUP=${DNA_RNA[`map $char`]}
+  if [ -z $LOOKUP ]; then
+    echo "Invalid nucleotide detected."
+    exit 1
+  else
+    OUTPUT+=$LOOKUP
+  fi
 done
 
 echo $OUTPUT
