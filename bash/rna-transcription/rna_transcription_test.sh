@@ -31,7 +31,6 @@
 @test 'Complement of long string' {
   run bash rna_transcription.sh ACGTGGTCTTAA
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" == 'UGCACCAGAAUU' ]
 }
