@@ -25,7 +25,6 @@
 @test "asking a question" {
   run bash bob.sh "Does this cryogenic chamber make me look fat?"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
@@ -33,7 +32,6 @@
 @test "asking a numeric question" {
   run bash bob.sh 'You are, what, like 15?'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
@@ -41,7 +39,6 @@
 @test "asking gibberish" {
   run bash bob.sh "fffbbcbeab?"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
@@ -50,7 +47,6 @@
 @test "talking forcefully" {
   run bash bob.sh "Let's go make out behind the gym!"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -58,7 +54,6 @@
 @test "using accronyms in regular speech" {
   run bash bob.sh "It's OK if you don't want to go to the DMV."
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -66,7 +61,6 @@
 @test "forceful question" {
   run bash bob.sh "WHAT THE HELL WERE YOU THINKING?"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whoa, chill out!" ]
 }
@@ -74,7 +68,6 @@
 @test "shouting numbers" {
   run bash bob.sh "1, 2, 3 GO!"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whoa, chill out!" ]
 }
