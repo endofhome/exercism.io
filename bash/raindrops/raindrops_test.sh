@@ -12,7 +12,6 @@
 @test "Number 52, not factor of 3, 5 or 7, should output itself: 52." {
   run bash raindrops.sh 52
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "52" ]
 }
@@ -20,7 +19,6 @@
 @test "Number 21121, not factor of 3, 5 or 7, should output itself: 21121." {
   run bash raindrops.sh 21121
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "21121" ]
 }
