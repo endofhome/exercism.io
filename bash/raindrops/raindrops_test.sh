@@ -35,7 +35,6 @@
 @test "Number 5, only factor of 5, should output: Plang." {
   run bash raindrops.sh 5
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Plang" ]
 }
