@@ -74,7 +74,6 @@
 @test "Number 15, factor of 3 and 5, should output: PlingPlang." {
   run bash raindrops.sh 15
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "PlingPlang" ]
 }
@@ -82,7 +81,6 @@
 @test "Number 21, factor of 3 and 7, should output: PlingPlong." {
   run bash raindrops.sh 21
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "PlingPlong" ]
 }
@@ -90,7 +88,6 @@
 @test "Number 35, factor of 5 and 7, should output: PlangPlong." {
   run bash raindrops.sh 35
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "PlangPlong" ]
 }
@@ -100,7 +97,6 @@
 @test "Number 9, factor of 9, should output: Pling (not PlingPling)." {
   run bash raindrops.sh 9
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Pling" ]
 }
@@ -108,7 +104,6 @@
 @test "Number 25, factor of 5, should output: Plang (not PlangPlang)." {
   run bash raindrops.sh 25
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Plang" ]
 }
@@ -116,7 +111,6 @@
 @test "Number 49, factor of 7, should output: Plong (not PlongPlong)." {
   run bash raindrops.sh 49
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Plong" ]
 }
@@ -126,7 +120,6 @@
 @test "Number 105, factor of 3, 5 and 7, should output: PlingPlangPlong." {
   run bash raindrops.sh 105
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "PlingPlangPlong" ]
 }
