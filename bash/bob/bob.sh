@@ -3,8 +3,10 @@
 INPUT=$@
 
 if [ "$INPUT" = "$(echo $INPUT | awk '{print toupper}')" ]; then
-  echo "Whoa, chill out!"  
-  exit 0
+  if [ "$INPUT" != "$(echo $INPUT | awk '{print tolower}')" ]; then 
+    echo "Whoa, chill out!"  
+    exit 0
+  fi
 fi
 
 if [ "${INPUT: -1}" = "?" ]; then
@@ -13,4 +15,3 @@ if [ "${INPUT: -1}" = "?" ]; then
 fi
 
 echo "Whatever."
-

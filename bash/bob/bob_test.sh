@@ -75,7 +75,6 @@
 @test "only numbers" {
   run bash bob.sh "1, 2, 3"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -83,7 +82,6 @@
 @test "question with only numbers" {
   run bash bob.sh '4?'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
@@ -91,7 +89,6 @@
 @test "shouting with special characters" {
   run bash bob.sh 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whoa, chill out!" ]
 }
@@ -99,7 +96,6 @@
 @test "shouting with umlauts" {
   run bash bob.sh 'ÜMLÄÜTS!'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whoa, chill out!" ]
 }
