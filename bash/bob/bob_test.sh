@@ -10,7 +10,6 @@
 @test "shouting" {
   run bash bob.sh 'WATCH OUT!'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = 'Whoa, chill out!' ]
 }
@@ -18,7 +17,6 @@
 @test "shouting gibberish" {
   run bash bob.sh 'FCECDFCAAB'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = 'Whoa, chill out!' ]
 }
