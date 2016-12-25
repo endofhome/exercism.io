@@ -28,7 +28,6 @@
 @test "Number 3, only factor of 3, should output: Pling." {
   run bash raindrops.sh 3
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Pling" ]
 }
