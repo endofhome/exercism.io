@@ -137,7 +137,6 @@
 @test "silence" {
   run bash bob.sh ''
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Fine. Be that way!" ]
 }
@@ -145,7 +144,6 @@
 @test "silence" {
   run bash bob.sh
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Fine. Be that way!" ]
 }
