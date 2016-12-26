@@ -195,7 +195,6 @@
 @test "non-question ending with whitespace" {
   run bash bob.sh 'This is a statement ending with whitespace      '
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
