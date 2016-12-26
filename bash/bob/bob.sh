@@ -2,8 +2,8 @@
 
 INPUT=$@
 
-if [ "$INPUT" = "$(echo $INPUT | awk '{print toupper}')" ]; then
-  if [ "$INPUT" != "$(echo $INPUT | awk '{print tolower}')" ]; then 
+if [ "$INPUT" = "$(echo $INPUT | tr [:lower:] [:upper:])" ]; then
+  if [ "$INPUT" != "$(echo $INPUT | tr [:upper:] [:lower:])" ]; then 
     echo "Whoa, chill out!"  
     exit 0
   fi

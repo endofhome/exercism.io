@@ -103,7 +103,6 @@
 @test "calmly speaking with umlauts" {
   run bash bob.sh 'ÜMLäÜTS!'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -111,7 +110,6 @@
 @test "shouting with no exclamation mark" {
   run bash bob.sh 'I HATE YOU'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whoa, chill out!" ]
 }
@@ -119,7 +117,6 @@
 @test "statement containing question mark" {
   run bash bob.sh 'Ending with ? means a question.'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -127,14 +124,12 @@
 @test "non-letters with question" {
   run bash bob.sh ':) ?'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
 @test "prattling on" {
   run bash bob.sh 'Wait! Hang on. Are you going to be OK?'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }
