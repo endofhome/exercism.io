@@ -151,7 +151,6 @@
 @test "prolonged silence" {
   run bash bob.sh "     "
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Fine. Be that way!" ]
 }
@@ -159,7 +158,6 @@
 @test "alternate silence" {
   run bash bob.sh "                 "
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Fine. Be that way!" ]
 }
@@ -167,7 +165,6 @@
 @test "multiple line question" {
   run bash bob.sh "\nDoes this cryogenic chamber make me look fat?\nno"
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -175,7 +172,6 @@
 @test "starting with whitespace" {
   run bash bob.sh '         hmmmmmmm...'
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Whatever." ]
 }
@@ -183,7 +179,6 @@
 @test "ending with whitespace" {
   run bash bob.sh 'Okay if like my  spacebar  quite a bit?   '
 
-  skip
   [ "$status" -eq 0 ]
   [ "$output" = "Sure." ]
 }

@@ -1,8 +1,9 @@
 #!/bin/bash
 
 INPUT=$@
+INPUT_NO_WHITESPACE=$(echo $@ | tr -d [:space:])
 
-if [ $# -ne 1 ]; then
+if [ -z "$INPUT_NO_WHITESPACE" ]; then
   echo "Fine. Be that way!"
   exit 0
 fi
