@@ -1,19 +1,10 @@
 object HelloWorld {
-    fun hello(input: String?): String {
-        val strippedName = stripNullOrBlank(input)
-        val processedName = when (strippedName) {
-            null -> "World"
-            else -> strippedName
-        }
+    fun hello(name: String?): String {
+        val processedName = if (name.isNullOrBlank()) "World" else name
         return "Hello, $processedName!"
     }
 
     fun hello(): String {
         return hello("World")
-    }
-
-    private fun stripNullOrBlank(input: String?): String? {
-        if (input.isNullOrBlank()) return null
-        return input
     }
 }
