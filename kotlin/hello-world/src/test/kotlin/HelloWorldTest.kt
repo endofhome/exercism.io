@@ -21,13 +21,11 @@ class HelloWorldTest {
         assertEquals("Hello, World!", HelloWorld.hello(null))
     }
 
-    @Ignore
     @Test
     fun helloSampleName() {
         assertEquals("Hello, Alice!", HelloWorld.hello("Alice"))
     }
 
-    @Ignore
     @Test
     fun helloAnotherSampleName() {
         assertEquals("Hello, Bob!", HelloWorld.hello("Bob"))
