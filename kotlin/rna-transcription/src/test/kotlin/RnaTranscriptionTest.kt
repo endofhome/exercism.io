@@ -29,7 +29,6 @@ class RnaTranscriptionTest {
         Assert.assertEquals("U", RnaTranscription.ofDna("A"));
     }
 
-    @Ignore
     @Test
     fun rnaTranscription() {
         Assert.assertEquals("UGCACCAGAAUU", RnaTranscription.ofDna("ACGTGGTCTTAA"));
