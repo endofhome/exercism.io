@@ -1,25 +1,14 @@
-class RnaTranscription() {
+object RnaTranscription {
 
-    companion object Transcriber {
-        val dnaToRna = mapOf(
-                Pair("G", "C"),
-                Pair("C", "G"),
-                Pair("T", "A"),
-                Pair("A", "U")
-        )
-
-        fun ofDna(dnaString : String): String? {
-            val transcription = dnaString.map {
-                char -> transformChar(char.toString())
+    fun ofDna(dnaString: String): String? {
+        return dnaString.map {
+            when (it) {
+                'G' -> 'C'
+                'C' -> 'G'
+                'T' -> 'A'
+                'A' -> 'U'
+                else -> throw IllegalArgumentException("Invalid DNA input")
             }
-            return transcription.joinToString("")
-        }
-
-        private fun transformChar(dnaString: String): String? {
-            if (dnaToRna[dnaString].isNullOrBlank()) {
-                return ""
-            }
-            return dnaToRna[dnaString]
-        }
+        }.joinToString("")
     }
 }
