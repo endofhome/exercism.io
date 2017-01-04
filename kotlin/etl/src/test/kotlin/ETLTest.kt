@@ -12,7 +12,6 @@ class ETLTest {
         assertEquals(expected, ETL.transform(old))
     }
 
-    @Ignore
     @Test
     fun transformMoreValues() {
         val old = mapOf(1 to listOf("WORLD", "GSCHOOLERS"))
