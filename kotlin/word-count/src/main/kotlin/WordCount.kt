@@ -1,5 +1,8 @@
 object WordCount {
-    fun phrase(word : String): Map<String, Int> {
-        return mapOf("word" to 1)
+    fun phrase(sentence: String): Map<String, Int> {
+        val words = sentence.split(" ")
+        return words.map{
+            it to 1
+        }.toMap()
     }
 }

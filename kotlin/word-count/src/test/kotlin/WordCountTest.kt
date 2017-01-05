@@ -11,7 +11,6 @@ class WordCountTest {
         assertEquals(expectedWordCount, WordCount.phrase("word"))
     }
 
-    @Ignore
     @Test
     fun countOneOfEach() {
         val expectedWordCount = mapOf("one" to 1, "of" to 1, "each" to 1)
