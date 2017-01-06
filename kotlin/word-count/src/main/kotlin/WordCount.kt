@@ -1,6 +1,7 @@
 object WordCount {
     fun phrase(sentence: String): Map<String, Int> {
         val words = sentence
+                .toLowerCase()
                 .split(" ")
                 .map {
                     it.replace(Regex("[:!&@$%^&,]"), "")
