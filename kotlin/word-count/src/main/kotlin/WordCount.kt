@@ -4,7 +4,7 @@ object WordCount {
                 .toLowerCase()
                 .split(" ")
                 .map {
-                    it.replace(Regex("[:!&@$%^&,]"), "")
+                    it.replace(Regex("[:!&@$%^&,.]"), "")
                 }
                 .filter(String::isNotEmpty)
         return words.map{
