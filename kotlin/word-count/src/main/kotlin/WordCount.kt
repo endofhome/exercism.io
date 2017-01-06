@@ -3,7 +3,7 @@ object WordCount {
         val words = sentence
                 .split(" ")
                 .map {
-                    it.replace(Regex("[:!&@$%^&]"), "")
+                    it.replace(Regex("[:!&@$%^&,]"), "")
                 }
                 .filter(String::isNotEmpty)
         return words.map{

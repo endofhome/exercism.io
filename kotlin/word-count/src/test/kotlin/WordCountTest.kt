@@ -33,7 +33,6 @@ class WordCountTest {
 
     }
 
-    @Ignore
     @Test
     fun includeNumbers() {
         val expectedWordCount = mapOf("testing" to 2, "1" to 1, "2" to 1)
