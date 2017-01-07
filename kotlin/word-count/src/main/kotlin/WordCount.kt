@@ -12,7 +12,7 @@ object WordCount {
         }.toMap()
     }
 
-    fun count(word: String, words: List<String>): Int {
+    private fun count(word: String, words: List<String>): Int {
         val duplicates = words.filter { it == word }
         return duplicates.size
     }
