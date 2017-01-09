@@ -1,19 +1,8 @@
 object WordCount {
     fun phrase(sentence: String): Map<String, Int> {
-        val words = sentence
-                .toLowerCase()
-                .split(" ")
-                .map {
-                    it.replace(Regex("[:!&@$%^&,.]"), "")
-                }
+        return sentence.toLowerCase()
+                .split(Regex("[^a-zA-Z0-9']+"))
                 .filter(String::isNotEmpty)
-        return words.map{
-            it to count(it, words)
-        }.toMap()
-    }
-
-    private fun count(word: String, words: List<String>): Int {
-        val duplicates = words.filter { it == word }
-        return duplicates.size
+                .groupBy { it }.mapValues { it.value.size }
     }
 }
