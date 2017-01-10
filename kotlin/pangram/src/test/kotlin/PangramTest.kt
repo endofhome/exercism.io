@@ -40,13 +40,11 @@ class PangramTest {
         assertFalse(Pangrams.isPangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"))
     }
 
-    @Ignore
     @Test
     fun mixedCaseAndPunctuation() {
         assertTrue(Pangrams.isPangram("\"Five quacking Zephyrs jolt my wax bed.\""))
     }
 
-    @Ignore
     @Test
     fun nonAsciiCharacters() {
         assertTrue(Pangrams.isPangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich."))
