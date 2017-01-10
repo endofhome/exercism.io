@@ -31,7 +31,6 @@ class AnagramTest {
         assertEquals(listOf(), anagrams)
     }
 
-    @Ignore
     @Test
     fun identicalWordIsNotAnagram() {
         val detector = Anagram("corn")
@@ -39,21 +38,18 @@ class AnagramTest {
         assertEquals(listOf("cron"), anagrams)
     }
 
-    @Ignore
     @Test
     fun eliminateAnagramsWithSameChecksum() {
         val detector = Anagram("mass")
         assertEquals(listOf(), detector.match(listOf("last")))
     }
 
-    @Ignore
     @Test
     fun eliminateAnagramSubsets() {
         val detector = Anagram("good")
         assertEquals(listOf(), detector.match(listOf("dog", "goody")))
     }
 
-    @Ignore
     @Test
     fun detectAnagrams() {
         val detector = Anagram("listen")
@@ -61,7 +57,6 @@ class AnagramTest {
         assertEquals(listOf("inlets"), anagrams)
     }
 
-    @Ignore
     @Test
     fun multipleAnagrams() {
         val detector = Anagram("allergy")
@@ -69,7 +64,6 @@ class AnagramTest {
         assertEquals(listOf("gallery", "largely", "regally"), anagrams.sorted())
     }
 
-    @Ignore
     @Test
     fun anagramsAreCaseInsensitive() {
         val detector = Anagram("Orchestra")
