@@ -10,7 +10,6 @@ class AnagramTest {
         assertEquals(listOf(), detector.match(listOf("hello", "world", "zombies", "pants")))
     }
 
-    @Ignore
     @Test
     fun simpleAnagram() {
         val detector = Anagram("ant")

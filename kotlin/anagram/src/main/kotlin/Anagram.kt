@@ -1,5 +1,7 @@
-class Anagram(inputWord: String) {
+class Anagram(private val inputWord: String) {
     fun match(possibleMatches: List<String>): List<String> {
-       return emptyList()
+        return possibleMatches.filter {
+            it.length == inputWord.length
+        }.toList()
     }
 }
