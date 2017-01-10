@@ -1,5 +1,9 @@
 object Pangrams {
     fun isPangram(sentence : String): Boolean {
-        return false
+        val charCountMap = CharRange('a', 'z').map {
+            it to sentence.contains(it)
+        }.toMap()
+
+        return charCountMap.values.all { it }
     }
 }
