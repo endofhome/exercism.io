@@ -17,7 +17,6 @@ class AnagramTest {
         assertEquals(listOf("tan"), anagram)
     }
 
-    @Ignore
     @Test
     fun detectMultipleAnagrams() {
         val detector = Anagram("master")
@@ -25,7 +24,6 @@ class AnagramTest {
         assertEquals(listOf("maters", "stream"), anagrams.sorted())
     }
 
-    @Ignore
     @Test
     fun doesNotConfuseDifferentDuplicates() {
         val detector = Anagram("galea")
