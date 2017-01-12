@@ -1,8 +1,11 @@
 object Hamming {
     fun compute(base: String, compare: String): Int {
-        if (base == compare) {
-            return 0
+        var counter = 0
+        base.toList().mapIndexed { i, c ->
+            if (c != compare.toList()[i]) {
+                counter++
+            }
         }
-        return 1
+        return counter
     }
 }

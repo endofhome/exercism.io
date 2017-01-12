@@ -14,19 +14,16 @@ class HammingTest {
         assertEquals(1, Hamming.compute("A", "G"))
     }
 
-    @Ignore
     @Test
     fun completeHammingDistanceForSmallStrand() {
         assertEquals(2, Hamming.compute("AG", "CT"))
     }
 
-    @Ignore
     @Test
     fun smallHammingDistance() {
         assertEquals(1, Hamming.compute("AT", "CT"))
     }
 
-    @Ignore
     @Test
     fun smallHammingDistanceInLongerStrand() {
         assertEquals(1, Hamming.compute("GGACG", "GGTCG"))
