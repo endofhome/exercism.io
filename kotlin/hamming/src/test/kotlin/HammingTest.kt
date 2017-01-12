@@ -9,7 +9,6 @@ class HammingTest {
         assertEquals(0, Hamming.compute("A", "A"))
     }
 
-    @Ignore
     @Test
     fun completeHammingDistanceOfForSingleNucleotideStrand() {
         assertEquals(1, Hamming.compute("A", "G"))
