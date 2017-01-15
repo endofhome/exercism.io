@@ -14,25 +14,21 @@ class RobertTest {
         assertEquals("Whoa, chill out!", Bob.hey("WATCH OUT!"))
     }
 
-    @Ignore
     @Test
     fun askingAQuestion() {
         assertEquals("Sure.", Bob.hey("Does this cryogenic chamber make me look fat?"))
     }
 
-    @Ignore
     @Test
     fun askingANumericQuestion() {
         assertEquals("Sure.", Bob.hey("You are, what, like 15?"))
     }
 
-    @Ignore
     @Test
     fun talkingForcefully() {
         assertEquals("Whatever.", Bob.hey("Let's go make out behind the gym!"))
     }
 
-    @Ignore
     @Test
     fun usingAcronymsInRegularSpeech() {
         assertEquals("Whatever.", Bob.hey("It's OK if you don't want to go to the DMV."))
