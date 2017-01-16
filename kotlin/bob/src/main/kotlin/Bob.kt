@@ -4,7 +4,7 @@ object Bob {
            "Whoa, chill out!"
         } else if (input.endsWith("?")) {
             "Sure."
-        } else if (input.trim{it == ' '}.isEmpty()) {
+        } else if (input.isBlank()) {
             "Fine. Be that way!"
         } else {
             "Whatever."
