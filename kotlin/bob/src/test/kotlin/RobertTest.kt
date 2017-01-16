@@ -44,49 +44,41 @@ class RobertTest {
         assertEquals("Whoa, chill out!", Bob.hey("1, 2, 3 GO!"))
     }
 
-    @Ignore
     @Test
     fun onlyNumbers() {
         assertEquals("Whatever.", Bob.hey("1, 2, 3"))
     }
 
-    @Ignore
     @Test
     fun questionWithOnlyNumbers() {
         assertEquals("Sure.", Bob.hey("4?"))
     }
 
-    @Ignore
     @Test
     fun shoutingWithSpecialCharacters() {
         assertEquals("Whoa, chill out!", Bob.hey("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))
     }
 
-    @Ignore
     @Test
     fun shoutingWithUmlauts() {
         assertEquals("Whoa, chill out!", Bob.hey("\u00dcML\u00c4\u00dcTS!"))
     }
 
-    @Ignore
     @Test
     fun calmlySpeakingWithUmlauts() {
         assertEquals("Whatever.", Bob.hey("\u00dcML\u00e4\u00dcTS!"))
     }
 
-    @Ignore
     @Test
     fun shoutingWithNoExclamationMark() {
         assertEquals("Whoa, chill out!", Bob.hey("I HATE YOU"))
     }
 
-    @Ignore
     @Test
     fun statementContainingQuestionMark() {
         assertEquals("Whatever.", Bob.hey("Ending with ? means a question."))
     }
 
-    @Ignore
     @Test
     fun prattlingOn() {
         assertEquals("Sure.", Bob.hey("Wait! Hang on. Are you going to be OK?"))
