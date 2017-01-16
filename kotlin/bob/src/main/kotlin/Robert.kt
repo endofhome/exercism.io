@@ -4,6 +4,8 @@ object Bob {
            "Whoa, chill out!"
         } else if (input.endsWith("?")) {
             "Sure."
+        } else if (input.isEmpty()) {
+            "Fine. Be that way!"
         } else {
             "Whatever."
         }

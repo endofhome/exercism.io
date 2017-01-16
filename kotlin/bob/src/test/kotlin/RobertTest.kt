@@ -84,7 +84,6 @@ class RobertTest {
         assertEquals("Sure.", Bob.hey("Wait! Hang on. Are you going to be OK?"))
     }
 
-    @Ignore
     @Test
     fun silence() {
         assertEquals("Fine. Be that way!", Bob.hey(""))
