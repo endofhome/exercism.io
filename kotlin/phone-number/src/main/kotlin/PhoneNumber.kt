@@ -1,4 +1,4 @@
 class PhoneNumber(unformattedNumber: String) {
-    val number = "1234567890"
+    val number = unformattedNumber.filter(Char::isDigit)
     val areaCode: String? = null
 }

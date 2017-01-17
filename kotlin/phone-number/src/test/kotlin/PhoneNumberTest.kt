@@ -12,7 +12,6 @@ class PhoneNumberTest {
         assertEquals(expectedNumber, actualNumber)
     }
 
-    @Ignore
     @Test
     fun cleansNumberWithDots() {
         val expectedNumber = "1234567890"
