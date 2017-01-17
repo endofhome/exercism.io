@@ -1,7 +1,7 @@
 class Robot {
-    val letters = ('A'..'Z').toList()
-    val numbers = (0..9).toList()
-    var previousNames = mutableSetOf<String>()
+    private val letters = ('A'..'Z').toList()
+    private val numbers = (0..9).toList()
+    private var previousNames = mutableSetOf<String>()
     var name = generateName()
 
     private fun generateName(): String {
