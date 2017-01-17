@@ -1,4 +1,3 @@
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
@@ -22,7 +21,6 @@ class RobotTest {
         assertNotEquals(robot.name, Robot().name)
     }
 
-    @Ignore
     @Test
     fun resetName() {
         val name = robot.name

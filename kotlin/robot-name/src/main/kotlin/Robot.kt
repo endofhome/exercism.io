@@ -1,7 +1,7 @@
 class Robot {
-    val name = initialiseName()
+    var name = generateName()
 
-    private fun initialiseName(): String {
+    private fun generateName(): String {
         val letters = ('A'..'Z').toList()
         fun letter() = letters[(Math.random() * letters.size).toInt()].toString()
 
@@ -12,5 +12,6 @@ class Robot {
     }
 
     fun reset() {
+        name = generateName()
     }
 }
