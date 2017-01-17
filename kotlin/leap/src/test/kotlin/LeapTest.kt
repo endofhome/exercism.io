@@ -10,13 +10,11 @@ class LeapTest {
         assertTrue(Year(1996).isLeap)
     }
 
-    @Ignore
     @Test
     fun standardOddYear() {
         assertFalse(Year(1997).isLeap)
     }
 
-    @Ignore
     @Test
     fun standardEvenYear() {
         assertFalse(Year(1998).isLeap)

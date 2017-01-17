@@ -1,3 +1,3 @@
 class Year(private val year: Int) {
-    val isLeap = true
+    val isLeap = year.mod(4).equals(0)
 }
