@@ -36,7 +36,6 @@ class PhoneNumberTest {
         assertEquals(expectedNumber, actualNumber)
     }
 
-    @Ignore
     @Test
     fun invalidWhen9Digits() {
         val expectedNumber = "0000000000"
