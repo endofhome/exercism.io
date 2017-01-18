@@ -1,4 +1,3 @@
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -52,7 +51,6 @@ class PhoneNumberTest {
         assertEquals(expectedAreaCode, actualAreaCode)
     }
 
-    @Ignore
     @Test
     fun toStringPrint() {
         val expectedtoStringNumber = "(123) 456-7890"
@@ -61,7 +59,6 @@ class PhoneNumberTest {
         assertEquals(expectedtoStringNumber, actualtoStringNumber)
     }
 
-    @Ignore
     @Test
     fun toStringPrintWithFullUSPhoneNumber() {
         val expectedtoStringNumber = "(123) 456-7890"
