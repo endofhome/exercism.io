@@ -8,11 +8,8 @@ class PhoneNumber(unformattedNumber: String) {
     }
 
     private fun String.validateNumber(): String {
-        if (this.length == 11 && this.first() == '1') {
-            return this.substring(1)
-        } else if (this.length == 11) {
-            return "0000000000"
-        }
-        return this
+        if (this.length != 11) return this
+        if (this.length == 11 && this.first() == '1') return this.substring(1)
+        return "0000000000"
     }
 }
