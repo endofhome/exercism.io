@@ -1,6 +1,13 @@
 class School {
-    fun db(): Map<Int, List<String>> = mapOf()
-    fun add(s: String, i: Int) {}
+    private var db: MutableMap<Int, List<String>> = mutableMapOf()
+
+    fun db() = db
+
+    fun add(name: String, grade: Int) {
+        db[grade] = mutableListOf(name)
+    }
+
     fun grade(i: Int): List<String> = listOf()
+
     fun sort(): Map<Int, List<String>> = mapOf()
 }

@@ -18,7 +18,6 @@ class SchoolTest {
         assertTrue(school.db().isEmpty())
     }
 
-    @Ignore
     @Test
     fun addsStudents() {
         school.add("Aimee", 2)
