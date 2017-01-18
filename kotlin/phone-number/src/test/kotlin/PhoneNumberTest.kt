@@ -44,7 +44,6 @@ class PhoneNumberTest {
         assertEquals(expectedNumber, actualNumber)
     }
 
-    @Ignore
     @Test
     fun areaCode() {
         val expectedAreaCode = "123"

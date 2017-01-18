@@ -1,6 +1,6 @@
 class PhoneNumber(unformattedNumber: String) {
     val number = processNumber(unformattedNumber)
-    val areaCode: String? = null
+    val areaCode = number.substring(0, 3)
 
     private fun processNumber(unformattedNumber: String): String {
         return unformattedNumber.validateNumber()
