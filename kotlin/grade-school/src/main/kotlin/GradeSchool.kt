@@ -4,7 +4,12 @@ class School {
     fun db() = db
 
     fun add(name: String, grade: Int) {
-        db[grade] = mutableListOf(name)
+        var studentsForGrade: MutableList<String> = mutableListOf()
+        if (db.keys.contains(grade)) {
+            studentsForGrade = db.get(grade)!!.toMutableList()
+        }
+        studentsForGrade?.add(name)
+        db[grade] = studentsForGrade.toList()
     }
 
     fun grade(i: Int): List<String> = listOf()
