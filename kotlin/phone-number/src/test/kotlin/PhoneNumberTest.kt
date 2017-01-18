@@ -20,7 +20,6 @@ class PhoneNumberTest {
         assertEquals(expectedNumber, actualNumber)
     }
 
-    @Ignore
     @Test
     fun validWhen11DigitsAndFirstIs1() {
         val expectedNumber = "1234567890"
