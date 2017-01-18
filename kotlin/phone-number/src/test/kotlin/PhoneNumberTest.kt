@@ -28,7 +28,6 @@ class PhoneNumberTest {
         assertEquals(expectedNumber, actualNumber)
     }
 
-    @Ignore
     @Test
     fun invalidWhenOnly11Digits() {
         val expectedNumber = "0000000000"
