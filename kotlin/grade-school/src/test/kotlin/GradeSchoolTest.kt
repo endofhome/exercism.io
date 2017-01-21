@@ -1,5 +1,4 @@
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -61,7 +60,6 @@ class SchoolTest {
         assertTrue(school.grade(1).isEmpty())
     }
 
-    @Ignore
     @Test
     fun sortsSchool() {
         school.add("Jennifer", 4)
@@ -73,7 +71,6 @@ class SchoolTest {
         val sortedClasses = school.sort()
         assertEquals(expected, sortedClasses)
         assertEquals(listOf(3, 4, 6), sortedClasses.keys.toList(), "Grades not sorted in ascending order")
-
         assertEquals(listOf("Jennifer", "Christopher"), school.db().get(4), "Original student order should not be mutated")
     }
 }

@@ -8,11 +8,15 @@ class School {
         if (db.keys.contains(grade)) {
             studentsForGrade = db.get(grade)!!.toMutableList()
         }
-        studentsForGrade?.add(name)
+        studentsForGrade.add(name)
         db[grade] = studentsForGrade.toList()
     }
 
     fun grade(i: Int): List<String> = listOf()
 
-    fun sort(): Map<Int, List<String>> = mapOf()
+    fun sort(): Map<Int, List<String>> {
+        return db.keys.sorted().map {
+            it to db[it].orEmpty().sorted()
+        }.toMap()
+    }
 }
