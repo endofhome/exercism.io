@@ -1,15 +1,29 @@
+import java.util.HashMap
+
 class School {
-    private var db: MutableMap<Int, List<String>> = mutableMapOf()
+    private var db: Map<Int, List<String>> = mapOf()
 
     fun db() = db
 
     fun add(name: String, grade: Int) {
-        var studentsForGrade: MutableList<String> = mutableListOf()
-        if (db.keys.contains(grade)) {
-            studentsForGrade = db.get(grade)!!.toMutableList()
+        when (db.keys.contains(grade)) {
+            true -> addStudentForExistingGrade(name, grade)
+            false -> addStudentForNewGrade(name, grade)
         }
+    }
+
+    private fun addStudentForExistingGrade(name: String, grade: Int) {
+        val localDb = db as MutableMap<Int, List<String>>
+        val studentsForGrade: MutableList<String> = localDb.get(grade).orEmpty().toMutableList()
         studentsForGrade.add(name)
-        db[grade] = studentsForGrade.toList()
+        localDb[grade] = studentsForGrade
+        db = localDb
+    }
+
+    private fun addStudentForNewGrade(name: String, grade: Int) {
+        val localDb: MutableMap<Int, List<String>> = HashMap(db)
+        localDb[grade] = listOf(name)
+        db = localDb
     }
 
     fun grade(i: Int): List<String> = listOf()
