@@ -1,7 +1,7 @@
 import java.util.HashMap
 
 class School {
-    private var db: Map<Int, List<String>> = mapOf()
+    private var db: Map<Int, List<String>> = emptyMap()
 
     fun db() = db
 
