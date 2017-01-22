@@ -12,8 +12,6 @@ class School {
     }
 
     fun sort(): Map<Int, List<String>> {
-        return db.keys.sorted().map {
-            it to db[it].orEmpty().sorted()
-        }.toMap()
+        return db.toSortedMap().mapValues { it.value.sorted() }
     }
 }
