@@ -19,7 +19,7 @@ class SpaceAge(age: Number) {
 
     fun onUranus() = format(preciseEarthAge.div(84.016846))
 
-    fun onNeptune(): Double = 0.0
+    fun onNeptune() = format(preciseEarthAge.div(164.79132))
 
     private fun format(highPrecisionNumber: Double): Double {
         return BigDecimal(highPrecisionNumber).setScale(2, RoundingMode.HALF_UP).toDouble()
