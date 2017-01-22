@@ -4,13 +4,9 @@ import java.math.RoundingMode
 class SpaceAge(age: Number) {
     val seconds: Int = age.toInt()
 
-    fun onEarth(): Double {
-        return format(seconds.div(31557600.0))
-    }
+    fun onEarth() = format(seconds.div(31557600.0))
 
-    fun onMercury(): Double {
-        return format(onEarth().div(0.2408467))
-    }
+    fun onMercury() = format(onEarth().div(0.2408467))
 
     fun onVenus(): Double = 0.0
 
