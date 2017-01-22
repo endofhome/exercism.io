@@ -61,6 +61,14 @@ class SchoolTest {
     }
 
     @Test
+    fun getsStudentsInGradeWithOneStudent() {
+        school.add("Milford", 3)
+
+        val expected = listOf("Milford")
+        assertEquals(expected, school.grade(3))
+    }
+
+    @Test
     fun sortsSchool() {
         school.add("Jennifer", 4)
         school.add("Kareem", 6)

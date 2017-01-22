@@ -26,7 +26,9 @@ class School {
         db = localDb
     }
 
-    fun grade(i: Int): List<String> = listOf()
+    fun grade(grade: Int): List<String> {
+        return db.get(grade).orEmpty()
+    }
 
     fun sort(): Map<Int, List<String>> {
         return db.keys.sorted().map {
