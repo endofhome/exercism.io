@@ -11,7 +11,6 @@ class SpaceAgeTest {
         assertEquals(1000000, age.seconds)
     }
 
-    @Ignore
     @Test
     fun ageOnEarth() {
         val age = SpaceAge(1000000000)
