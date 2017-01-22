@@ -15,7 +15,7 @@ class SpaceAge(age: Number) {
 
     fun onJupiter() = format(preciseEarthAge.div(11.862615))
 
-    fun onSaturn(): Double = 0.0
+    fun onSaturn() = format(preciseEarthAge.div(29.447498))
 
     fun onUranus(): Double = 0.0
 
