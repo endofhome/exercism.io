@@ -1,8 +1,7 @@
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-class SpaceAge(age: Number) {
-    val seconds = age.toLong()
+class SpaceAge(val seconds: Long) {
     private val preciseEarthAge = seconds.div(31557600.0)
 
     fun onEarth() = format(preciseEarthAge)
