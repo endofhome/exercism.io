@@ -2,9 +2,11 @@ object BeerSong {
     val lyrics: String = ""
 
     fun verse(number: Int): String {
-        return when (number) {
-            0 -> "${numberOfBottles(0)} of beer on the wall, ${numberOfBottles(0)} of beer.\nGo to the store and buy some more, ${numberOfBottles(-1)} of beer on the wall.\n".capitalize()
-            1 -> "${numberOfBottles(1)} of beer on the wall, ${numberOfBottles(1)} of beer.\nTake it down and pass it around, ${numberOfBottles(0)} of beer on the wall.\n"
+        require(number >= 0, { "Beer song verse can't be negative" })
+
+        return when {
+            number == 0 -> "${numberOfBottles(0)} of beer on the wall, ${numberOfBottles(0)} of beer.\nGo to the store and buy some more, ${numberOfBottles(-1)} of beer on the wall.\n".capitalize()
+            number == 1 -> "${numberOfBottles(1)} of beer on the wall, ${numberOfBottles(1)} of beer.\nTake it down and pass it around, ${numberOfBottles(0)} of beer on the wall.\n"
             else -> "${numberOfBottles(number)} of beer on the wall, ${numberOfBottles(number)} of beer.\nTake one down and pass it around, ${numberOfBottles(number -1)} of beer on the wall.\n"
         }
     }

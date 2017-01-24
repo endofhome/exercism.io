@@ -35,7 +35,6 @@ class BeerSongTest {
         assertEquals(expected, BeerSong.verse(99))
     }
 
-    @Ignore
     @Test
     fun verseMinus1() {
         assertFailsWith(IllegalArgumentException::class, "Beer song verse can't be negative", { BeerSong.verse(-1) })
