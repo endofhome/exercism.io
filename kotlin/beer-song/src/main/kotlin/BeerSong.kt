@@ -3,6 +3,7 @@ object BeerSong {
 
     fun verse(number: Int): String {
         require(number >= 0, { "Beer song verse can't be negative" })
+        require(number <= 99, { "Beer song only goes up to verse 99" })
 
         return when {
             number == 0 -> "${numberOfBottles(0)} of beer on the wall, ${numberOfBottles(0)} of beer.\nGo to the store and buy some more, ${numberOfBottles(-1)} of beer on the wall.\n".capitalize()
