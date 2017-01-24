@@ -17,21 +17,18 @@ class BeerSongTest {
         assertEquals(expected, BeerSong.verse(1))
     }
 
-    @Ignore
     @Test
     fun verse2() {
         val expected = "2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n"
         assertEquals(expected, BeerSong.verse(2))
     }
 
-    @Ignore
     @Test
     fun verse8() {
         val expected = "8 bottles of beer on the wall, 8 bottles of beer.\nTake one down and pass it around, 7 bottles of beer on the wall.\n"
         assertEquals(expected, BeerSong.verse(8))
     }
 
-    @Ignore
     @Test
     fun verse99() {
         val expected = "99 bottles of beer on the wall, 99 bottles of beer.\nTake one down and pass it around, 98 bottles of beer on the wall.\n"

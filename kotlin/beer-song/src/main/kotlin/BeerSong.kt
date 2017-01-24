@@ -3,8 +3,9 @@ object BeerSong {
 
     fun verse(number: Int): String {
         return when (number) {
-            0 -> "${numberOfBottles(0)} of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n".capitalize()
-            else -> "${numberOfBottles(number)} of beer on the wall, ${numberOfBottles(number)} of beer.\nTake it down and pass it around, ${numberOfBottles(number -1)} of beer on the wall.\n"
+            0 -> "${numberOfBottles(0)} of beer on the wall, ${numberOfBottles(0)} of beer.\nGo to the store and buy some more, ${numberOfBottles(-1)} of beer on the wall.\n".capitalize()
+            1 -> "${numberOfBottles(1)} of beer on the wall, ${numberOfBottles(1)} of beer.\nTake it down and pass it around, ${numberOfBottles(0)} of beer on the wall.\n"
+            else -> "${numberOfBottles(number)} of beer on the wall, ${numberOfBottles(number)} of beer.\nTake one down and pass it around, ${numberOfBottles(number -1)} of beer on the wall.\n"
         }
     }
 
