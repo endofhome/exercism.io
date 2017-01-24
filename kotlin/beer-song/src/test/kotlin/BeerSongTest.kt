@@ -11,7 +11,6 @@ class BeerSongTest {
         assertEquals(expected, BeerSong.verse(0))
     }
 
-    @Ignore
     @Test
     fun verse1() {
         val expected = "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n"
