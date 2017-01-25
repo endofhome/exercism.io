@@ -1,5 +1,5 @@
 object BeerSong {
-    val lyrics: String = ""
+    val lyrics: String = verses(99, 0)
 
     fun verse(number: Int): String {
         require(number >= 0, { "Beer song verse can't be negative" })

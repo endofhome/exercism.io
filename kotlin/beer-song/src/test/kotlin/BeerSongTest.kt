@@ -1,4 +1,3 @@
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -67,7 +66,6 @@ class BeerSongTest {
         assertFailsWith(IllegalArgumentException::class, "Beer song can't go down into a negative verse", { BeerSong.verses(3, -1) })
     }
 
-    @Ignore
     @Test
     fun entireSong() {
         val expected =
