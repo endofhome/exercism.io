@@ -19,5 +19,10 @@ object BeerSong {
         else -> "$number bottles"
     }
 
-    fun verses(startNumber: Int, endNumber: Int): String = ""
+    fun verses(startNumber: Int, endNumber: Int): String {
+        val verseNumbers = startNumber downTo endNumber
+        return verseNumbers.map {
+            verse(it)
+        }.joinToString("\n")
+    }
 }
