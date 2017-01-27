@@ -11,7 +11,6 @@ class NucleotideTest {
         assertEquals(0, dna.count('A'))
     }
 
-    @Ignore
     @Test
     fun emptyDnaStringHasNoNucleotides() {
         val dna = DNA("");
