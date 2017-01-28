@@ -19,14 +19,12 @@ class NucleotideTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    @Ignore
     @Test
     fun repetitiveCytidineGetsCounted() {
         val dna = DNA("CCCCC");
         assertEquals(5, dna.count('C'))
     }
 
-    @Ignore
     @Test
     fun repetitiveSequenceWithOnlyGuanosine() {
         val dna = DNA("GGGGGGGG");
@@ -35,7 +33,6 @@ class NucleotideTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    @Ignore
     @Test
     fun countsOnlyThymidine() {
         val dna = DNA("GGGGGTAACCCGG");
@@ -43,7 +40,6 @@ class NucleotideTest {
         assertEquals(1, dna.count('T'))
     }
 
-    @Ignore
     @Test
     fun countsANucleotideOnlyOnce() {
         val dna = DNA("CGATTGGG");
@@ -52,7 +48,6 @@ class NucleotideTest {
         assertEquals(2, dna.count('T'))
     }
 
-    @Ignore
     @Test
     fun dnaCountsDoNotChangeAfterCountingAdenosine() {
         val dna = DNA("GATTACA");
