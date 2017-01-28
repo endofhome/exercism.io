@@ -10,5 +10,7 @@ class Squares(private val upper: Int) {
         }.toList().sum()
     }
 
-    fun difference(): Int = 0
+    fun difference(): Int {
+        return squareOfSum() - sumOfSquares()
+    }
 }

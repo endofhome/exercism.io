@@ -1,4 +1,3 @@
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -39,25 +38,21 @@ class SquaresTest {
         assertEquals(0, Squares(0).difference())
     }
 
-    @Ignore
     @Test
     fun differenceOfSquares5() {
         assertEquals(170, Squares(5).difference())
     }
 
-    @Ignore
     @Test
     fun differenceOfSquares10() {
         assertEquals(2640, Squares(10).difference())
     }
 
-    @Ignore
     @Test
     fun differenceOfSquares100() {
         assertEquals(25164150, Squares(100).difference())
     }
 
-    @Ignore
     @Test
     fun consistentDifference() {
         assertEquals(Squares(0).difference(), Squares(0).difference())
