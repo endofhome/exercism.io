@@ -4,7 +4,11 @@ class Squares(private val upper: Int) {
         return sum.times(sum)
     }
 
-    fun  sumOfSquares(): Int = 0
+    fun  sumOfSquares(): Int {
+        return 1.rangeTo(upper).map {
+            it.times(it)
+        }.toList().sum()
+    }
 
     fun difference(): Int = 0
 }

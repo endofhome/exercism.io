@@ -9,37 +9,31 @@ class SquaresTest {
         assertEquals(225, Squares(5).squareOfSum())
     }
 
-    @Ignore
     @Test
     fun squareOfSum10() {
         assertEquals(3025, Squares(10).squareOfSum())
     }
 
-    @Ignore
     @Test
     fun squareOfSum100() {
         assertEquals(25502500, Squares(100).squareOfSum())
     }
 
-    @Ignore
     @Test
     fun sumOfSquares5() {
         assertEquals(55, Squares(5).sumOfSquares())
     }
 
-    @Ignore
     @Test
     fun sumOfSquares10() {
         assertEquals(385, Squares(10).sumOfSquares())
     }
 
-    @Ignore
     @Test
     fun sumOfSquares100() {
         assertEquals(338350, Squares(100).sumOfSquares())
     }
 
-    @Ignore
     @Test
     fun differenceOfSquares0() {
         assertEquals(0, Squares(0).difference())
