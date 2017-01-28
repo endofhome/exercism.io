@@ -57,7 +57,6 @@ class NucleotideTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun validatesNucleotides() {
         DNA("GX")

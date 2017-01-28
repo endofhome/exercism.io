@@ -1,15 +1,17 @@
 class DNA(private val dnaString: String) {
-    val validNucleotides = listOf('A', 'C', 'G', 'T')
+    private val validNucleotides = listOf('A', 'C', 'G', 'T')
     val nucleotideCounts = nucleotideCounts()
 
+    fun count(char: Char): Int {
+        return nucleotideCounts.getOrElse(char, { 0 })
+    }
+
     private fun nucleotideCounts(): Map<Char, Int> {
+        require(validNucleotides.containsAll(dnaString.toList()))
+
         return validNucleotides.map {
             char ->
             char to dnaString.count { it == char }
         }.toMap()
-    }
-
-    fun count(char: Char): Int {
-        return nucleotideCounts.getOrElse(char, { 0 })
     }
 }
