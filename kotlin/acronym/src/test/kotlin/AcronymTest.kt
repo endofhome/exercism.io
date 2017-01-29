@@ -18,7 +18,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromInconsistentlyCasedPhrases() {
         val phrase = "HyperText Markup Language"
@@ -26,7 +25,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromPhrasesWithPunctuation() {
         val phrase = "First In, First Out"
@@ -34,7 +32,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromOtherPhrasesWithPunctuation() {
         val phrase = "PHP: Hypertext Preprocessor"
