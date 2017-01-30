@@ -1,4 +1,3 @@
-import org.junit.Ignore
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -39,7 +38,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromPhrasesWithPunctuationAndSentenceCasing() {
         val phrase = "Complementary metal-oxide semiconductor"
