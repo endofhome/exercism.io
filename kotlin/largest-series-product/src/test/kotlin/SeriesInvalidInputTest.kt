@@ -20,7 +20,6 @@ class SeriesInvalidInputTest {
         Series("123").getLargestProduct(4)
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun spanLargerThanStringSizeUsingEmptyString() {
         Series("").getLargestProduct(1)
