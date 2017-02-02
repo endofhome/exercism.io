@@ -3,10 +3,13 @@ class Series(val unvalidatedInput: String) {
 
     private fun validateInput(): String {
         require(unvalidatedInput.all { it.isDigit() })
+
         return unvalidatedInput
     }
 
     fun getLargestProduct(span: Int): Long {
+        require(span >= 0)
+
         val inputAsListOfLong = input.map { it.toString().toLong() }.toList()
         val listOfProducts = inputAsListOfLong.mapIndexed { i, l ->
             inputAsListOfLong
