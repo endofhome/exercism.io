@@ -1,5 +1,5 @@
 class Series(val unvalidatedInput: String) {
-    val input = validateInput()
+    private val input = validateInput()
 
     private fun validateInput(): String {
         require(unvalidatedInput.all { it.isDigit() })
