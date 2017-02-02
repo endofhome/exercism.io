@@ -1,10 +1,10 @@
 
 import org.junit.Ignore
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class SeriesInvalidInputTest {
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun nonDigitCharacters() {
         Series("1234a5")

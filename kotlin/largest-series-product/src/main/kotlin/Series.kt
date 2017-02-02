@@ -1,4 +1,11 @@
-class Series(val input: String) {
+class Series(val unvalidatedInput: String) {
+    val input = validateInput()
+
+    private fun validateInput(): String {
+        require(unvalidatedInput.all { it.isDigit() })
+        return unvalidatedInput
+    }
+
     fun getLargestProduct(span: Int): Long {
         val inputAsListOfLong = input.map { it.toString().toLong() }.toList()
         val listOfProducts = inputAsListOfLong.mapIndexed { i, l ->
@@ -11,8 +18,8 @@ class Series(val input: String) {
 
     private fun appropriateRange(i: Int, span: Int): IntRange {
         return when (i + span - 1 < input.length) {
-            true -> i.rangeTo(i + span -1)
-            else -> (input.lastIndex - (span -1)).rangeTo(input.lastIndex)
+            true -> i.rangeTo(i + span - 1)
+            else -> (input.lastIndex - (span - 1)).rangeTo(input.lastIndex)
         }
     }
 }
