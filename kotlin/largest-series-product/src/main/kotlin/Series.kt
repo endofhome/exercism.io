@@ -5,7 +5,7 @@ class Series(val input: String) {
     }
 
     fun getLargestProduct(span: Int): Long {
-        require(span >= 0 && span <= input.length)
+        require(span in 0..input.length)
 
         val inputAsListOfLong = input.map { it.toString().toLong() }.toList()
         val listOfProducts = inputAsListOfLong.mapIndexed { i, l ->
