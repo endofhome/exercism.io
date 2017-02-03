@@ -1,10 +1,7 @@
-class Series(val unvalidatedInput: String) {
-    private val input = validateInput()
+class Series(val input: String) {
 
-    private fun validateInput(): String {
-        require(unvalidatedInput.all { it.isDigit() })
-
-        return unvalidatedInput
+    init {
+        require(input.all { it.isDigit() })
     }
 
     fun getLargestProduct(span: Int): Long {
