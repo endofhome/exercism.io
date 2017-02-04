@@ -8,12 +8,11 @@ class Series(val input: String) {
         require(span in 0..input.length)
 
         val inputAsListOfLong = input.map { it.toString().toLong() }.toList()
-        val listOfProducts = inputAsListOfLong.mapIndexed { i, l ->
+        return inputAsListOfLong.mapIndexed { i, l ->
             inputAsListOfLong
                     .slice(appropriateRange(i, span))
                     .reduce { L1, L2 -> L1 * L2 }
-        }.sorted()
-        return listOfProducts.getOrElse(listOfProducts.lastIndex, { 1L })
+        }.max() ?: 1
     }
 
     private fun appropriateRange(i: Int, span: Int): IntRange {
