@@ -6,6 +6,8 @@ object RomanNumeral {
     )
 
     fun value(input: Int): String {
+        require(input in 0..3000)
+
         return when (input) {
             in 0..3 -> addRomanOnes(input)
             in 4..8 -> fiveOrTenBased(input, arabicToRoman[5])
