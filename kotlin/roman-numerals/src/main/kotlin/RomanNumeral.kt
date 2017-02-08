@@ -1,3 +1,5 @@
+import java.lang.Character.getNumericValue
+
 object RomanNumeral {
     private val arabicToRoman = mapOf(
             1 to "I",
@@ -12,21 +14,57 @@ object RomanNumeral {
     fun value(input: Int): String {
         require(input in 0..3000)
 
+        val inputString = input.toString()
+
+        return inputString.mapIndexed { i, char ->
+            val itAsInt = getNumericValue(char)
+            val length = inputString.length
+
+            val numeralToConvert = when (i) {
+                1 -> itAsInt * conversionFactor(length - 1)
+                2 -> itAsInt * conversionFactor(length - 2)
+                3 -> itAsInt * conversionFactor(length - 3)
+                else -> itAsInt * conversionFactor(length)
+            }
+
+            arabicToRoman[numeralToConvert] ?: (getRoman(numeralToConvert))
+        }.joinToString("")
+    }
+
+    private fun conversionFactor(input: Int): Int {
         return when (input) {
-            in 0..3 -> addRomanOnes(input)
-            in 4..8 -> fiveOrTenBased(input, arabicToRoman[5])
-            in 9..13 -> fiveOrTenBased(input, arabicToRoman[10])
-            else -> "not yet supported"
+            2 -> 10
+            3 -> 100
+            4 -> 1000
+            else -> 1
         }
     }
 
-    private fun fiveOrTenBased(input: Int, base: String?): String {
+    private fun getRoman(input: Int): String {
+        val firstDigit = getNumericValue(input.toString().toList().first())
+        return when (firstDigit) {
+            in 0..3 -> addRomanOnes(firstDigit, conversionFactor(input.toString().length))
+            in 4..8 -> fiveOrTenBasedRoman(firstDigit, 5 * conversionFactor(input.toString().length))
+            9 -> fiveOrTenBasedRoman(firstDigit, 10 * conversionFactor(input.toString().length))
+            else -> ""
+        }
+    }
+
+    private fun fiveOrTenBasedRoman(firstDigit: Int, arabicBase: Int): String {
+        val base = arabicToRoman[arabicBase]
+        val prefix = arabicToRoman[arabicBase / fiveOrTen(arabicBase)]
         return when {
-            input == 4 || input == 9 -> arabicToRoman[1] + base
-            input >= 5 -> base + addRomanOnes(input.minus(5))
+            firstDigit == 4 || firstDigit == 9 -> prefix + base
+            firstDigit >= 5 -> base + addRomanOnes(firstDigit.minus(5), conversionFactor(arabicBase.toString().length))
             else -> throw IllegalArgumentException("not '5' or '10' based")
         }
     }
 
-    private fun addRomanOnes(input: Int) = 1.rangeTo(input).map { arabicToRoman[1] }.joinToString("")
+    private fun fiveOrTen(arabicBase: Int): Int {
+        val fiveOrTen = getNumericValue(arabicBase.toString().first())
+        if (fiveOrTen == 1) return 10
+        return fiveOrTen
+    }
+
+    private fun addRomanOnes(numberOfOnes: Int, conversionFactor: Int) = 1.rangeTo(numberOfOnes).map { arabicToRoman[conversionFactor] }.joinToString("")
 }
