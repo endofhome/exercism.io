@@ -1,10 +1,10 @@
 object Raindrops {
     fun convert(input: Int): String {
-        return when {
-            input % 3 == 0 -> "Pling"
-            input % 5 == 0 -> "Plang"
-            input % 7 == 0 -> "Plong"
-            else -> input.toString()
-        }
+        var result = ""
+        if (input % 3 == 0) result += "Pling"
+        if (input % 5 == 0) result += "Plang"
+        if (input % 7 == 0) result += "Plong"
+        if (result == "") return input.toString()
+        return result
     }
 }
