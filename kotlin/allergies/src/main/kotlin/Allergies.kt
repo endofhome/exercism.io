@@ -1,6 +1,6 @@
-class Allergies(i: Int) {
+class Allergies(val allergyType: Int) {
     fun isAllergicTo(allergen: Allergen): Boolean {
-        return false
+        return allergyType == allergen.score
     }
 
     fun getList(): List<Allergen> {
