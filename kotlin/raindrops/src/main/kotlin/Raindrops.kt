@@ -1,5 +1,5 @@
 object Raindrops {
     fun convert(input: Int): String {
-        return "1"
+        return input.toString()
     }
 }
