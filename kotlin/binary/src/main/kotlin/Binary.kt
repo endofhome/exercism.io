@@ -1,10 +1,18 @@
 object Binary {
     fun toDecimal(input: String): Int {
-        val radix = 1
+        var radix = 1
         return input.reversed().map {
-            if (it == '1') {
-                radix
-            } else 0
+            when (it) {
+                '1' -> {
+                    val currentRadix = radix
+                    radix *= 2
+                    currentRadix
+                }
+                else -> {
+                    radix *= 2
+                    0
+                }
+            }
         }.sum()
     }
 }
