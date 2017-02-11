@@ -26,7 +26,7 @@ class RaindropsTest(val input: Int, val expectedOutput: String) {
                 arrayOf(10, "Plang"),
                 arrayOf(25, "Plang"),
 
-                // Numbers with 7 as a prime factor
+                    // Numbers with 7 as a prime factor
                 arrayOf(7, "Plong"),
                 arrayOf(14, "Plong"),
                 arrayOf(49, "Plong"),
