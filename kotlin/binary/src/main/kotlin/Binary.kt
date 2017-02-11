@@ -1,5 +1,7 @@
 object Binary {
     fun toDecimal(input: String): Int {
+        if (input.isNotBinaryNumber()) return 0
+
         var radix = 1
         return input.reversed().map {
             when (it) {
@@ -16,3 +18,5 @@ object Binary {
         }.sum()
     }
 }
+
+private fun String.isNotBinaryNumber(): Boolean = this.any { it != '0' && it != '1' }
