@@ -161,7 +161,6 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
-    @Ignore
     @Test
     fun ignoreNonAllergenScoreParts() {
         val allergies = Allergies(509)

@@ -4,14 +4,27 @@ class Allergies(val allergyType: Int) {
     }
 
     fun getList(): List<Allergen> {
-        var remainder = allergyType
         val allergenList: MutableList<Allergen> = mutableListOf()
+        val missingScores: MutableList<Int> = findMissingScores()
+        var remainder = allergyType - missingScores.sum()
+
         for (allergen in Allergen.values().reversed()) {
             if (remainder >= allergen.score) {
                 remainder -= allergen.score
                 allergenList.add(allergen)
             }
         }
+
         return allergenList.reversed()
+    }
+
+    private fun findMissingScores(): MutableList<Int> {
+        var currentMissingScore = Allergen.values().last().score * 2
+        val missingScores: MutableList<Int> = mutableListOf()
+        while (currentMissingScore <= allergyType) {
+            missingScores.add(currentMissingScore)
+            currentMissingScore *= 2
+        }
+        return missingScores
     }
 }
