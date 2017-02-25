@@ -70,7 +70,6 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.CATS))
     }
 
-    @Ignore
     @Test
     fun isAllergicToEggsInAdditionToOtherStuff() {
         val allergies = Allergies(5)
@@ -78,7 +77,6 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS))
     }
 
-    @Ignore
     @Test
     fun noAllergies() {
         val allergies = Allergies(0)
@@ -86,7 +84,6 @@ class AllergiesTest {
         assertEquals(0, allergies.getList().size)
     }
 
-    @Ignore
     @Test
     fun isAllergicToJustEggs() {
         val allergies = Allergies(1)
