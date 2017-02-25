@@ -4,7 +4,14 @@ class Allergies(val allergyType: Int) {
     }
 
     fun getList(): List<Allergen> {
-        return Allergen.values().toList()
-                .filter { it.score <= allergyType }
+        var remainder = allergyType
+        val allergenList: MutableList<Allergen> = mutableListOf()
+        for (allergen in Allergen.values().reversed()) {
+            if (remainder >= allergen.score) {
+                remainder -= allergen.score
+                allergenList.add(allergen)
+            }
+        }
+        return allergenList
     }
 }
