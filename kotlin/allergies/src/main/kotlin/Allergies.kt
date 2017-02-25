@@ -1,4 +1,5 @@
 class Allergies(val allergyType: Int) {
+
     fun isAllergicTo(allergen: Allergen): Boolean {
         return getList().any { it.score == allergen.score }
     }
@@ -8,10 +9,10 @@ class Allergies(val allergyType: Int) {
         val missingScores: MutableList<Int> = findMissingScores()
         var remainder = allergyType - missingScores.sum()
 
-        for (allergen in Allergen.values().reversed()) {
-            if (remainder >= allergen.score) {
-                remainder -= allergen.score
-                allergenList.add(allergen)
+        Allergen.values().reversed().map {
+            if (remainder >= it.score) {
+                remainder -= it.score
+                allergenList.add(it)
             }
         }
 
