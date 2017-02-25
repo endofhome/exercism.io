@@ -12,6 +12,6 @@ class Allergies(val allergyType: Int) {
                 allergenList.add(allergen)
             }
         }
-        return allergenList
+        return allergenList.reversed()
     }
 }
