@@ -14,6 +14,7 @@ class AllergiesTest {
         assertEquals(false, allergies.isAllergicTo(Allergen.CATS))
     }
 
+    @Ignore
     @Test
     fun allergicToEggs() {
         val allergies = Allergies(1)
@@ -21,6 +22,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS))
     }
 
+    @Ignore
     @Test
     fun allergicToPeanuts() {
         val allergies = Allergies(2)
@@ -28,6 +30,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.PEANUTS))
     }
 
+    @Ignore
     @Test
     fun allergicToShellfish() {
         val allergies = Allergies(4)
@@ -35,6 +38,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.SHELLFISH))
     }
 
+    @Ignore
     @Test
     fun allergicToStrawberries() {
         val allergies = Allergies(8)
@@ -42,6 +46,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.STRAWBERRIES))
     }
 
+    @Ignore
     @Test
     fun allergicToTomatoes() {
         val allergies = Allergies(16)
@@ -49,6 +54,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.TOMATOES))
     }
 
+    @Ignore
     @Test
     fun allergicToChocolate() {
         val allergies = Allergies(32)
@@ -56,6 +62,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.CHOCOLATE))
     }
 
+    @Ignore
     @Test
     fun allergicToPollen() {
         val allergies = Allergies(64)
@@ -63,6 +70,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.POLLEN))
     }
 
+    @Ignore
     @Test
     fun allergicToCats() {
         val allergies = Allergies(128)
@@ -70,6 +78,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.CATS))
     }
 
+    @Ignore
     @Test
     fun isAllergicToEggsInAdditionToOtherStuff() {
         val allergies = Allergies(5)
@@ -77,6 +86,7 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS))
     }
 
+    @Ignore
     @Test
     fun noAllergies() {
         val allergies = Allergies(0)
@@ -84,6 +94,7 @@ class AllergiesTest {
         assertEquals(0, allergies.getList().size)
     }
 
+    @Ignore
     @Test
     fun isAllergicToJustEggs() {
         val allergies = Allergies(1)
@@ -92,6 +103,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToJustPeanuts() {
         val allergies = Allergies(2)
@@ -100,6 +112,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToJustStrawberries() {
         val allergies = Allergies(8)
@@ -108,6 +121,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToEggsAndPeanuts() {
         val allergies = Allergies(3)
@@ -119,6 +133,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToEggsAndShellfish() {
         val allergies = Allergies(5)
@@ -130,6 +145,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToLotsOfStuff() {
         val allergies = Allergies(248)
@@ -144,6 +160,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun isAllergicToEverything() {
         val allergies = Allergies(255)
@@ -161,6 +178,7 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
+    @Ignore
     @Test
     fun ignoreNonAllergenScoreParts() {
         val allergies = Allergies(509)
