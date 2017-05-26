@@ -17,7 +17,7 @@ class Allergies(val allergyType: Int) {
         }
     }
 
-    fun getList(): List<Any> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    fun getList(): List<Allergen> {
+        return listOf()
     }
 }

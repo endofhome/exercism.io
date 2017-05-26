@@ -77,7 +77,6 @@ class AllergiesTest {
         assertEquals(true, allergies.isAllergicTo(Allergen.EGGS))
     }
 
-    @Ignore
     @Test
     fun noAllergies() {
         val allergies = Allergies(0)
