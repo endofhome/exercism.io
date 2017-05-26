@@ -18,6 +18,9 @@ class Allergies(val allergyType: Int) {
     }
 
     fun getList(): List<Allergen> {
-        return listOf()
+        return when (allergyType) {
+            0 -> listOf()
+            else -> listOf(Allergen.EGGS)
+        }
     }
 }

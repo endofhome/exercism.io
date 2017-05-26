@@ -84,7 +84,6 @@ class AllergiesTest {
         assertEquals(0, allergies.getList().size)
     }
 
-    @Ignore
     @Test
     fun isAllergicToJustEggs() {
         val allergies = Allergies(1)
