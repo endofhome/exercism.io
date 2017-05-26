@@ -9,13 +9,8 @@ enum class Allergen(val score: Int) {
     CATS(128)
 }
 
-class Allergies(val allergyType: Int) {
-    fun isAllergicTo(allergen: Allergen): Boolean {
-        return when (allergyType) {
-            0 -> false
-            else -> true
-        }
-    }
+class Allergies(val score: Int) {
+    fun isAllergicTo(allergen: Allergen): Boolean = allergen.score and score != 0
 
-    fun getList(): List<Allergen> = Allergen.values().filter { it.score == allergyType }
+    fun getList(): List<Allergen> = Allergen.values().filter { isAllergicTo(it) }
 }
