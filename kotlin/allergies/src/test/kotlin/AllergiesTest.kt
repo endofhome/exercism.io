@@ -92,7 +92,6 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
-    @Ignore
     @Test
     fun isAllergicToJustPeanuts() {
         val allergies = Allergies(2)
@@ -101,7 +100,6 @@ class AllergiesTest {
         assertEquals(expectedAllergens, allergies.getList())
     }
 
-    @Ignore
     @Test
     fun isAllergicToJustStrawberries() {
         val allergies = Allergies(8)

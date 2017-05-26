@@ -17,10 +17,5 @@ class Allergies(val allergyType: Int) {
         }
     }
 
-    fun getList(): List<Allergen> {
-        return when (allergyType) {
-            0 -> listOf()
-            else -> listOf(Allergen.EGGS)
-        }
-    }
+    fun getList(): List<Allergen> = Allergen.values().filter { it.score == allergyType }
 }
