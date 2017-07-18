@@ -30,7 +30,6 @@ class NaturalNumberTest {
         assertEquals(Classification.ABUNDANT, classify(24))
     }
 
-    @Ignore
     @Test
     fun largeAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, classify(33550335))
@@ -60,4 +59,8 @@ class NaturalNumberTest {
         assertEquals(Classification.DEFICIENT, classify(-1))
     }
 
+    @Test
+    fun `can find factors of 6`() {
+        assertEquals(listOf(1,2,3), 6.factors())
+    }
 }

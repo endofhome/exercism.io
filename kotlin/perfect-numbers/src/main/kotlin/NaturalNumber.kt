@@ -3,6 +3,17 @@ enum class Classification {
 }
 
 fun classify(naturalNumber: Int): Classification {
-    if (naturalNumber % 12 == 0) return Classification.ABUNDANT
-    return Classification.PERFECT
+    return when (naturalNumber.factors().sum() > naturalNumber) {
+        true -> Classification.ABUNDANT
+        false -> Classification.PERFECT
+    }
+}
+
+fun Int.factors(): List<Int> {
+    return (1..this).mapNotNull {
+        when (this % it == 0 && this != it) {
+          true -> it
+          false -> null
+        }
+    }.toList()
 }
