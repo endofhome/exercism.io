@@ -3,9 +3,10 @@ enum class Classification {
 }
 
 fun classify(naturalNumber: Int): Classification {
-    return when (naturalNumber.factors().sum() > naturalNumber) {
-        true -> Classification.ABUNDANT
-        false -> Classification.PERFECT
+    return when {
+        naturalNumber.factors().sum() > naturalNumber -> Classification.ABUNDANT
+        naturalNumber.factors().sum() < naturalNumber -> Classification.DEFICIENT
+        else -> Classification.PERFECT
     }
 }
 

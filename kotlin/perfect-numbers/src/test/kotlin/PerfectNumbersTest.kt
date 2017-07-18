@@ -35,19 +35,16 @@ class NaturalNumberTest {
         assertEquals(Classification.ABUNDANT, classify(33550335))
     }
 
-    @Ignore
     @Test
     fun smallDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, classify(8))
     }
 
-    @Ignore
     @Test
     fun mediumNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, classify(31))
     }
 
-    @Ignore
     @Test
     fun largeDeficientNumberIsClassifiedCorrectly() {
         assertEquals(Classification.DEFICIENT, classify(33550337))
