@@ -1,4 +1,3 @@
-
 enum class Classification {
     DEFICIENT, PERFECT, ABUNDANT
 }
