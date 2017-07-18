@@ -24,8 +24,7 @@ class NaturalNumberTest {
     fun smallAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, classify(12))
     }
-    
-    @Ignore
+
     @Test
     fun mediumAbundantNumberIsClassifiedCorrectly() {
         assertEquals(Classification.ABUNDANT, classify(24))
