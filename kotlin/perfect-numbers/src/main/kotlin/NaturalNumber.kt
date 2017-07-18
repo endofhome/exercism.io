@@ -4,10 +4,12 @@ enum class Classification {
 
 fun classify(naturalNumber: Int): Classification {
     require(naturalNumber >= 0)
-    return when {
-        naturalNumber.factors().sum() > naturalNumber -> Classification.ABUNDANT
-        naturalNumber.factors().sum() < naturalNumber -> Classification.DEFICIENT
-        else -> Classification.PERFECT
+    return naturalNumber.factors().sum().let {
+        when {
+            it > naturalNumber -> Classification.ABUNDANT
+            it < naturalNumber -> Classification.DEFICIENT
+            else -> Classification.PERFECT
+        }
     }
 }
 
