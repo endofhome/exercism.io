@@ -35,7 +35,6 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(8))
     }
 
-    @Ignore
     @Test
     fun testAnInputThatYieldsTwoActions() {
         assertEquals(
