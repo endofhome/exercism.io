@@ -15,7 +15,7 @@ object HandshakeCalculator {
 
 private fun Char.isOne() = this == '1'
 
-private fun String.containsBinary16() = this.length >= 5 && Integer.parseInt(this[0].toString()) == 1
+private fun String.containsBinary16(): Boolean = this.length >= 5 && this.takeLast(5)[0] == '1'
 
 private fun List<Signal>.reverseIf(contains16: Boolean): List<Signal> {
     return when (contains16) {

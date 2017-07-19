@@ -95,6 +95,15 @@ class HandshakeCalculatorTest {
     fun testThatInputOf51IsReversed() {
         assertEquals(
                 listOf(Signal.DOUBLE_BLINK, Signal.WINK),
-                HandshakeCalculator.calculateHandshake(51))
+                HandshakeCalculator.calculateHandshake(51)
+        )
+    }
+
+    @Test
+    fun testThatInputOf35IsNotReversed() {
+        assertEquals(
+                listOf(Signal.WINK, Signal.DOUBLE_BLINK),
+                HandshakeCalculator.calculateHandshake(35)
+        )
     }
 }
