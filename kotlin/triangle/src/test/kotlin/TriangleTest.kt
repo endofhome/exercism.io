@@ -20,13 +20,11 @@ class TriangleTest {
         assertFalse(Triangle(5, 4, 6).isEquilateral)
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun allZeroSidesAreIllegalSoNotEquilateral() {
         assertFalse(Triangle(0, 0, 0).isEquilateral)
     }
 
-    @Ignore
     @Test
     fun equilateralSidesMayBeFloatingPoint() {
         assertTrue(Triangle(0.5, 0.5, 0.5).isEquilateral)
