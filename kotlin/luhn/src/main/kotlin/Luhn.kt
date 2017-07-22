@@ -1,5 +1,16 @@
 object Luhn {
-    fun isValid(numString: String): Boolean = numString.length > 1 && numString.replace(" ", "").everySecondValid()
+    fun isValid(numString: String): Boolean {
+        return numString.length > 1
+                && numString.noLetters()
+                && numString.replace(" ", "").everySecondValid()
+    }
+}
+
+private fun  String.noLetters(): Boolean {
+    return when {
+        this.contains(Regex("[a-zA-Z]")) -> false
+        else -> true
+    }
 }
 
 private fun  String.everySecondValid(): Boolean {
