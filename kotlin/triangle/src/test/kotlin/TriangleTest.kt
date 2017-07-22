@@ -30,19 +30,16 @@ class TriangleTest {
         assertTrue(Triangle(0.5, 0.5, 0.5).isEquilateral)
     }
 
-    @Ignore
     @Test
     fun isoscelesIfLastTwoSidesAreEqual() {
         assertTrue(Triangle(3, 4, 4).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun isoscelesIfFirstTwoSidesAreEqual() {
         assertTrue(Triangle(4, 4, 3).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun isoscelesIfFirstAndLastSidesAreEqual() {
         assertTrue(Triangle(4, 3, 4).isIsosceles)
