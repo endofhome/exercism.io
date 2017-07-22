@@ -1,5 +1,5 @@
 object Luhn {
-    fun isValid(numString: String): Boolean = numString.length > 1 && numString.everySecondValid()
+    fun isValid(numString: String): Boolean = numString.length > 1 && numString.replace(" ", "").everySecondValid()
 }
 
 private fun  String.everySecondValid(): Boolean {
