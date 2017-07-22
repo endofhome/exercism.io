@@ -4,8 +4,8 @@ class Triangle(a: Double, b: Double, c: Double) {
         require(a != 0.0 && b != 0.0 && c != 0.0)
     }
 
-    private val numOfEqualSides = listOf(a, b, c).toSet().size
+    private val differentiatedSideLengths = listOf(a, b, c).toSet().size
     val isScalene: Boolean = false
-    val isIsosceles: Boolean = numOfEqualSides == 2
-    val isEquilateral: Boolean = numOfEqualSides == 1
+    val isIsosceles: Boolean = differentiatedSideLengths <= 2
+    val isEquilateral: Boolean = differentiatedSideLengths == 1
 }

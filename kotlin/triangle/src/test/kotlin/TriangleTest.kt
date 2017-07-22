@@ -45,13 +45,11 @@ class TriangleTest {
         assertTrue(Triangle(4, 3, 4).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun equilateralIsAlsoIsosceles() {
         assertTrue(Triangle(4, 4, 4).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun notIsoscelesIfNoSidesAreEqual() {
         assertFalse(Triangle(2, 3, 4).isIsosceles)
