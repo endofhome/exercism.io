@@ -10,6 +10,7 @@ private fun  String.noLettersOrPunctuation(): Boolean {
     return when {
         this.contains(Regex("[a-zA-Z]")) -> false
         this.contains(Regex("[,.!?\\-]")) -> false
+        this.contains(Regex("[@£$%^&*()_+={}<>]")) -> false
         else -> true
     }
 }
