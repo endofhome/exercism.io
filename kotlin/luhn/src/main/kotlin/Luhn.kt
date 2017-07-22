@@ -1,14 +1,15 @@
 object Luhn {
     fun isValid(numString: String): Boolean {
         return numString.length > 1
-                && numString.noLetters()
+                && numString.noLettersOrPunctuation()
                 && numString.replace(" ", "").everySecondValid()
     }
 }
 
-private fun  String.noLetters(): Boolean {
+private fun  String.noLettersOrPunctuation(): Boolean {
     return when {
         this.contains(Regex("[a-zA-Z]")) -> false
+        this.contains(Regex("[,.!?\\-]")) -> false
         else -> true
     }
 }

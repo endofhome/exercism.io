@@ -47,7 +47,6 @@ class LuhnTest {
         assertFalse(Luhn.isValid("055a 444 285"))
     }
 
-    @Ignore
     @Test
     fun validStringsWithPunctuationIncludedBecomeInvalid() {
         assertFalse(Luhn.isValid("055-444-285"))
