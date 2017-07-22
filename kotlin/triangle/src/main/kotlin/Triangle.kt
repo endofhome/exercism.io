@@ -1,7 +1,7 @@
 class Triangle(val a: Double, val b: Double, val c: Double) {
     constructor(a: Int, b: Int, c: Int): this(a.toDouble(), b.toDouble(), c.toDouble())
     init {
-        require(a != 0.0 && b != 0.0 && c != 0.0)
+        require(listOf(a, b, c).map { it != 0.0 }.all { it })
         require(isATriangle())
     }
 
