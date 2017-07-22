@@ -65,31 +65,26 @@ class TriangleTest {
         assertTrue(Triangle(0.5, 0.4, 0.5).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun scaleneIfNoSidesAreEqual() {
         assertTrue(Triangle(5, 4, 6).isScalene)
     }
 
-    @Ignore
     @Test
     fun notScaleneIfAllSidesAreEqual() {
         assertFalse(Triangle(4, 4, 4).isScalene)
     }
 
-    @Ignore
     @Test
     fun notScaleneIfTwoSidesAreEqual() {
         assertFalse(Triangle(4, 4, 3).isScalene)
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun sidesViolateTriangleInequalitySoNotScalene() {
         assertFalse(Triangle(7, 3, 2).isScalene)
     }
 
-    @Ignore
     @Test
     fun scaleneSidesMayBeFloatingPoint() {
         assertTrue(Triangle(0.5, 0.4, 0.6).isScalene)

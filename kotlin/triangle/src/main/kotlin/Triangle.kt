@@ -6,7 +6,7 @@ class Triangle(val a: Double, val b: Double, val c: Double) {
     }
 
     private val distinctSides = listOf(a, b, c).toSet().size
-    val isScalene: Boolean = false
+    val isScalene: Boolean = distinctSides == 3
     val isIsosceles: Boolean = distinctSides <= 2
     val isEquilateral: Boolean = distinctSides == 1
 
