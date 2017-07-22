@@ -1,8 +1,9 @@
 object Luhn {
     fun isValid(numString: String): Boolean {
-        return numString.length > 1
-                && numString.noLettersOrPunctuation()
-                && numString.replace(" ", "").everySecondValid()
+        val noWhitespace = numString.replace(" ", "")
+        return noWhitespace.length > 1
+                && noWhitespace.noLettersOrPunctuation()
+                && noWhitespace.everySecondValid()
     }
 }
 

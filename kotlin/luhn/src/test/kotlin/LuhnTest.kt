@@ -57,19 +57,16 @@ class LuhnTest {
         assertFalse(Luhn.isValid("055£ 444$ 285"))
     }
 
-    @Ignore
     @Test
     fun singleZeroWithSpaceIsInvalid() {
         assertFalse(Luhn.isValid(" 0"))
     }
 
-    @Ignore
     @Test
     fun moreThanSingleZeroIsValid() {
         assertTrue(Luhn.isValid("0000 0"))
     }
 
-    @Ignore
     @Test
     fun inputDigit9IsCorrectlyConvertedToOutputDigit9() {
         assertTrue(Luhn.isValid("091"))
