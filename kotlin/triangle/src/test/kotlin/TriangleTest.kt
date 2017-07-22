@@ -55,13 +55,11 @@ class TriangleTest {
         assertFalse(Triangle(2, 3, 4).isIsosceles)
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun sidesViolateTriangleInequalitySoNotIsosceles() {
         assertFalse(Triangle(1, 1, 3).isIsosceles)
     }
 
-    @Ignore
     @Test
     fun isoscelesSidesMayBeFloatingPoint() {
         assertTrue(Triangle(0.5, 0.4, 0.5).isIsosceles)
