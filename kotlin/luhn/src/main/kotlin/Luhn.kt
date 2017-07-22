@@ -17,7 +17,7 @@ private fun  String.noLettersOrPunctuation(): Boolean {
 }
 
 private fun  String.everySecondValid(): Boolean {
-    val oddCharList = oddChars()
+    val odds = oddChars()
         .map { Integer.parseInt(it.toString()) * 2 }
         .map {
             when (it > 9) {
@@ -25,12 +25,12 @@ private fun  String.everySecondValid(): Boolean {
                 false -> it
             }
         }
-    val listWithDoubledOdds = oddCharList + evenChars().map { Integer.parseInt(it.toString()) }
-    return listWithDoubledOdds.sum() % 10 == 0
+    return (odds + evens()).sum() % 10 == 0
 }
 
-private fun String.evenChars() = this.toList().reversed()
+private fun String.evens() = this.toList().reversed()
         .filterIndexed { i, _ -> i % 2 == 0 }
+        .map { Integer.parseInt(it.toString()) }
 
 private fun String.oddChars() = this.toList().reversed()
         .filterIndexed { i, _ -> i % 2 != 0 }
