@@ -5,10 +5,10 @@ class Triangle(val a: Double, val b: Double, val c: Double) {
         require(isATriangle())
     }
 
-    private val distinctSideLengths = listOf(a, b, c).toSet().size
+    private val distinctSides = listOf(a, b, c).toSet().size
     val isScalene: Boolean = false
-    val isIsosceles: Boolean = distinctSideLengths <= 2
-    val isEquilateral: Boolean = distinctSideLengths == 1
+    val isIsosceles: Boolean = distinctSides <= 2
+    val isEquilateral: Boolean = distinctSides == 1
 
     private fun isATriangle(): Boolean {
         val sides = listOf(a, b, c)
