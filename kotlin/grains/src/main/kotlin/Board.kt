@@ -12,5 +12,11 @@ object Board {
         return grainCount
     }
 
-    fun getTotalGrainCount(): BigInteger = BigInteger.valueOf(0L)
+    fun getTotalGrainCount(): BigInteger = (1..64).mapNotNull {
+        getGrainCountForSquare(it)
+    }.toList().sum()
+}
+
+fun List<BigInteger>.sum(): BigInteger {
+    return this.reduce { acc, bigInteger -> acc.add(bigInteger) }
 }

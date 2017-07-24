@@ -57,7 +57,6 @@ class BoardTest {
         Board.getGrainCountForSquare(0)
     }
 
-    @Ignore
     @Test
     fun testNegativeSquareIsInvalid() {
         expectedException.expect(IllegalArgumentException::class.java)
@@ -66,7 +65,6 @@ class BoardTest {
         Board.getGrainCountForSquare(-1)
     }
 
-    @Ignore
     @Test
     fun testSquareGreaterThan64IsInvalid() {
         expectedException.expect(IllegalArgumentException::class.java)
@@ -75,7 +73,6 @@ class BoardTest {
         Board.getGrainCountForSquare(65)
     }
 
-    @Ignore
     @Test
     fun testBoardContainsCorrectNumberOfGrains() {
         assertEquals(BigInteger("18446744073709551615"), Board.getTotalGrainCount())
