@@ -29,13 +29,11 @@ class BoardTest {
         assertEquals(BigInteger.valueOf(4), Board.getGrainCountForSquare(3))
     }
 
-    @Ignore
     @Test
     fun testSquare4ContainsCorrectNumberOfGrains() {
         assertEquals(BigInteger.valueOf(8), Board.getGrainCountForSquare(4))
     }
 
-    @Ignore
     @Test
     fun testSquare16ContainsCorrectNumberOfGrains() {
         assertEquals(BigInteger.valueOf(32768), Board.getGrainCountForSquare(16))
