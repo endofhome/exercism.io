@@ -3,12 +3,12 @@ import java.math.BigInteger
 object Board {
     fun  getGrainCountForSquare(squareNum: Int): BigInteger? {
         var counter = 1
-        var grainCount = 1
+        var grainCount = BigInteger.valueOf(1L)
         while (counter < squareNum) {
             ++counter
-            grainCount *= 2
+            grainCount *= BigInteger.valueOf(2L)
         }
-        return BigInteger.valueOf(grainCount.toLong())
+        return grainCount
     }
 
     fun getTotalGrainCount(): BigInteger = BigInteger.valueOf(0L)
