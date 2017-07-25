@@ -16,6 +16,6 @@ object Board {
     }.toList().sum()
 }
 
-fun List<BigInteger>.sum(): BigInteger {
+private fun List<BigInteger>.sum(): BigInteger {
     return this.reduce { acc, bigInteger -> acc.add(bigInteger) }
 }
