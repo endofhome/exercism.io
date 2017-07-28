@@ -4,12 +4,12 @@ object Sieve {
                 (2..input).map { it to Status.UNMARKED }
                         .toMap().toMutableMap()
         resultMap.toSortedMap().firstKey().let {
-            markMultiples(it, input, resultMap)
+            markMultiples(1, input, resultMap)
         }
         return resultMap.filter { it.value == Status.UNMARKED }.keys.toList()
     }
 
-    private fun markMultiples(root: Int, input: Int, resultMap: MutableMap<Int, Status>) {
+    private fun markMultiples(step: Int, input: Int, resultMap: MutableMap<Int, Status>) {
         resultMap.keys
                 .filter { resultMap[it] == Status.UNMARKED }
                 .map { toTest ->
@@ -18,7 +18,7 @@ object Sieve {
                 resultMap[multiple] = Status.MARKED
             }
         }
-        if (root < input) { markMultiples(root + 1, input, resultMap) }
+        if (step < 4) { markMultiples(step + 1, input, resultMap) }
     }
 }
 
