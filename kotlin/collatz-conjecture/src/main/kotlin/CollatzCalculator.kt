@@ -1,14 +1,10 @@
 object CollatzCalculator {
 
-    fun  computeStepCount(n: Int, counter: Int = 0): Int {
+    fun computeStepCount(n: Int, counter: Int = 0): Int {
         require(n > 0, { "Only natural numbers are allowed" })
         return when (n == 1) {
             true -> counter
-            false -> {
-                val updatedN = collatzTransform(n)
-                val updatedCounter = counter + 1
-                computeStepCount(updatedN, updatedCounter)
-            }
+            false -> computeStepCount(collatzTransform(n), counter + 1)
         }
     }
 
