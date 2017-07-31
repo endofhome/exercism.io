@@ -5,7 +5,7 @@ object Atbash {
 
     fun encode(input: String): String {
         return input.map {
-            val charPos = alphabet.indexOf(it)
+            val charPos = alphabet.indexOf(it.toLowerCase())
             alphabet.reversed()[charPos]
         }.toList().joinToString("")
     }
