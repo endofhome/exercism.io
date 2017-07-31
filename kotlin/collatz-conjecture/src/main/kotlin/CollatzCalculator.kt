@@ -1,6 +1,7 @@
 object CollatzCalculator {
 
     fun  computeStepCount(n: Int, counter: Int = 0): Int {
+        require(n > 0, { "Only natural numbers are allowed" })
         return when (n == 1) {
             true -> counter
             false -> {

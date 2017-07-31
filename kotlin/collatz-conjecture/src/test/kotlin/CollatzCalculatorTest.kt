@@ -33,7 +33,6 @@ class CollatzCalculatorTest {
         assertEquals(152, CollatzCalculator.computeStepCount(1000000))
     }
 
-    @Ignore
     @Test
     fun testZeroIsConsideredInvalidInput() {
         expectedException.expect(IllegalArgumentException::class.java)
@@ -42,7 +41,6 @@ class CollatzCalculatorTest {
         CollatzCalculator.computeStepCount(0)
     }
 
-    @Ignore
     @Test
     fun testNegativeIntegerIsConsideredInvalidInput() {
         expectedException.expect(IllegalArgumentException::class.java)
