@@ -23,13 +23,11 @@ class CollatzCalculatorTest {
         assertEquals(4, CollatzCalculator.computeStepCount(16))
     }
 
-    @Ignore
     @Test
     fun testCorrectNumberOfStepsWhenBothStepTypesAreNeeded() {
         assertEquals(9, CollatzCalculator.computeStepCount(12))
     }
 
-    @Ignore
     @Test
     fun testAVeryLargeInput() {
         assertEquals(152, CollatzCalculator.computeStepCount(1000000))
