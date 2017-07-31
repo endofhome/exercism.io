@@ -18,7 +18,6 @@ class CollatzCalculatorTest {
         assertEquals(0, CollatzCalculator.computeStepCount(1))
     }
 
-    @Ignore
     @Test
     fun testCorrectNumberOfStepsWhenAllStepsAreDivisions() {
         assertEquals(4, CollatzCalculator.computeStepCount(16))
