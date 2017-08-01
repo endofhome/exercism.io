@@ -3,12 +3,17 @@ object Atbash {
             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
             't', 'u', 'v', 'w', 'x', 'y', 'z')
 
-    fun encode(input: String): String {
-        return input.map {
-            val charPos = alphabet.indexOf(it.toLowerCase())
-            alphabet.reversed()[charPos]
+    fun encode(input: String): String =
+        input.filter { it.isLetterOrDigit() }
+             .map {
+                 when (it.isLetter()) {
+                     true -> {
+                         val charPos = alphabet.indexOf(it.toLowerCase())
+                         alphabet.reversed()[charPos]
+                    }
+                    false -> it
+                }
         }.toList().joinToString("").maxFiveCharsPerWord()
-    }
 
     fun decode(input: String): String {
         return ""
@@ -20,7 +25,7 @@ private fun String.maxFiveCharsPerWord(): String {
     return listOfFives.joinToString(" ")
 }
 
-private fun  String.listOfFives(): List<String> {
+private fun String.listOfFives(): List<String> {
     val workingList = this.toMutableList()
     val outputList = mutableListOf<List<Char>>()
     while (workingList.size > 0) {
