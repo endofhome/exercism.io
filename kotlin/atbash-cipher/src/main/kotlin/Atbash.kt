@@ -4,28 +4,30 @@ object Atbash {
             't', 'u', 'v', 'w', 'x', 'y', 'z')
 
     fun encode(input: String): String =
-        input.filter { it.isLetterOrDigit() }
-             .map {
-                 when (it.isLetter()) {
-                     true -> {
-                         val charPos = alphabet.indexOf(it.toLowerCase())
-                         alphabet.reversed()[charPos]
-                    }
-                    false -> it
-                }
-        }.toList().joinToString("").maxFiveCharsPerWord()
+        basicTransform(input).maxFiveCharsPerWord()
 
-    fun decode(input: String): String {
-        return ""
+    fun decode(input: String): String = basicTransform(input)
+
+    private fun basicTransform(input: String): String {
+        return input.filter { it.isLetterOrDigit() }
+                .map {
+                    when (it.isLetter()) {
+                        true -> {
+                            val charPos = alphabet.indexOf(it.toLowerCase())
+                            alphabet.reversed()[charPos]
+                        }
+                        false -> it
+                    }
+                }.toList().joinToString("")
     }
 }
 
 private fun String.maxFiveCharsPerWord(): String {
-    val listOfFives = this.listOfFives()
+    val listOfFives = this.groupByFiveLetters()
     return listOfFives.joinToString(" ")
 }
 
-private fun String.listOfFives(): List<String> {
+private fun String.groupByFiveLetters(): List<String> {
     val workingList = this.toMutableList()
     val outputList = mutableListOf<List<Char>>()
     while (workingList.size > 0) {
