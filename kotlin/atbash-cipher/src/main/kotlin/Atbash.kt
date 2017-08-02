@@ -12,13 +12,15 @@ object Atbash {
         return input.filter { it.isLetterOrDigit() }
                 .map {
                     when (it.isLetter()) {
-                        true -> {
-                            val charPos = alphabet.indexOf(it.toLowerCase())
-                            alphabet.reversed()[charPos]
-                        }
+                        true -> flip(it)
                         false -> it
                     }
                 }.toList().joinToString("")
+    }
+
+    private fun flip(letter: Char): Char {
+        val charPos = alphabet.indexOf(letter.toLowerCase())
+        return alphabet.reversed()[charPos]
     }
 }
 
@@ -32,11 +34,13 @@ private fun String.groupByFiveLetters(): List<String> {
     val outputList = mutableListOf<List<Char>>()
     while (workingList.size > 0) {
         outputList.add(workingList.take(5))
-        (0..4).map {
-            if (workingList.size > 0) {
-                workingList.removeAt(0)
-            }
-        }
+        (0..4).map { workingList.removeFirstLetterIfPresent() }
     }
     return outputList.map { it.joinToString("") }
+}
+
+private fun MutableList<Char>.removeFirstLetterIfPresent() {
+    if (this.size > 0) {
+        this.removeAt(0)
+    }
 }
