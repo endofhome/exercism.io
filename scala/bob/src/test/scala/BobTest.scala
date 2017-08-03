@@ -8,7 +8,6 @@ class BobTest extends FunSuite with Matchers {
   }
 
   test("shouting") {
-    pending
     Bob.response("WATCH OUT!") should be ("Whoa, chill out!")
   }
 
