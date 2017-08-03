@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FIRST_STRAND_LENGTH=$(echo $1 | awk "{print length}")
-SECOND_STRAND_LENGTH=$(echo $2 | awk "{print length}")
+FIRST_STRAND_LENGTH=${#1}
+SECOND_STRAND_LENGTH=${#2}
 
 if [ $# -eq 0 ]; then
   echo "Usage: hamming.sh <string1> <string2>"
