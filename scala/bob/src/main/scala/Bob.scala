@@ -1,7 +1,6 @@
 object Bob {
   def response(statement: String): String =
-    statement.toUpperCase() match {
-      case `statement` => "Whoa, chill out!"
-      case _ => "Whatever."
-    }
+    if (statement == statement.toUpperCase()) "Whoa, chill out!"
+    else if (statement.endsWith("?")) "Sure."
+    else "Whatever."
 }
