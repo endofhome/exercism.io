@@ -44,7 +44,6 @@ class BobTest extends FunSuite with Matchers {
   }
 
   test("only numbers") {
-    pending
     Bob.response("1, 2, 3") should be ("Whatever.")
   }
 

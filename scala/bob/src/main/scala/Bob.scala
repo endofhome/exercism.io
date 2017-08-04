@@ -1,6 +1,11 @@
 object Bob {
-  def response(statement: String): String =
-    if (statement == statement.toUpperCase()) "Whoa, chill out!"
+  def response(statement: String): String = {
+    if (isShouting(statement)) "Whoa, chill out!"
     else if (statement.endsWith("?")) "Sure."
     else "Whatever."
+  }
+
+  private def isShouting(statement: String): Boolean = {
+    statement == statement.toUpperCase() & statement.replaceAll("[a-zA-Z]", "") != statement
+  }
 }
