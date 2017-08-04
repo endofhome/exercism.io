@@ -13,4 +13,4 @@ java**/.idea/*
 scala/**/target/
 scala/**/project/boot/
 scala/**/project/plugins/project
-
+/**/my-notes.txt
