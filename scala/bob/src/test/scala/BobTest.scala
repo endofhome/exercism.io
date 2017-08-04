@@ -80,19 +80,16 @@ class BobTest extends FunSuite with Matchers {
   }
 
   test("alternate silence") {
-    pending
     Bob.response("										") should be ("Fine. Be that way!")
   }
 
   test("multiple line question") {
-    pending
     Bob.response("""
 Does this cryogenic chamber make me look fat?
 no""") should be ("Whatever.")
   }
 
   test("starting with whitespace") {
-    pending
     Bob.response("         hmmmmmmm...") should be ("Whatever.")
   }
 
