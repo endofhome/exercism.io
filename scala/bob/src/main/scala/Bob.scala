@@ -1,7 +1,7 @@
 object Bob {
   def response(statement: String): String = {
     if (isShouting(statement)) "Whoa, chill out!"
-    else if (statement.endsWith("?")) "Sure."
+    else if (statement.trim.endsWith("?")) "Sure."
     else if (statement.replaceAll("\\s*", "") .isEmpty) "Fine. Be that way!"
     else "Whatever."
   }
