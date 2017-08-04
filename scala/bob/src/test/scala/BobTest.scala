@@ -76,7 +76,6 @@ class BobTest extends FunSuite with Matchers {
   }
 
   test("prolonged silence") {
-    pending
     Bob.response("          ") should be ("Fine. Be that way!")
   }
 
