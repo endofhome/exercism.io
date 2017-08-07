@@ -6,7 +6,6 @@ class SumOfMultiplesTest extends FunSuite with Matchers {
   }
 
   test("[3, 5] 4") {
-    pending
     SumOfMultiples.sumOfMultiples(Set(3, 5), 4) should be (3)
   }
 
