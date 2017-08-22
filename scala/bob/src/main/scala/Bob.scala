@@ -6,7 +6,7 @@ object Bob {
     else "Whatever."
   }
 
-  private implicit class StringExtensions(val s: String){
+  private implicit class StringExtensions(val s: String) {
     def isShouting: Boolean = {
       s == s.toUpperCase() && s.replaceAll("[a-zA-Z]", "") != s
     }
