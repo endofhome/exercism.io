@@ -8,7 +8,6 @@ class LeapTest extends FunSuite with Matchers {
   }
 
   test("year divisible by 4, not divisible by 100: leap year") {
-    pending
     Leap.leapYear(2016) should be (true)
   }
 
