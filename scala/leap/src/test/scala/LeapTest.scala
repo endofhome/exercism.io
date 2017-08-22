@@ -12,7 +12,6 @@ class LeapTest extends FunSuite with Matchers {
   }
 
   test("year divisible by 100, not divisible by 400: common year") {
-    pending
     Leap.leapYear(2100) should be (false)
   }
 
