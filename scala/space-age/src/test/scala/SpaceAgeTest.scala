@@ -12,7 +12,6 @@ class SpaceAgeTest extends FunSuite with Matchers {
   }
 
   test ("age in mercury years") {
-    pending
     val age = SpaceAge(2134835688)
     age.onEarth should be (67.65)
     age.onMercury should be (280.88)
