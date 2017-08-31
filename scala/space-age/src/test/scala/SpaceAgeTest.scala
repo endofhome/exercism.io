@@ -48,8 +48,7 @@ class SpaceAgeTest extends FunSuite with Matchers {
   }
 
   test ("age on neptune") {
-    pending
-    val age = SpaceAge(8210123456L)
+    val   age = SpaceAge(8210123456L)
     age.onEarth should be (260.16)
     age.onNeptune should be (1.58)
   }

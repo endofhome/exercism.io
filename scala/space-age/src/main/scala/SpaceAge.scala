@@ -10,7 +10,7 @@ case class SpaceAge(seconds: Long) {
   val onJupiter: Double = ageOnPlanet(11.862615d)
   val onSaturn: Double = ageOnPlanet(29.447498d)
   val onUranus: Double = ageOnPlanet(84.016846d)
-  val onNeptune: Double = 0
+  val onNeptune: Double = ageOnPlanet(164.79132d  )
 
   private def ageOnPlanet(orbitalPeriodInEarthYears: Double) = {
     format(PRECISE_EARTH_ORBITAL_PERIOD / orbitalPeriodInEarthYears)
