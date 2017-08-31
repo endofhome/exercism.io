@@ -7,7 +7,7 @@ case class SpaceAge(seconds: Long) {
   val onMercury: Double = ageOnPlanet(0.2408467d)
   val onVenus: Double = ageOnPlanet(0.61519726d)
   val onMars: Double = ageOnPlanet(1.8808158)
-  val onJupiter: Double = 0
+  val onJupiter: Double = ageOnPlanet(11.862615d)
   val onSaturn: Double = 0
   val onUranus: Double = 0
   val onNeptune: Double = 0
