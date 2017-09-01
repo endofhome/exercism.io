@@ -1,7 +1,7 @@
 import scala.math.BigDecimal.RoundingMode.HALF_UP
 
 case class SpaceAge(seconds: Long) {
-  private val PRECISE_EARTH_ORBITAL_PERIOD = seconds / 31557600d
+  private val PreciseEarthOrbitalPeriod = seconds / 31557600d
 
   val onEarth: Double = ageOnPlanetWhenEarthOrbitalPeriodIs(1d)
   val onMercury: Double = ageOnPlanetWhenEarthOrbitalPeriodIs(0.2408467d)
@@ -13,7 +13,7 @@ case class SpaceAge(seconds: Long) {
   val onNeptune: Double = ageOnPlanetWhenEarthOrbitalPeriodIs(164.79132d)
 
   private def ageOnPlanetWhenEarthOrbitalPeriodIs(orbitalPeriodInEarthYears: Double) = {
-    format(PRECISE_EARTH_ORBITAL_PERIOD / orbitalPeriodInEarthYears)
+    format(PreciseEarthOrbitalPeriod / orbitalPeriodInEarthYears)
   }
 
   private def format(double: Double) = {
