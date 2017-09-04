@@ -10,5 +10,12 @@ class School {
 
   def grade(g: Int): Seq[String] = data.getOrElse(g, Seq.empty)
 
-  def sorted: DB = ???
+  def sorted: DB = {
+    def sortedDBValuesFor(key: Int) = {
+      data.getOrElse(key, Seq.empty).sorted
+    }
+
+    data.keys.toList.sorted.map(key =>
+      key -> sortedDBValuesFor(key)).toMap
+  }
 }
