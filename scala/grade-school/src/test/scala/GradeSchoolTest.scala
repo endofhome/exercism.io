@@ -13,7 +13,6 @@ class GradeSchoolTest extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("add more students in same class") {
-    pending
     school.add("James", 2)
     school.add("Blair", 2)
     school.add("Paul", 2)
