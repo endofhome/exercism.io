@@ -26,15 +26,13 @@ class GradeSchoolTest extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("get students in a grade") {
-    pending
     school.add("Franklin", 5)
     school.add("Bradley", 5)
     school.add("Jeff", 1)
     school.grade(5) should be (Seq("Franklin", "Bradley"))
   }
 
-  test ("get students in a non-existant grade") {
-    pending
+  test ("get students in a non-existent grade") {
     school.grade(1) should be (Seq())
   }
 
