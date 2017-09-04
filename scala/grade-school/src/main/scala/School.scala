@@ -3,7 +3,7 @@ class School {
   var data: DB = Map.empty
 
   def add(name: String, g: Int) = {
-    data = Map(g -> (data.getOrElse(g, Seq.empty) ++ Seq(name)))
+    data = data ++ Map(g -> (data.getOrElse(g, Seq.empty) ++ Seq(name)))
   }
 
   def db: DB = data

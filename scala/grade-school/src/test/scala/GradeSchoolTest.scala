@@ -20,7 +20,6 @@ class GradeSchoolTest extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("add students to different grades") {
-    pending
     school.add("Chelsea", 3)
     school.add("Logan", 7)
     school.db should be (Map(3 -> Seq("Chelsea"), 7 -> Seq("Logan")))
