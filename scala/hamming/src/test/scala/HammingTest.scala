@@ -12,7 +12,6 @@ class HammingTest extends FunSuite with Matchers {
   }
 
   test("complete distance in single nucleotide strands") {
-    pending
     Hamming.distance("A", "G") should be (Some(1))
   }
 
