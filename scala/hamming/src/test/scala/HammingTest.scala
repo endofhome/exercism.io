@@ -16,52 +16,42 @@ class HammingTest extends FunSuite with Matchers {
   }
 
   test("complete distance in small strands") {
-    pending
     Hamming.distance("AG", "CT") should be (Some(2))
   }
 
   test("small distance in small strands") {
-    pending
     Hamming.distance("AT", "CT") should be (Some(1))
   }
 
   test("small distance") {
-    pending
     Hamming.distance("GGACG", "GGTCG") should be (Some(1))
   }
 
   test("small distance in long strands") {
-    pending
     Hamming.distance("ACCAGGG", "ACTATGG") should be (Some(2))
   }
 
   test("non-unique character in first strand") {
-    pending
     Hamming.distance("AGA", "AGG") should be (Some(1))
   }
 
   test("non-unique character in second strand") {
-    pending
     Hamming.distance("AGG", "AGA") should be (Some(1))
   }
 
   test("same nucleotides in different positions") {
-    pending
     Hamming.distance("TAG", "GAT") should be (Some(2))
   }
 
   test("large distance") {
-    pending
     Hamming.distance("GATACA", "GCATAA") should be (Some(4))
   }
 
   test("large distance in off-by-one strand") {
-    pending
     Hamming.distance("GGACGGATTCTG", "AGGACGGATTCT") should be (Some(9))
   }
 
   test("empty strands") {
-    pending
     Hamming.distance("", "") should be (Some(0))
   }
 

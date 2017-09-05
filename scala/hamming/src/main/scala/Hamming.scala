@@ -1,6 +1,6 @@
 object Hamming {
   def distance(strandOne: String, strandTwo: String) = {
-    if (strandOne == strandTwo) Some(0)
-    else Some(1)
+    val zippedStrands = strandOne.zip(strandTwo)
+    Some(zippedStrands.count(pair => pair._1 != pair._2))
   }
 }
