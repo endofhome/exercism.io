@@ -8,15 +8,16 @@ class PerfectNumbersTest extends FunSuite with Matchers {
   }
 
   test("Medium perfect number is classified correctly") {
+    pending
     PerfectNumbers.classify(28) should be (Right(NumberType.Perfect))
   }
 
   test("Large perfect number is classified correctly") {
+    pending
     PerfectNumbers.classify(33550336) should be (Right(NumberType.Perfect))
   }
 
   test("Smallest abundant number is classified correctly") {
-    pending
     PerfectNumbers.classify(12) should be (Right(NumberType.Abundant))
   }
 
