@@ -8,7 +8,6 @@ class EtlTest extends FunSuite with Matchers {
   }
 
   test("single score with multiple letters") {
-    pending
     Etl.transform(Map(1 -> Seq("A", "E", "I", "O", "U"))) should be(Map("a" -> 1,
       "e" -> 1, "i" -> 1, "o" -> 1, "u" -> 1))
   }
