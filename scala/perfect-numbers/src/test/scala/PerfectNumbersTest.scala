@@ -8,12 +8,10 @@ class PerfectNumbersTest extends FunSuite with Matchers {
   }
 
   test("Medium perfect number is classified correctly") {
-    pending
     PerfectNumbers.classify(28) should be (Right(NumberType.Perfect))
   }
 
   test("Large perfect number is classified correctly") {
-    pending
     PerfectNumbers.classify(33550336) should be (Right(NumberType.Perfect))
   }
 
@@ -22,12 +20,10 @@ class PerfectNumbersTest extends FunSuite with Matchers {
   }
 
   test("Medium abundant number is classified correctly") {
-    pending
     PerfectNumbers.classify(30) should be (Right(NumberType.Abundant))
   }
 
   test("Large abundant number is classified correctly") {
-    pending
     PerfectNumbers.classify(33550335) should be (Right(NumberType.Abundant))
   }
 

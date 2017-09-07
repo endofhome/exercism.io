@@ -9,7 +9,7 @@ object PerfectNumbers {
   def aliquotSum(int: Int): Int = int.factors.sum
 
   private implicit class IntExtensions(val i: Int) {
-    def factors = List(1, 2, 3)
+    def factors = (1 until i).filter(i % _ == 0).toList
   }
 }
 
