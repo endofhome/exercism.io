@@ -3,7 +3,8 @@ import NumberType.NumberType
 object PerfectNumbers {
   def classify(int: Int): Either[String, NumberType] = {
     if (aliquotSum(int) == int) Right(NumberType.Perfect)
-    else Right(NumberType.Abundant)
+    else if (aliquotSum(int) > int) Right(NumberType.Abundant)
+    else Right(NumberType.Deficient)
   }
 
   def aliquotSum(int: Int): Int = int.factors.sum
