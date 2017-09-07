@@ -48,12 +48,10 @@ class PerfectNumbersTest extends FunSuite with Matchers {
   }
 
   test("Zero is rejected (not a natural number)") {
-    pending
     PerfectNumbers.classify(0) should be (Left("Classification is only possible for natural numbers."))
   }
 
   test("Negative integer is rejected (not a natural number)") {
-    pending
     PerfectNumbers.classify(-1) should be (Left("Classification is only possible for natural numbers."))
   }
 }

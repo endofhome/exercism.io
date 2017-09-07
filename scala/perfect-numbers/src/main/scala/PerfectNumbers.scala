@@ -2,7 +2,8 @@ import NumberType.NumberType
 
 object PerfectNumbers {
   def classify(int: Int): Either[String, NumberType] = {
-    if (aliquotSum(int) == int) Right(NumberType.Perfect)
+    if (int <= 0) Left("Classification is only possible for natural numbers.")
+    else if (aliquotSum(int) == int) Right(NumberType.Perfect)
     else if (aliquotSum(int) > int) Right(NumberType.Abundant)
     else Right(NumberType.Deficient)
   }
