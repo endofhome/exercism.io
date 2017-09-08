@@ -1,17 +1,7 @@
-import NumberType.NumberType
-
 object PerfectNumbers {
-  type T = Int
-  type R = Int
-  val numberTypeMappings: Map[NumberType, (T, R) => Boolean] = Map(
-    (NumberType.Perfect, (T, R) => { T == R }),
-    (NumberType.Abundant, (T, R) => { T > R }),
-    (NumberType.Deficient, (T, R) => { T < R })
-  )
-
-  def classify(int: Int): Either[String, NumberType] = {
+  def classify(int: Int): Either[String, NumberType.NumType] = {
     if (int <= 0) Left("Classification is only possible for natural numbers.")
-    else Right(numberTypeMappings.find(_._2(int.factors.sum, int)).get._1)
+    else Right(NumberType.values.find(_.definition(int.factors.sum, int)).get)
   }
 
   private implicit class IntExtensions(val i: Int) {
@@ -19,7 +9,12 @@ object PerfectNumbers {
   }
 }
 
-object NumberType extends Enumeration {
-  type NumberType = Value
-  val Perfect, Abundant, Deficient = Value
+object NumberType {
+  def values = List(Perfect, Abundant, Deficient)
+
+  sealed class NumType(val definition: (Int, Int) => Boolean)
+
+  case object Perfect extends NumType((A, B) => { A == B })
+  case object Abundant extends NumType((A, B) => { A > B })
+  case object Deficient extends NumType((A, B) => { A < B })
 }
