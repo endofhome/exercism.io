@@ -1,7 +1,9 @@
 object SecretHandshake {
-  def commands(input: Int) = {
-    if (input.toBinaryString == "1") List("wink")
-    else if (input.toBinaryString == "10") List("double blink")
-    else List("close your eyes")
+  def commands(input: Int): List[String] = {
+    input.toBinaryString.length() match {
+      case 1 => List("wink")
+      case 2 => List("double blink")
+      case 3 => List("close your eyes")
+    }
   }
 }
