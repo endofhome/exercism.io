@@ -12,7 +12,6 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("close your eyes for 100") {
-    pending
     SecretHandshake.commands(4) should be (List("close your eyes"))
   }
 
