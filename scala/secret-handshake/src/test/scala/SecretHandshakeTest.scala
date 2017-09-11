@@ -16,7 +16,6 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("jump for 1000") {
-    pending
     SecretHandshake.commands(8) should be (List("jump"))
   }
 
