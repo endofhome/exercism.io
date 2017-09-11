@@ -8,7 +8,6 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("double blink for 10") {
-    pending
     SecretHandshake.commands(2) should be (List("double blink"))
   }
 
