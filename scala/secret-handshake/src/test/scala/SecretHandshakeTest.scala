@@ -20,7 +20,6 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("combine two actions") {
-    pending
     SecretHandshake.commands(3) should be (List("wink", "double blink"))
   }
 
