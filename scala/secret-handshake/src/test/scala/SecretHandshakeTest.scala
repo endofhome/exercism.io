@@ -24,7 +24,6 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("reverse two actions") {
-    pending
     SecretHandshake.commands(19) should be (List("double blink", "wink"))
   }
 
