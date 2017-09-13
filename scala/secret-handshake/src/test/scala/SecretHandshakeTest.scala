@@ -28,27 +28,22 @@ class SecretHandshakeTest extends FunSuite with Matchers {
   }
 
   test("reversing one action gives the same action") {
-    pending
     SecretHandshake.commands(24) should be (List("jump"))
   }
 
   test("reversing no actions still gives no actions") {
-    pending
     SecretHandshake.commands(16) should be (List())
   }
 
   test("all possible actions") {
-    pending
     SecretHandshake.commands(15) should be (List("wink", "double blink", "close your eyes", "jump"))
   }
 
   test("reverse all possible actions") {
-    pending
     SecretHandshake.commands(31) should be (List("jump", "close your eyes", "double blink", "wink"))
   }
 
   test("do nothing for zero") {
-    pending
     SecretHandshake.commands(0) should be (List())
   }
 }
