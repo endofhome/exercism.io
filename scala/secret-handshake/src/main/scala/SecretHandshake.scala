@@ -1,7 +1,7 @@
 object SecretHandshake {
 
   def commands(input: Int): List[String] = {
-    val handshake = translate(input)
+    val handshake = handshakeFrom(input)
     handshake.binary.reverse.zipWithIndex
       .filter( _._1 == '1' )
       .map(
@@ -11,27 +11,27 @@ object SecretHandshake {
         case 2 => "close your eyes"
         case 3 => "jump"
       }
-    ).toList.reverseIf(handshake.shouldReverse)
+    ).toList.reverseIf(handshake.shouldBeReversed)
   }
 
-  private def translate(input: Int): BinaryHandshake = {
+  private def handshakeFrom(input: Int): Handshake = {
     val binary = input.toBinaryString
-    val shouldReverse = binary.length == 5 && binary.charAt(0) == '1'
-    val binaryWithoutSwitch = removeSwitchFrom(binary, shouldReverse)
-    BinaryHandshake(binaryWithoutSwitch, shouldReverse)
+    val shouldBeReversed = binary.length == 5 && binary.charAt(0) == '1'
+    val binaryWithoutSwitch = removeSwitchIfPresent(binary, shouldBeReversed)
+    Handshake(binaryWithoutSwitch, shouldBeReversed)
   }
 
-  private def removeSwitchFrom(binary: String, shouldReverse: Boolean) = {
-    if (shouldReverse) binary.substring(1)
+  private def removeSwitchIfPresent(binary: String, shouldBeReversed: Boolean) = {
+    if (shouldBeReversed) binary.substring(1)
     else binary
   }
 
-  private implicit class ListOfStringExtensions(val l: List[String]) {
-    def reverseIf(shouldReverse: Boolean): List[String] = {
-      if (shouldReverse) l.reverse
-      else l
+  private implicit class ListOfStringExtensions(val list: List[String]) {
+    def reverseIf(shouldBeReversed: Boolean): List[String] = {
+      if (shouldBeReversed) list.reverse
+      else list
     }
   }
 
-  case class BinaryHandshake(binary: String, shouldReverse: Boolean)
+  case class Handshake(binary: String, shouldBeReversed: Boolean)
 }
