@@ -8,7 +8,6 @@ class RobotTest extends FunSuite with Matchers {
   }
 
   test("advance - positive") { 
-    pending
     Robot(Bearing.North, (0, 0)).advance should equal(Robot(Bearing.North, (0, 1)))
     Robot(Bearing.East, (0, 0)).advance should equal(Robot(Bearing.East, (1, 0)))
   }
