@@ -11,9 +11,23 @@ case class Robot(bearing: Bearing.Value, coordinates: (Int, Int)) {
     }
   }
 
-  def turnLeft(): Robot = ???
+  def turnLeft(): Robot = {
+    bearing match {
+      case North => Robot(Bearing.West, coordinates)
+      case South => Robot(Bearing.East, coordinates)
+      case East => Robot(Bearing.North, coordinates)
+      case West => Robot(Bearing.South, coordinates)
+    }
+  }
 
-  def turnRight(): Robot = ???
+  def turnRight(): Robot = {
+    bearing match {
+      case North => Robot(Bearing.East, coordinates)
+      case South => Robot(Bearing.West, coordinates)
+      case East => Robot(Bearing.South, coordinates)
+      case West => Robot(Bearing.North, coordinates)
+    }
+  }
 
   def simulate(string: String): Robot = ???
 }

@@ -18,13 +18,11 @@ class RobotTest extends FunSuite with Matchers {
   }
 
   test("turning") { 
-    pending
     Robot(Bearing.South, (0, 0)).turnRight should equal(Robot(Bearing.West, (0, 0)))
     Robot(Bearing.West, (0, 0)).turnLeft() should equal(Robot(Bearing.South, (0, 0)))
   }
 
   test("turning - edge cases") { 
-    pending
     Robot(Bearing.West, (0, 0)).turnRight should equal(Robot(Bearing.North, (0, 0)))
     Robot(Bearing.North, (0, 0)).turnLeft should equal(Robot(Bearing.West, (0, 0)))
   }
