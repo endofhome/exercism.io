@@ -15,7 +15,6 @@ class PrimeTest {
         assertEquals(3, Prime.nth(2))
     }
 
-    @Ignore
     @Test
     fun sixthPrime() {
         assertEquals(13, Prime.nth(6))

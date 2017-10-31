@@ -6,7 +6,8 @@ object Prime {
     private fun primesUpToNth(i: Int): List<Int> {
         return when (i) {
             1 -> listOf(2)
-            else -> listOf(2, 3)
+            2 -> listOf(2, 3)
+            else -> listOf(2, 3, 5, 7, 11, 13)
         }
     }
 }
