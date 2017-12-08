@@ -45,5 +45,5 @@
 (deftest responds-to-only-numbers
   (is (= "Whatever." (bob/response-for "1, 2, 3"))))
 
-;(deftest responds-to-number-question
-;  (is (= "Sure." (bob/response-for "4?"))))
+(deftest responds-to-number-question
+  (is (= "Sure." (bob/response-for "4?"))))
