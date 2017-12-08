@@ -15,10 +15,10 @@
 (deftest responds-to-forceful-talking
   (is (= "Whatever." (bob/response-for "Let's go make out behind the gym!"))))
 
-;(deftest responds-to-acronyms
-;  (is (= "Whatever."
-;         (bob/response-for "It's OK if you don't want to go to the DMV."))))
-;
+(deftest responds-to-acronyms
+  (is (= "Whatever."
+         (bob/response-for "It's OK if you don't want to go to the DMV."))))
+
 ;(deftest responds-to-forceful-questions
 ;  (is (= "Whoa, chill out!"
 ;         (bob/response-for "WHAT THE HELL WERE YOU THINKING?"))))
