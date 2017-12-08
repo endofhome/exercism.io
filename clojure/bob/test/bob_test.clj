@@ -23,10 +23,10 @@
   (is (= "Whoa, chill out!"
          (bob/response-for "WHAT THE HELL WERE YOU THINKING?"))))
 
-;(deftest responds-to-shouting-with-special-characters
-;  (is (= "Whoa, chill out!"
-;         (bob/response-for "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))))
-;
+(deftest responds-to-shouting-with-special-characters
+  (is (= "Whoa, chill out!"
+         (bob/response-for "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))))
+
 ;(deftest responds-to-shouting-numbers
 ;  (is (= "Whoa, chill out!" (bob/response-for "1, 2, 3 GO!"))))
 ;
