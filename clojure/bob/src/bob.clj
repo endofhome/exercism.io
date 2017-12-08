@@ -1,5 +1,7 @@
 (ns bob)
 
 (defn response-for [sentence]
-  "Whatever."
+  (if (= sentence "WATCH OUT!")
+    "Whoa, chill out!"
+    "Whatever.")
 )
