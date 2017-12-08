@@ -27,9 +27,9 @@
   (is (= "Whoa, chill out!"
          (bob/response-for "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))))
 
-;(deftest responds-to-shouting-numbers
-;  (is (= "Whoa, chill out!" (bob/response-for "1, 2, 3 GO!"))))
-;
+(deftest responds-to-shouting-numbers
+  (is (= "Whoa, chill out!" (bob/response-for "1, 2, 3 GO!"))))
+
 ;(deftest responds-to-shouting-with-no-exclamation-mark
 ;  (is (= "Whoa, chill out!" (bob/response-for "I HATE YOU"))))
 ;
