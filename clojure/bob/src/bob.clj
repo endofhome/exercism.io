@@ -1,7 +1,7 @@
 (ns bob)
 
 (defn response-for [sentence]
-  (if (= sentence "WATCH OUT!")
+  (if (= sentence (clojure.string/upper-case sentence))
     "Whoa, chill out!"
     "Whatever.")
 )
