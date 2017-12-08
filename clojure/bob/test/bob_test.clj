@@ -19,10 +19,10 @@
   (is (= "Whatever."
          (bob/response-for "It's OK if you don't want to go to the DMV."))))
 
-;(deftest responds-to-forceful-questions
-;  (is (= "Whoa, chill out!"
-;         (bob/response-for "WHAT THE HELL WERE YOU THINKING?"))))
-;
+(deftest responds-to-forceful-questions
+  (is (= "Whoa, chill out!"
+         (bob/response-for "WHAT THE HELL WERE YOU THINKING?"))))
+
 ;(deftest responds-to-shouting-with-special-characters
 ;  (is (= "Whoa, chill out!"
 ;         (bob/response-for "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"))))
