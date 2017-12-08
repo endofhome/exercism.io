@@ -33,9 +33,9 @@
 (deftest responds-to-shouting-with-no-exclamation-mark
   (is (= "Whoa, chill out!" (bob/response-for "I HATE YOU"))))
 
-;(deftest responds-to-statement-containing-question-mark
-;  (is (= "Whatever." (bob/response-for "Ending with ? means a question."))))
-;
+(deftest responds-to-statement-containing-question-mark
+  (is (= "Whatever." (bob/response-for "Ending with ? means a question."))))
+
 ;(deftest responds-to-silence
 ;  (is (= "Fine. Be that way!" (bob/response-for ""))))
 ;
