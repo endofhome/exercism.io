@@ -36,9 +36,9 @@
 (deftest responds-to-statement-containing-question-mark
   (is (= "Whatever." (bob/response-for "Ending with ? means a question."))))
 
-;(deftest responds-to-silence
-;  (is (= "Fine. Be that way!" (bob/response-for ""))))
-;
+(deftest responds-to-silence
+  (is (= "Fine. Be that way!" (bob/response-for ""))))
+
 ;(deftest responds-to-prolonged-silence
 ;  (is (= "Fine. Be that way!" (bob/response-for "    "))))
 ;
