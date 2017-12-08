@@ -39,9 +39,9 @@
 (deftest responds-to-silence
   (is (= "Fine. Be that way!" (bob/response-for ""))))
 
-;(deftest responds-to-prolonged-silence
-;  (is (= "Fine. Be that way!" (bob/response-for "    "))))
-;
+(deftest responds-to-prolonged-silence
+  (is (= "Fine. Be that way!" (bob/response-for "    "))))
+
 ;(deftest responds-to-only-numbers
 ;  (is (= "Whatever." (bob/response-for "1, 2, 3"))))
 ;
