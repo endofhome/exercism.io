@@ -8,10 +8,10 @@
 (deftest responds-to-shouts
   (is (= "Whoa, chill out!" (bob/response-for "WATCH OUT!"))))
 
-;(deftest responds-to-questions
-;  (is (= "Sure."
-;         (bob/response-for "Does this cryogenic chamber make me look fat?"))))
-;
+(deftest responds-to-questions
+  (is (= "Sure."
+         (bob/response-for "Does this cryogenic chamber make me look fat?"))))
+
 ;(deftest responds-to-forceful-talking
 ;  (is (= "Whatever." (bob/response-for "Let's go make out behind the gym!"))))
 ;

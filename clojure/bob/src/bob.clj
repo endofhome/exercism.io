@@ -1,7 +1,11 @@
 (ns bob)
 
 (defn response-for [sentence]
-  (if (= sentence (clojure.string/upper-case sentence))
-    "Whoa, chill out!"
-    "Whatever.")
+  (cond
+    (= sentence (clojure.string/upper-case sentence))
+      "Whoa, chill out!"
+    (= (str(last sentence)) "?")
+      "Sure."
+    :else
+      "Whatever.")
 )
