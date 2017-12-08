@@ -12,9 +12,9 @@
   (is (= "Sure."
          (bob/response-for "Does this cryogenic chamber make me look fat?"))))
 
-;(deftest responds-to-forceful-talking
-;  (is (= "Whatever." (bob/response-for "Let's go make out behind the gym!"))))
-;
+(deftest responds-to-forceful-talking
+  (is (= "Whatever." (bob/response-for "Let's go make out behind the gym!"))))
+
 ;(deftest responds-to-acronyms
 ;  (is (= "Whatever."
 ;         (bob/response-for "It's OK if you don't want to go to the DMV."))))
