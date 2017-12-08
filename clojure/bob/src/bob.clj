@@ -1,13 +1,22 @@
 (ns bob
   (:require [clojure.string :as str]))
 
+(defn silence [sentence]
+  (empty? (str/trim sentence)))
+
+(defn shouting [sentence]
+  (and (= sentence (str/upper-case sentence)) (re-seq #"[a-z]+" (str/lower-case sentence))))
+
+(defn question [sentence]
+  (= (str(last sentence)) "?"))
+
 (defn response-for [sentence]
   (cond
-    (empty? (str/trim sentence))
+    (silence sentence)
       "Fine. Be that way!"
-    (and (= sentence (str/upper-case sentence)) (re-seq #"[a-z]+" (str/lower-case sentence)))
+    (shouting sentence)
       "Whoa, chill out!"
-    (= (str(last sentence)) "?")
+    (question sentence)
       "Sure."
     :else
       "Whatever.")
