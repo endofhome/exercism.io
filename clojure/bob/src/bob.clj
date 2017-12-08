@@ -5,7 +5,8 @@
   (empty? (str/trim sentence)))
 
 (defn shouting [sentence]
-  (and (= sentence (str/upper-case sentence)) (re-seq #"[a-z]+" (str/lower-case sentence))))
+  (and (= sentence (str/upper-case sentence))
+       (not (= sentence (str/lower-case sentence)))))
 
 (defn question [sentence]
   (= (str(last sentence)) "?"))
