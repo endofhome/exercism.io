@@ -1,5 +1,9 @@
 (ns hello-world)
 
-(defn hello []
-  "Hello, World!"
+(def greeting "Hello, ")
+
+(defn hello [& names]
+  (if (empty? names)
+    (str greeting "World!")
+    (str greeting (first names) "!"))
 )
