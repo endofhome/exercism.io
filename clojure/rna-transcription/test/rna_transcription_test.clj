@@ -14,8 +14,8 @@
 (deftest it-transcribes-thymine-to-adenine
   (is (= "A" (rna-transcription/to-rna "T"))))
 
-;(deftest it-transcribes-all-nucleotides
-;  (is (= "UGCACCAGAAUU" (rna-transcription/to-rna "ACGTGGTCTTAA"))))
-;
+(deftest it-transcribes-all-nucleotides
+  (is (= "UGCACCAGAAUU" (rna-transcription/to-rna "ACGTGGTCTTAA"))))
+
 ;(deftest it-validates-dna-strands
 ;  (is (thrown? AssertionError (rna-transcription/to-rna "XCGFGGTDTTAA"))))
