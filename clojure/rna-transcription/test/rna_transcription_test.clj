@@ -11,9 +11,9 @@
 (deftest transcribes-adenine-to-uracil
   (is (= "U" (rna-transcription/to-rna "A"))))
 
-;(deftest it-transcribes-thymine-to-adenine
-;  (is (= "A" (rna-transcription/to-rna "T"))))
-;
+(deftest it-transcribes-thymine-to-adenine
+  (is (= "A" (rna-transcription/to-rna "T"))))
+
 ;(deftest it-transcribes-all-nucleotides
 ;  (is (= "UGCACCAGAAUU" (rna-transcription/to-rna "ACGTGGTCTTAA"))))
 ;

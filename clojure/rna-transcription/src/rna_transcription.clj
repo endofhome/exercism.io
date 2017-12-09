@@ -4,5 +4,6 @@
   (cond
     (= (str dna) "C") "G"
     (= (str dna) "G") "C"
-    (= (str dna) "A") "U")
+    (= (str dna) "A") "U"
+    (= (str dna) "T") "A")
 )
