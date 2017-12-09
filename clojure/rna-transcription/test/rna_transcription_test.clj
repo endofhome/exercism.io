@@ -17,5 +17,5 @@
 (deftest it-transcribes-all-nucleotides
   (is (= "UGCACCAGAAUU" (rna-transcription/to-rna "ACGTGGTCTTAA"))))
 
-;(deftest it-validates-dna-strands
-;  (is (thrown? AssertionError (rna-transcription/to-rna "XCGFGGTDTTAA"))))
+(deftest it-validates-dna-strands
+  (is (thrown? AssertionError (rna-transcription/to-rna "XCGFGGTDTTAA"))))
