@@ -8,10 +8,10 @@
          (testing "encode an empty string"
                   (is (= (rle/run-length-encode "") ""))))
 
-;(deftest encode-single-characters-without-count
-;         (testing "encode single characters without count"
-;                  (is (= (rle/run-length-encode "XYZ") "XYZ"))))
-;
+(deftest encode-single-characters-without-count
+         (testing "encode single characters without count"
+                  (is (= (rle/run-length-encode "XYZ") "XYZ"))))
+
 ;(deftest encode-string-with-no-single-characters
 ;         (testing "encode string with no single characters"
 ;                  (is (= (rle/run-length-encode "AABBBCCCC") "2A3B4C"))))

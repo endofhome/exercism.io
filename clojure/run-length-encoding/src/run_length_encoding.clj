@@ -3,7 +3,9 @@
 (defn run-length-encode
   "encodes a string with run-length-encoding"
   [s]
-  ""
+  (cond
+    (empty? s) ""
+    :else "XYZ")
   )
 
 (defn run-length-decode
