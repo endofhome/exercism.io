@@ -5,7 +5,7 @@
   [s]
   (cond
     (empty? s) ""
-    :else "XYZ")
+    :else s)
   )
 
 (defn run-length-decode

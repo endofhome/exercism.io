@@ -15,7 +15,7 @@
 ;(deftest encode-string-with-no-single-characters
 ;         (testing "encode string with no single characters"
 ;                  (is (= (rle/run-length-encode "AABBBCCCC") "2A3B4C"))))
-;
+
 ;(deftest encode-string-with-single-and-mixed-characters
 ;         (testing "encode string with single and mixed characters"
 ;                  (is (= (rle/run-length-encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB") "12WB12W3B24WB"))))
