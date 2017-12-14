@@ -12,13 +12,13 @@
   ([s] (encode s ""))
   ([s processed]
    (let [partitioned (partition-by #(= (first s) %) s)
-         remainder (last partitioned)
+         remainder (rest partitioned)
          times (display (count (first partitioned)))
          charToRepeat (first (first partitioned))
          encoded (str processed times charToRepeat)]
      (cond
-       (and (not-empty (last partitioned)) (= (count partitioned) 2))
-            (encode (str/join (last partitioned)) encoded)
+       (and (not-empty (last partitioned)) (>= (count partitioned) 2))
+            (encode (str/join (flatten (rest partitioned))) encoded)
        :else encoded
      ))
     )

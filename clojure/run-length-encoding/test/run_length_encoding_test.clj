@@ -16,18 +16,17 @@
          (testing "encode string with no single characters"
                   (is (= "2A3B4C" (rle/run-length-encode "AABBBCCCC")))))
 
-;(deftest encode-string-with-single-and-mixed-characters
-;         (testing "encode string with single and mixed characters"
-;                  (is (= "12WB12W3B24WB" (rle/run-length-encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")))))
-;
-;(deftest encode-multiple-whitespace
-;         (testing "encode string with whitespace characters mixed in it"
-;                  (is (= "2 hs2q q2w2 " (rle/run-length-encode "  hsqq qww  ")))))
-;
-;
-;(deftest encode-lowercase
-;         (testing "encode string with lowercase characters"
-;                  (is (= "2a3b4c" (rle/run-length-encode "aabbbcccc")))))
+(deftest encode-string-with-single-and-mixed-characters
+         (testing "encode string with single and mixed characters"
+                  (is (= "12WB12W3B24WB" (rle/run-length-encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB")))))
+
+(deftest encode-multiple-whitespace
+         (testing "encode string with whitespace characters mixed in it"
+                  (is (= "2 hs2q q2w2 " (rle/run-length-encode "  hsqq qww  ")))))
+
+(deftest encode-lowercase
+         (testing "encode string with lowercase characters"
+                  (is (= "2a3b4c" (rle/run-length-encode "aabbbcccc")))))
 
 ;(deftest decode-empty-string
 ;         (testing "decode empty string"
