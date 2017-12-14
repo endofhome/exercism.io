@@ -36,4 +36,5 @@
 (defn run-length-decode
   "decodes a run-length-encoded string"
   [s]
+  s
   )

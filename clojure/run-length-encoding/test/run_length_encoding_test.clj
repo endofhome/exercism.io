@@ -28,14 +28,14 @@
          (testing "encode string with lowercase characters"
                   (is (= "2a3b4c" (rle/run-length-encode "aabbbcccc")))))
 
-;(deftest decode-empty-string
-;         (testing "decode empty string"
-;                  (is (= (rle/run-length-decode "") ""))))
-;
-;(deftest decode-single-characters
-;         (testing "decode string with single characters only"
-;                  (is (= (rle/run-length-decode "XYZ") "XYZ"))))
-;
+(deftest decode-empty-string
+         (testing "decode empty string"
+                  (is (= (rle/run-length-decode "") ""))))
+
+(deftest decode-single-characters
+         (testing "decode string with single characters only"
+                  (is (= (rle/run-length-decode "XYZ") "XYZ"))))
+
 ;(deftest decode-no-single-characters
 ;         (testing "decode string with no single characters"
 ;                  (is (= (rle/run-length-decode "2A3B4C") "AABBBCCCC"))))
