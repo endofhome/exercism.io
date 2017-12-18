@@ -25,7 +25,6 @@ class PrimeTest {
         assertEquals(104743, Prime.nth(10001))
     }
 
-    @Ignore
     @Test(expected = IllegalArgumentException::class)
     fun undefinedPrime() {
         Prime.nth(0)
