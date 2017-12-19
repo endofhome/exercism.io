@@ -18,7 +18,6 @@ class MatrixTest {
         assertEquals(expectedSaddlePoints, matrix.saddlePoints)
     }
 
-    @Ignore
     @Test
     fun testCanIdentifyThatEmptyMatrixHasNoSaddlePoints() {
         val matrix = Matrix(listOf(emptyList()))
