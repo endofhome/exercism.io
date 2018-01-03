@@ -21,9 +21,15 @@ fun MatrixData.calculateSaddlePoints(): Set<MatrixCoordinate> {
     }
 
     return enhancedCoords.filter { enhancedCoord ->
-        enhancedCoord.value >= enhancedCoord.row.filter { it != enhancedCoord.value }.sorted().last() &&
-        enhancedCoord.value <= enhancedCoord.col.filter { it != enhancedCoord.value }.sorted().last()
+        val thisRowPosition = enhancedCoord.matrixCoordinate.row
+        val thisColPosition = enhancedCoord.matrixCoordinate.col
+        enhancedCoord.value >= enhancedCoord.row.without(thisColPosition).sorted().last() &&
+        enhancedCoord.value <= enhancedCoord.col.without(thisRowPosition).sorted().first()
     }.map { it.matrixCoordinate }.toSet()
+}
+
+private fun List<Int>.without(itemIndex: Int): List<Int> {
+    return this.filterIndexed { index, _ -> index != itemIndex }
 }
 
 typealias MatrixData = List<List<Int>>
