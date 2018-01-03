@@ -2,11 +2,9 @@ class Matrix(data: MatrixData, val saddlePoints: Set<MatrixCoordinate> = data.ca
 
 fun MatrixData.calculateSaddlePoints(): Set<MatrixCoordinate> {
     val firstRow = this[0]
-    val firstColumn = this.let {
-        when {
-            firstRow.isNotEmpty() -> this.map { it[0] }
-            else                  -> emptyList()
-        }
+    val firstColumn = when {
+        firstRow.isNotEmpty() -> this.map { this[0] }
+        else                  -> emptyList()
     }
 
     val enhancedCoords = (0 until firstColumn.size).flatMap { heightPos ->
