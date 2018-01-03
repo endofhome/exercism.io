@@ -18,11 +18,9 @@ fun MatrixData.calculateSaddlePoints(): Set<MatrixCoordinate> {
         }
     }
 
-    return enhancedCoords.filter { enhancedCoord ->
-        val thisRowPosition = enhancedCoord.matrixCoordinate.row
-        val thisColPosition = enhancedCoord.matrixCoordinate.col
-        enhancedCoord.value >= enhancedCoord.row.without(thisColPosition).sorted().last() &&
-        enhancedCoord.value <= enhancedCoord.col.without(thisRowPosition).sorted().first()
+    return enhancedCoords.filter { (matrixCoordinate, value, row, col) ->
+        value >= row.without(matrixCoordinate.col).sorted().last() &&
+        value <= col.without(matrixCoordinate.row).sorted().first()
     }.map { it.matrixCoordinate }.toSet()
 }
 
