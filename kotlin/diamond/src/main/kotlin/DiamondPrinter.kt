@@ -14,7 +14,7 @@ class DiamondPrinter {
     private fun reflectedDiamond(top: List<String>): List<String> {
         return when {
             top.size == 1 -> top
-            else          -> top + top.filterIndexed { index, _ -> index == 0 }
+            else          -> top + top.reversed().filterIndexed { index, _ -> index != 0 }
         }
     }
 
