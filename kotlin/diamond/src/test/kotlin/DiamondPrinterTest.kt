@@ -19,7 +19,6 @@ class DiamondPrinterTest {
         assertThat(output, `is`(listOf("A")))
     }
 
-    @Ignore
     @Test
     fun testTwoByTwoDiamond() {
         val output = diamondPrinter.printToList('B')
