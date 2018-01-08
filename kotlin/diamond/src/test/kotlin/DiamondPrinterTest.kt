@@ -54,7 +54,6 @@ class DiamondPrinterTest {
                 "    A    ")))
     }
 
-    @Ignore
     @Test
     fun testFullDiamond() {
         val output = diamondPrinter.printToList('Z')

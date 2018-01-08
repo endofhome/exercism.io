@@ -3,8 +3,8 @@ class DiamondPrinter {
         val topUnpadded = ('A'..char).mapIndexed { index, character ->
             when (index) {
                 0 -> character.toString()
-                else -> character + padWith((index *2) -1) + character
-            }
+                else -> character + padWith((index * 2) -1) + character
+             }
         }
         val width = topUnpadded.last().length
         val top = topUnpadded.map {
