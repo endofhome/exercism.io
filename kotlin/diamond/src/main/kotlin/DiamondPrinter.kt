@@ -1,7 +1,11 @@
 class DiamondPrinter {
     fun printToList(char: Char): List<String>? {
         val topUnpadded = ('A'..char).mapIndexed { index, character ->
-            (0..index).map { character }.joinToString(" ")
+            when (index) {
+                0 -> character.toString()
+                else -> character + centrePadding(index) + character
+            }
+
         }
         val width = topUnpadded.last().length
         val top = topUnpadded.map {
@@ -19,4 +23,11 @@ class DiamondPrinter {
     }
 
     private fun padWith(padding: Int) = (0 until padding).map { ' ' }.joinToString("")
+
+    private fun centrePadding(index: Int): String {
+        return when (index) {
+            1    -> padWith(index)
+            else -> padWith(index + 1)
+        }
+    }
 }

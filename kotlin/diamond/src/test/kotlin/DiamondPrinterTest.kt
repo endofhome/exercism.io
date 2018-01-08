@@ -28,7 +28,6 @@ class DiamondPrinterTest {
                 " A ")))
     }
 
-    @Ignore
     @Test
     fun testThreeByThreeDiamond() {
         val output = diamondPrinter.printToList('C')
