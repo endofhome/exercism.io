@@ -3,14 +3,13 @@ class DiamondPrinter {
         val topUnpadded = ('A'..char).mapIndexed { index, character ->
             when (index) {
                 0 -> character.toString()
-                else -> character + centrePadding(index) + character
+                else -> character + padWith((index *2) -1) + character
             }
-
         }
         val width = topUnpadded.last().length
         val top = topUnpadded.map {
-            val padding = (width - it.length) / 2
-            padWith(padding) + it + padWith(padding)
+            val sidePadding = (width - it.length) / 2
+            padWith(sidePadding) + it + padWith(sidePadding)
         }
         return reflectedDiamond(top)
     }
@@ -24,10 +23,4 @@ class DiamondPrinter {
 
     private fun padWith(padding: Int) = (0 until padding).map { ' ' }.joinToString("")
 
-    private fun centrePadding(index: Int): String {
-        return when (index) {
-            1    -> padWith(index)
-            else -> padWith(index + 1)
-        }
-    }
 }

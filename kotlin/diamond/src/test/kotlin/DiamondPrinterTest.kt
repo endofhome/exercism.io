@@ -39,7 +39,6 @@ class DiamondPrinterTest {
                 "  A  ")))
     }
 
-    @Ignore
     @Test
     fun testFiveByFiveDiamond() {
         val output = diamondPrinter.printToList('E')
