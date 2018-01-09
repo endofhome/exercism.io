@@ -4,5 +4,7 @@ object Flattener {
                 is List<*> -> flatten(it)
                 else -> listOf(it)
             }
+        }.map {
+            it.filterNotNull()
         }.reduce { acc, l -> acc + l }
 }
