@@ -2,7 +2,7 @@ class DiamondPrinter {
     fun printToList(char: Char): List<String>? {
         val topUnpadded = ('A'..char).mapIndexed { index, character ->
             when (index) {
-                0 -> character.toString()
+                0    -> character.toString()
                 else -> character + padWith((index * 2) -1) + character
              }
         }
@@ -17,7 +17,7 @@ class DiamondPrinter {
     private fun reflectedDiamond(top: List<String>): List<String> {
         return when {
             top.size == 1 -> top
-            else          -> top + top.reversed().filterIndexed { index, _ -> index != 0 }
+            else          -> top + top.reversed().drop(1)
         }
     }
 
