@@ -1,10 +1,8 @@
 object Flattener {
-    fun flatten(list: List<Any?>): List<Any> = list.map {
-            when (it) {
-                is List<*> -> flatten(it)
-                else -> listOf(it)
-            }
-        }.map {
-            it.filterNotNull()
-        }.reduce { acc, l -> acc + l }
+    fun flatten(list: List<Any?>): List<Any> = list.flatMap {
+        when (it) {
+            is List<*> -> flatten(it)
+            else -> listOf(it)
+        }
+    }.filterNotNull()
 }
