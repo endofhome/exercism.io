@@ -1,7 +1,7 @@
 object PigLatin {
     val vowels = listOf('a', 'e', 'i', 'o', 'u')
     val consonants = ('a'..'z').filterNot { it in vowels }
-    val specialPairs = listOf("ch", "qu")
+    val specialPairs = listOf("ch", "qu", "th")
 
     fun translate(input: String): String = when {
         input.first() in vowels         -> input + "ay"
