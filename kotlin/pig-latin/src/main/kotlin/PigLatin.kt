@@ -1,7 +1,7 @@
 object PigLatin {
     val vowels = listOf('a', 'e', 'i', 'o', 'u')
     val consonants = ('a'..'z').filterNot { it in vowels }
-    val consonantPairs = listOf("ch", "qu", "th")
+    val consonantPairs = listOf("ch", "qu", "th", "rh")
     val consonantTriples = listOf("thr", "sch")
     val vowelPairs = listOf("yt", "xr")
 

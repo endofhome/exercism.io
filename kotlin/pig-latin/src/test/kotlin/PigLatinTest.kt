@@ -53,7 +53,7 @@ class PigLatinTest(val input: String, val expectedOutput: String) {
                 // Y is treated like a consonant at the beginning of a word
                 arrayOf("yellow", "ellowyay"),
 
-                // Y is treated like a vowel at the end of a consonant cluster
+                // Y is treated like a vowel at the end of a consonant cluster`
                 arrayOf("rhythm", "ythmrhay"),
 
                 // Y as second letter in two letter word
