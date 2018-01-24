@@ -9,7 +9,6 @@ class PrimeFactorCalculatorTest {
         assertEquals(emptyList(), PrimeFactorCalculator.primeFactors(1))
     }
 
-    @Ignore
     @Test
     fun testThatAPrimeNumberHasExactlyOnePrimeFactor() {
         assertEquals(listOf(2), PrimeFactorCalculator.primeFactors(2))
