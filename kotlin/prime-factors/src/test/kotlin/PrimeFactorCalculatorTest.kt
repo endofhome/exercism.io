@@ -14,7 +14,6 @@ class PrimeFactorCalculatorTest {
         assertEquals(listOf(2), PrimeFactorCalculator.primeFactors(2))
     }
 
-    @Ignore
     @Test
     fun testThatASquareOfAPrimeHasExactlyOnePrimeFactorRepeatedTwice() {
         assertEquals(listOf(3, 3), PrimeFactorCalculator.primeFactors(9))
