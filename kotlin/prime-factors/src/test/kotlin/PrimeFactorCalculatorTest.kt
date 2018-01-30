@@ -24,7 +24,6 @@ class PrimeFactorCalculatorTest {
         assertEquals(listOf(2, 2, 2), PrimeFactorCalculator.primeFactors(8))
     }
 
-    @Ignore
     @Test
     fun testThatAProductOfPrimesAndNonPrimesIsFactoredProperly() {
         assertEquals(listOf(2, 2, 3), PrimeFactorCalculator.primeFactors(12))
