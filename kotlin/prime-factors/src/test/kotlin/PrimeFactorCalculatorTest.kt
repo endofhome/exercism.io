@@ -19,7 +19,6 @@ class PrimeFactorCalculatorTest {
         assertEquals(listOf(3, 3), PrimeFactorCalculator.primeFactors(9))
     }
 
-    @Ignore
     @Test
     fun testThatACubeOfAPrimeHasExactlyOnePrimeFactorRepeatedThreeTimes() {
         assertEquals(listOf(2, 2, 2), PrimeFactorCalculator.primeFactors(8))
