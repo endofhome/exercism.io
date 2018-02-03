@@ -8,11 +8,11 @@ object PascalsTriangle {
     }
 
     private fun computeFor(numberOfRows: Int): List<List<Int>> {
-        val zeroPaddedRows = (0 until numberOfRows).map {
+        val firstRowPadded = (0 until numberOfRows).map {
             (0..it).map { 1 }
-        }.padWithZero()
+        }.extractFirstRowPadded()
 
-        return summedRows(zeroPaddedRows.first(), numberOfRows).removePadding()
+        return summedRows(firstRowPadded, numberOfRows).removePadding()
     }
 
     private fun summedRows(row: List<Int>, numberOfRows: Int, acc: List<List<Int>> = listOf(row)): List<List<Int>> =
@@ -31,12 +31,12 @@ object PascalsTriangle {
             acc.toList()
         }
 
-    private fun List<List<Int>>.padWithZero(): List<List<Int>> =
+    private fun List<List<Int>>.extractFirstRowPadded(): List<Int> =
         this.reversed()
             .mapIndexed { index, list ->
                 val zeros = (0..index).map { 0 }
                 zeros + list + zeros
-            }.reversed()
+            }.reversed().first()
 
     private fun  List<List<Int>>.removePadding(): List<List<Int>> =
             this.map { it.removePrefixPadding().reversed().removePrefixPadding() }
