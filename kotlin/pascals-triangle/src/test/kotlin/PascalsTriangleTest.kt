@@ -59,7 +59,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(4))
     }
 
-    @Ignore
     @Test
     fun fiveRows() {
         val expectedOutput = listOf(
@@ -73,7 +72,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(5))
     }
 
-    @Ignore
     @Test
     fun sixRows() {
         val expectedOutput = listOf(
@@ -88,7 +86,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(6))
     }
 
-    @Ignore
     @Test
     fun tenRows() {
         val expectedOutput = listOf(
