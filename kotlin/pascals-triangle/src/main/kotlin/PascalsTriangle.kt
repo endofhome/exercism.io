@@ -3,14 +3,16 @@ object PascalsTriangle {
         require(numberOfRows >= 0, { "Rows can't be negative!" })
         return when (numberOfRows) {
             0    -> emptyList()
-            else -> {
-                val zeroPaddedRows = (0 until numberOfRows).map {
-                    (0..it).map { 1 }
-                }.padWithZero()
-
-                summedRows(zeroPaddedRows.first(), numberOfRows).removePadding()
-            }
+            else -> computeFor(numberOfRows)
         }
+    }
+
+    private fun computeFor(numberOfRows: Int): List<List<Int>> {
+        val zeroPaddedRows = (0 until numberOfRows).map {
+            (0..it).map { 1 }
+        }.padWithZero()
+
+        return summedRows(zeroPaddedRows.first(), numberOfRows).removePadding()
     }
 
     private fun summedRows(row: List<Int>, numberOfRows: Int, acc: List<List<Int>> = listOf(row)): List<List<Int>> =
