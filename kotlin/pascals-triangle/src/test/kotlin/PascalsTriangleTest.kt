@@ -104,7 +104,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(10))
     }
 
-    @Ignore
     @Test
     fun validatesNotNegativeRows() {
         expectedException.expect(IllegalArgumentException::class.java)
