@@ -15,16 +15,16 @@ object PascalsTriangle {
 
     private fun summedRows(row: List<Int>, numberOfRows: Int, acc: List<List<Int>> = listOf(row)): List<List<Int>> =
         if (acc.size < numberOfRows) {
-            val newAcc: List<List<Int>> = acc + listOf(sumNextTwoElements(row))
+            val newAcc: List<List<Int>> = acc + listOf(sumElementsInTwos(row))
             summedRows(newAcc.last(), numberOfRows, newAcc)
         } else {
             acc
         }
 
-    private tailrec fun sumNextTwoElements(row: List<Int>, acc: List<Int> = emptyList()): List<Int> =
+    private tailrec fun sumElementsInTwos(row: List<Int>, acc: List<Int> = emptyList()): List<Int> =
         if (row.iterator().hasNext()) {
             val newAcc = acc + listOf(row.take(2).reduce { a, b -> a + b })
-            sumNextTwoElements(row.drop(1), newAcc)
+            sumElementsInTwos(row.drop(1), newAcc)
         } else {
             acc.toList()
         }
