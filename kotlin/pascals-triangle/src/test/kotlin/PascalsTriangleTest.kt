@@ -47,7 +47,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(3))
     }
 
-    @Ignore
     @Test
     fun fourRows() {
         val expectedOutput = listOf(
