@@ -28,7 +28,7 @@ object PascalsTriangle {
             val newAcc = acc + listOf(row.take(2).reduce { a, b -> a + b })
             sumElementsInTwos(row.drop(1), newAcc)
         } else {
-            acc.toList()
+            acc
         }
 
     private fun List<List<Int>>.extractFirstRowPadded(): List<Int> =
