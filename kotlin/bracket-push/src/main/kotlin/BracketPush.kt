@@ -20,12 +20,19 @@ object BracketPush {
             open = 0
         }
 
-        fun openBracket() {
+        fun process(char: Char) {
+            when (char) {
+                openingValue -> openBracket()
+                closingValue -> closeBracket()
+            }
+        }
+
+        private fun openBracket() {
             open++
             openBrackets.add(openingValue)
         }
 
-        fun closeBracket() {
+        private fun closeBracket() {
             if (openBrackets.last() == openingValue) {
                 open--
                 openBrackets.removeAt(openBrackets.lastIndex)
@@ -34,13 +41,6 @@ object BracketPush {
             }
             if (open < 0) {
                 throw IllegalStateException("Cannot close brackets before they have been opened.")
-            }
-        }
-
-        fun process(char: Char) {
-            when (char) {
-                openingValue -> openBracket()
-                closingValue -> closeBracket()
             }
         }
     }
