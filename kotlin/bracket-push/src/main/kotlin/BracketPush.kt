@@ -1,65 +1,13 @@
 object BracketPush {
     var openBrackets: MutableList<Char> = mutableListOf()
+    private val squareBrackets = Bracket(openingValue = '[', closingValue = ']')
+    private val braces = Bracket(openingValue = '{', closingValue = '}')
+    private val parentheses = Bracket(openingValue = '(', closingValue = ')')
 
-    object SquareBrackets {
-        val openingValue = '['
-        val closingValue = ']'
-        var open = 0
-
-        fun reset() {
-            open = 0
-        }
-
-        fun openBracket() {
-            open++
-            openBrackets.add(openingValue)
-        }
-
-        fun closeBracket() {
-            if (openBrackets.last() == openingValue) {
-                open--
-                openBrackets.removeAt(openBrackets.lastIndex)
-            } else {
-                throw IllegalStateException("Brackets are not nested correctly")
-            }
-            if (open < 0) {
-                throw IllegalStateException("Cannot close brackets before they have been opened.")
-            }
-        }
-    }
-
-    object Braces {
-        val openingValue = '{'
-        val closingValue = '}'
-        var open = 0
-
-        fun reset() {
-            open = 0
-        }
-
-        fun openBracket() {
-            open++
-            openBrackets.add(openingValue)
-        }
-
-        fun closeBracket() {
-            if (openBrackets.last() == openingValue) {
-                open--
-                openBrackets.removeAt(openBrackets.lastIndex)
-            } else {
-                throw IllegalStateException("Brackets are not nested correctly")
-            }
-            if (open < 0) {
-                throw IllegalStateException("Cannot close brackets before they have been opened.")
-            }
-        }
-    }
-
-    object Parentheses {
-        val openingValue = '('
-        val closingValue = ')'
-        var open = 0
-
+    class Bracket(val openingValue: Char = '[',
+                  val closingValue: Char = ']',
+                  var open: Int = 0
+    ) {
         fun reset() {
             open = 0
         }
@@ -88,24 +36,24 @@ object BracketPush {
         try {
             input.forEach { char ->
                 when (char) {
-                    SquareBrackets.openingValue -> SquareBrackets.openBracket()
-                    SquareBrackets.closingValue -> SquareBrackets.closeBracket()
-                    Braces.openingValue         -> Braces.openBracket()
-                    Braces.closingValue         -> Braces.closeBracket()
-                    Parentheses.openingValue    -> Parentheses.openBracket()
-                    Parentheses.closingValue    -> Parentheses.closeBracket()
+                    squareBrackets.openingValue -> squareBrackets.openBracket()
+                    squareBrackets.closingValue -> squareBrackets.closeBracket()
+                    braces.openingValue         -> braces.openBracket()
+                    braces.closingValue         -> braces.closeBracket()
+                    parentheses.openingValue    -> parentheses.openBracket()
+                    parentheses.closingValue    -> parentheses.closeBracket()
                 }
             }
         } catch (e: IllegalStateException) {
             return false
         }
 
-        return (SquareBrackets.open == 0) && (Braces.open == 0) && (Parentheses.open == 0)
+        return (squareBrackets.open == 0) && (braces.open == 0) && (parentheses.open == 0)
     }
 
     private fun resetState() {
-        SquareBrackets.reset()
-        Braces.reset()
-        Parentheses.reset()
+        squareBrackets.reset()
+        braces.reset()
+        parentheses.reset()
     }
 }
