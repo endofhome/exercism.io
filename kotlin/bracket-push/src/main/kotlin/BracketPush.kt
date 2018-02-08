@@ -20,15 +20,14 @@ object BracketPush {
             return false
         }
 
-        return bracketTypes.all { it.open == 0 }
+        return bracketTypes.all { it.open() == 0 }
     }
-
-    fun addOpenBracket(char: Char) = openBrackets.add(char)
 
     fun lastOpenBracket() = openBrackets.last()
 
-    fun removeLastOpenBracket() = openBrackets.removeAt(openBrackets.lastIndex)
+    fun addOpenBracket(char: Char) = openBrackets.add(char)
 
+    fun removeLastOpenBracket() = openBrackets.removeAt(openBrackets.lastIndex)
 
     private fun analysed(char: Char): Brackets? {
         val openingValues = BracketPush.bracketTypes.map { bracketType -> bracketType.openingValue to bracketType }
@@ -45,7 +44,7 @@ object BracketPush {
 sealed class Brackets(
         val openingValue: Char,
         val closingValue: Char,
-        var open: Int = 0,
+        private var open: Int = 0,
         private val bracketPush: BracketPush = BracketPush
 ) {
     object SquareBrackets : Brackets(openingValue = '[', closingValue = ']')
@@ -62,6 +61,8 @@ sealed class Brackets(
             closingValue -> closeBracket()
         }
     }
+
+    fun open() = open
 
     private fun openBracket() {
         open++
