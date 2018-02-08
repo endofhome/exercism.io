@@ -30,10 +30,10 @@ object BracketPush {
     fun removeLastOpenBracket() = openBrackets.removeAt(openBrackets.lastIndex)
 
     private fun analysed(char: Char): Brackets? {
-        val openingValues = BracketPush.bracketTypes.map { bracketType -> bracketType.openingValue to bracketType }
-        val closingValues = BracketPush.bracketTypes.map { bracketType -> bracketType.closingValue to bracketType }
+        val openingValues = bracketTypes.associateBy { it.openingValue }
+        val closingValues = bracketTypes.associateBy { it.closingValue }
         val bracketCharacters = openingValues + closingValues
-        return bracketCharacters.find { it.first == char }?.second
+        return bracketCharacters[char]
     }
 
     private fun resetState() {
