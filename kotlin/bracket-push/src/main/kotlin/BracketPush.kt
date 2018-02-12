@@ -10,12 +10,7 @@ object BracketPush {
         resetState()
 
         try {
-            input.forEach { char ->
-                val maybeBracket: Brackets? = analysed(char)
-                when (maybeBracket) {
-                    is Brackets -> maybeBracket.process(char)
-                }
-            }
+            input.forEach { char -> findBracketTypeFor(char)?.process(char) }
         } catch (e: IllegalStateException) {
             return false
         }
@@ -29,7 +24,7 @@ object BracketPush {
 
     fun removeLastOpenBracket() = openBrackets.removeAt(openBrackets.lastIndex)
 
-    private fun analysed(char: Char): Brackets? {
+    private fun findBracketTypeFor(char: Char): Brackets? {
         val openingValues = bracketTypes.associateBy { it.openingValue }
         val closingValues = bracketTypes.associateBy { it.closingValue }
         val bracketCharacters = openingValues + closingValues
