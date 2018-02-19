@@ -13,7 +13,6 @@ class SeriesTest {
         )
     }
 
-    @Ignore
     @Test
     fun slicesOfTwo() {
         assertEquals(listOf<List<Int>>(), Series.slices(2, ""))
