@@ -11,15 +11,17 @@ object Series {
         val inputIterator = inputInts.listIterator()
         return if (currentSlice.size < sliceSize && inputIterator.hasNext()) {
             val nextElement = inputIterator.next()
-            slice(sliceSize, inputIterator.asSequence().toList(), currentSlice.plus(nextElement), slices)
+            slice(sliceSize, inputIterator.toList(), currentSlice.plus(nextElement), slices)
         } else if (currentSlice.size == sliceSize && inputIterator.hasNext()) {
             val nextInput = when (sliceSize) {
-                1    -> inputIterator.asSequence().toList()
-                else -> listOf(currentSlice.last()) + inputIterator.asSequence().toList()
+                1    -> inputIterator.toList()
+                else -> listOf(currentSlice.last()) + inputIterator.toList()
             }
             slice(sliceSize, nextInput, emptyList(), slices + listOf(currentSlice))
         } else {
             slices + listOf(currentSlice)
         }
     }
+    
+    private fun ListIterator<Int>.toList() = this.asSequence().toList()
 }
