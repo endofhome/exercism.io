@@ -1,11 +1,11 @@
 object Series {
-    fun slices(sliceSize: Int, inputString: String): List<List<Int>> = when {
-        inputString.isEmpty() -> emptyList()
-        else                  -> {
-            val inputInts = inputString.map { Integer.parseInt(it.toString()) }
-            slice(sliceSize, inputInts)
+    fun slices(sliceSize: Int, inputString: String): List<List<Int>> =
+        inputString.map { Integer.parseInt(it.toString()) }.let { inputInts ->
+            when {
+                inputInts.isEmpty() -> emptyList()
+                else                -> slice(sliceSize, inputInts)
+            }
         }
-    }
 
     private fun slice(sliceSize: Int, inputInts: List<Int>, currentSlice: List<Int> = emptyList(), slices: List<List<Int>> = emptyList()): List<List<Int>> {
         val inputIterator = inputInts.listIterator()
