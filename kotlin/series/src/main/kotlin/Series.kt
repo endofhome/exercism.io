@@ -17,10 +17,7 @@ object Series {
     }
 
     private fun takeAnotherSlice(sliceSize: Int, inputIterator: ListIterator<Int>, currentSlice: List<Int>, slices: List<List<Int>>): List<List<Int>> {
-        val nextInput = when (sliceSize) {
-            1 -> inputIterator.toList()
-            else -> currentSlice.drop(1) + inputIterator.toList()
-        }
+        val nextInput = currentSlice.drop(1) + inputIterator.toList()
         return slice(sliceSize, nextInput, emptyList(), slices + listOf(currentSlice))
     }
 
