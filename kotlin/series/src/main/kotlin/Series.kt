@@ -21,10 +21,8 @@ object Series {
         return slice(sliceSize, nextInput, emptyList(), slices + listOf(currentSlice))
     }
 
-    private fun takeABiggerSlice(inputIterator: ListIterator<Int>, sliceSize: Int, currentSlice: List<Int>, slices: List<List<Int>>): List<List<Int>> {
-        val nextElement = inputIterator.next()
-        return slice(sliceSize, inputIterator.toList(), currentSlice.plus(nextElement), slices)
-    }
+    private fun takeABiggerSlice(inputIterator: ListIterator<Int>, sliceSize: Int, currentSlice: List<Int>, slices: List<List<Int>>): List<List<Int>> =
+            slice(sliceSize, inputIterator.toList(), currentSlice.plus(inputIterator.next()), slices)
 
     private fun ListIterator<Int>.toList() = this.asSequence().toList()
 }
