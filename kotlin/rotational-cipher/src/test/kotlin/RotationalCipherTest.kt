@@ -28,7 +28,6 @@ class RotationalCipherTest {
         assertEquals("z", cipher.encode("m"))
     }
 
-    @Ignore
     @Test
     fun testRotateLowercaseNBy1SingleWrapAround() {
         val cipher = RotationalCipher(13)
