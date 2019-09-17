@@ -1,7 +1,8 @@
+import Case.UpperCase
+import Case.LowerCase
+
 class RotationalCipher(private val key: Int) {
-    private val upperCaseChars = 65..90
-    private val lowerCaseChars = 97..122
-    private val alphabetSize = 26
+    private val cases = listOf(UpperCase, LowerCase)
 
     fun encode(input: String) =
         input.toCharArray().map { char ->
@@ -14,7 +15,23 @@ class RotationalCipher(private val key: Int) {
         }.joinToString("")
 
     private fun Pair<Int, Int>.normaliseInCharRange(): Int =
-        if (this.first in upperCaseChars && this.second > upperCaseChars.last) this.second - alphabetSize
-        else if (this.first in lowerCaseChars && this.second > lowerCaseChars.last) this.second - alphabetSize
-        else this.second
+        cases.find { this.first in it.charRange() && this.second > it.lastChar }
+            ?.keepInRange(this.second)
+            ?: this.second
+}
+
+interface RangeOfChars {
+    val firstChar: Int
+    val lastChar: Int
+}
+
+sealed class Case : RangeOfChars {
+    private val alphabetSize = 26
+    override val lastChar get() =  firstChar + alphabetSize - 1
+    fun charRange() = firstChar..lastChar
+    fun keepInRange(i: Int) = i - alphabetSize
+
+
+    object UpperCase : Case() { override val firstChar = 65 }
+    object LowerCase : Case() { override val firstChar = 97 }
 }
