@@ -34,7 +34,6 @@ class RotationalCipherTest {
         assertEquals("a", cipher.encode("n"))
     }
 
-    @Ignore
     @Test
     fun testRotateCapitalLettersNoWrapAround() {
         val cipher = RotationalCipher(5)
