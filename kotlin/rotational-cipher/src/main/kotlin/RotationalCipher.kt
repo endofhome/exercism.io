@@ -1,7 +1,7 @@
 class RotationalCipher(private val key: Int) {
     fun encode(input: String) =
         input.toCharArray().map {
-            if (! it.isWhitespace()) {
+            if (! it.isWhitespace() && ! it.isDigit()) {
                 (it.toInt() + rotateBy())
                     .normaliseInCharRange()
                     .toChar()

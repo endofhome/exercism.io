@@ -46,7 +46,6 @@ class RotationalCipherTest {
         assertEquals("T R L", cipher.encode("O M G"))
     }
 
-    @Ignore
     @Test
     fun testNumbersAreUnalteredByRotation() {
         val cipher = RotationalCipher(4)
