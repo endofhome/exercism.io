@@ -1,11 +1,12 @@
 class RotationalCipher(private val key: Int) {
     fun encode(input: String) =
         input.toCharArray().map {
-            (it.toInt() + rotateBy())
-                .normaliseInCharRange()
-                .toChar()
+            if (! it.isWhitespace()) {
+                (it.toInt() + rotateBy())
+                    .normaliseInCharRange()
+                    .toChar()
+            } else it
         }.joinToString("")
-
 
     private fun rotateBy() =
         if (key >= 26) key - 26
