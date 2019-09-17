@@ -1,7 +1,11 @@
-class RotationalCipher(val key: Int) {
+class RotationalCipher(private val key: Int) {
     fun encode(input: String) =
-        if (key.isEven()) "a"
-        else "b"
+        (input.toCharArray().single().toInt() + rotateBy())
+            .toChar()
+            .toString()
 
-    private fun Int.isEven() = this % 2 == 0
+    private fun rotateBy() =
+        if (key >= 26) key - 26
+        else key
 }
+
