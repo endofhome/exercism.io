@@ -1,18 +1,20 @@
 class RotationalCipher(private val key: Int) {
+    private val upperCaseChars = 65..90
+    private val lowerCaseChars = 97..122
+    private val alphabetSize = 26
+
     fun encode(input: String) =
-        input.toCharArray().map {
-            if (! it.isWhitespace() && ! it.isDigit()) {
-                (it.toInt() + rotateBy())
+        input.toCharArray().map { char ->
+            if (char.isLetter()) {
+                char.toInt()
+                    .let { charInt -> charInt to charInt + key }
                     .normaliseInCharRange()
                     .toChar()
-            } else it
+            } else char
         }.joinToString("")
 
-    private fun rotateBy() =
-        if (key >= 26) key - 26
-        else key
-
-    private fun Int.normaliseInCharRange() =
-        if (this > 122) this - 26
-        else this
+    private fun Pair<Int, Int>.normaliseInCharRange(): Int =
+        if (this.first in upperCaseChars && this.second > upperCaseChars.last) this.second - alphabetSize
+        else if (this.first in lowerCaseChars && this.second > lowerCaseChars.last) this.second - alphabetSize
+        else this.second
 }

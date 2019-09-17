@@ -52,14 +52,12 @@ class RotationalCipherTest {
         assertEquals("Xiwxmrk 1 2 3 xiwxmrk", cipher.encode("Testing 1 2 3 testing"))
     }
 
-    @Ignore
     @Test
     fun testPunctuationIsUnalteredByRotation() {
         val cipher = RotationalCipher(21)
         assertEquals("Gzo'n zvo, Bmviyhv!", cipher.encode("Let's eat, Grandma!"))
     }
 
-    @Ignore
     @Test
     fun testAllLettersRotateCorrectly() {
         val cipher = RotationalCipher(13)
