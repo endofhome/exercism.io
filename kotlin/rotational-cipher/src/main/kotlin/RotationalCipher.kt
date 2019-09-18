@@ -5,7 +5,7 @@ class RotationalCipher(private val key: Int) {
     fun encode(input: String) =
         input.toCharArray().map { char ->
             when {
-                char.isLetter() -> char.rotateBy(key).toChar()
+                char.isLetter() -> char.rotateBy(key)
                 else            -> char
             }
         }.joinToString("")
@@ -28,13 +28,15 @@ sealed class Case : RangeOfChars {
     object LowerCase : Case() { override val firstChar = 97 }
 }
 
-fun Char.rotateBy(key: Int): Int {
+fun Char.rotateBy(key: Int): Char {
     val cases = listOf(UpperCase, LowerCase)
     val charAsInt = this.toInt()
     val rotatedChar = charAsInt + key
 
-    return cases.find {
+    val rotatedCharAsInt = cases.find {
         case -> charAsInt in case.charRange && rotatedChar > case.lastChar
     }?.adjustInRange(rotatedChar)
         ?: rotatedChar
+
+    return rotatedCharAsInt.toChar()
 }
