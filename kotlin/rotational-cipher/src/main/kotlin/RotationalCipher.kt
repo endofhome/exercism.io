@@ -4,11 +4,10 @@ import Case.LowerCase
 class RotationalCipher(private val key: Int) {
     fun encode(input: String) =
         input.toCharArray().map { char ->
-            if (char.isLetter()) {
-                char.toInt()
-                    .rotateBy(key)
-                    .toChar()
-            } else char
+            when {
+                char.isLetter() -> char.toInt().rotateBy(key).toChar()
+                else            -> char
+            }
         }.joinToString("")
 
 }
