@@ -1,8 +1,7 @@
 object Prime {
     fun nth(i: Int): Int {
         require(i > 0)
-        var counter = 2
-        return generateSequence { (counter++) }
+        return generateSequence(2) { it + 1 }
                 .filter { it.isPrime() }
                 .take(i)
                 .last()
