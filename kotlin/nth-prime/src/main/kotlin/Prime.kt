@@ -1,10 +1,10 @@
 object Prime {
     fun nth(i: Int): Int {
-        require(i > 0)
+        require(i > 0) { "There is no zeroth prime." }
         return generateSequence(2) { it + 1 }
-                .filter { it.isPrime() }
-                .take(i)
-                .last()
+            .filter { it.isPrime() }
+            .take(i)
+            .last()
     }
 
     private fun Int.isPrime() =
