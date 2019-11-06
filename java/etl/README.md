@@ -1,8 +1,9 @@
-# Etl
+# ETL
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
 ### ETL
+
 Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
 we're going to migrate this."
 
@@ -11,6 +12,7 @@ once." That's then typically followed by much forehead slapping and
 moaning about how stupid we could possibly be.)
 
 ### The goal
+
 We're going to extract some scrabble scores from a legacy system.
 
 The old system stored a list of letters per score:
@@ -34,17 +36,43 @@ input letters:
 - "d" is worth 2 points.
 - Etc.
 
-Your mission, should you choose to accept it, is to write a program that
-transforms the legacy data format to the shiny new format.
+Your mission, should you choose to accept it, is to transform the legacy data
+format to the shiny new format.
 
 ### Notes
 
 A final note about scoring, Scrabble is played around the world in a
 variety of languages, each with its own unique scoring table. For
-example, an "A" is scored at 14 in the Basque-language version of the
-game while being scored at 9 in the Latin-language version.
+example, an "E" is scored at 2 in the Māori-language version of the
+game while being scored at 4 in the Hawaiian-language version.
 
+## Setup
+
+Go through the setup instructions for Java to install the necessary
+dependencies:
+
+[https://exercism.io/tracks/java/installation](https://exercism.io/tracks/java/installation)
+
+# Running the tests
+
+You can run all the tests for an exercise by entering the following in your
+terminal:
+
+```sh
+$ gradle test
+```
+
+> Use `gradlew.bat` if you're on Windows
+
+In the test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by removing the
+`@Ignore("Remove to run test")` annotation.
 
 ## Source
 
-The Jumpstart Lab team [view source](http://jumpstartlab.com)
+The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
+
+## Submitting Incomplete Solutions
+It's possible to submit an incomplete solution so you can see how others have
+completed the exercise.

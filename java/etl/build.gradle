@@ -4,13 +4,16 @@ apply plugin: "idea"
 
 repositories {
   mavenCentral()
-  maven { url "http://repo.bodar.com" }
 }
 
 dependencies {
-  compile "com.google.guava:guava:16+"
-  compile group:'com.googlecode.totallylazy', name:'totallylazy', version:'1.83'
+  testCompile "junit:junit:4.12"
+}
 
-  testCompile "junit:junit:4.10"
-  testCompile "org.assertj:assertj-core:3.2.0"
+test {
+  testLogging {
+    exceptionFormat = 'short'
+    showStandardStreams = true
+    events = ["passed", "failed", "skipped"]
+  }
 }
