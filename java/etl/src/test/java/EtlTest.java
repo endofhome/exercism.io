@@ -35,7 +35,6 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void testMoreKeys() {
         Map<Integer, List<String>> old = ImmutableMap.of(
@@ -52,7 +51,6 @@ public class EtlTest {
         assertThat(etl.transform(old)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void testFullDataset() {
         Map<Integer, List<String>> old = ImmutableMap.<Integer, List<String>>builder().
