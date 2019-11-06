@@ -13,9 +13,13 @@ public class Anagram {
 
     public List<String> match(List<String> candidates) {
         return candidates.stream()
-                .filter(word -> normalise(word).equals(normalise(subject)))
+                .filter(this::isAnagram)
                 .filter(word -> !(word.toLowerCase().equals(subject.toLowerCase())))
                 .collect(toList());
+    }
+
+    private boolean isAnagram(String word) {
+        return normalise(word).equals(normalise(subject));
     }
 
     private String normalise(String s) {
