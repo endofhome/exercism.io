@@ -5,15 +5,18 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class Anagram {
+    private final String subject;
     private final String sortedSubject;
 
     public Anagram(String subject) {
-        sortedSubject = sortCharacters(subject);
+        this.subject = subject;
+        this.sortedSubject = sortCharacters(subject);
     }
 
     public List<String> match(List<String> candidates) {
         return candidates.stream()
                 .filter(it -> sortCharacters(it).equals(this.sortedSubject))
+                .filter(it -> !it.equals(subject))
                 .collect(toList());
     }
 

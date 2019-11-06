@@ -35,7 +35,6 @@ public class AnagramTest {
         assertThat(anagrams).isEmpty();
     }
 
-    @Ignore
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -43,21 +42,18 @@ public class AnagramTest {
         assertThat(anagrams).containsExactly("cron");
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertThat(detector.match(Arrays.asList("last")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertThat(detector.match(Arrays.asList("dog", "goody"))).isEmpty();
     }
 
-    @Ignore
     @Test
     public void testDetectAnagrams() {
         Anagram detector = new Anagram("listen");
@@ -65,7 +61,6 @@ public class AnagramTest {
         assertThat(anagrams).contains("inlets");
     }
 
-    @Ignore
     @Test
     public void testMultipleAnagrams() {
         Anagram detector = new Anagram("allergy");
