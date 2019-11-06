@@ -6,22 +6,24 @@ import static java.util.stream.Collectors.toList;
 
 public class Anagram {
     private final String subject;
-    private final String sortedSubject;
 
     public Anagram(String subject) {
         this.subject = subject;
-        this.sortedSubject = sortCharacters(subject);
     }
 
     public List<String> match(List<String> candidates) {
         return candidates.stream()
-                .filter(it -> sortCharacters(it).equals(this.sortedSubject))
-                .filter(it -> !it.equals(subject))
+                .filter(word -> normalise(word).equals(normalise(subject)))
+                .filter(word -> !(word.toLowerCase().equals(subject.toLowerCase())))
                 .collect(toList());
     }
 
-    private String sortCharacters(String subject) {
-        return Arrays.stream(subject.split(""))
+    private String normalise(String s) {
+        return sortCharacters(s.toLowerCase());
+    }
+
+    private String sortCharacters(String s) {
+        return Arrays.stream(s.split(""))
                 .sorted()
                 .collect(joining());
     }
