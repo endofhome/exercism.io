@@ -14,12 +14,16 @@ public class Anagram {
     public List<String> match(List<String> candidates) {
         return candidates.stream()
                 .filter(this::isAnagram)
-                .filter(word -> !(word.toLowerCase().equals(subject.toLowerCase())))
+                .filter(this::isNotSubject)
                 .collect(toList());
     }
 
     private boolean isAnagram(String word) {
         return normalise(word).equals(normalise(subject));
+    }
+
+    private boolean isNotSubject(String word) {
+        return !(word.toLowerCase().equals(subject.toLowerCase()));
     }
 
     private String normalise(String s) {
