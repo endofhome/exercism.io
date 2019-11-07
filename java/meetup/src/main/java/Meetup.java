@@ -1,10 +1,12 @@
 import org.joda.time.DateTime;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.temporal.TemporalAccessor;
+import java.util.stream.IntStream;
 
 public class Meetup {
-
     private final int month;
     private final int year;
 
@@ -13,30 +15,22 @@ public class Meetup {
         this.year  = year;
     }
 
-    public DateTime day(int dayOfWeek, MeetupSchedule iteration) {
-        List<DateTime> queryDates = new ArrayList<>();
-        Integer startingDay = getStartingDay(iteration);
-        DateTime result = new DateTime();
-        buildDateList(queryDates, startingDay);
-        for (DateTime date : queryDates) {
-            if (date.dayOfWeek().get() == dayOfWeek) {
-                result = date;
-            }
-        }
-        return result;
+    public DateTime day(int dayNumber, MeetupSchedule schedule) {
+        YearMonth yearMonth = YearMonth.of(year, month);
+        int monthDay = IntStream.range(13, 20)
+                .filter(i -> isTeenth(dayNumber, yearMonth, i))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Could not find teenth"));
+
+        LocalDate meetupDate = yearMonth.atDay(monthDay);
+        int year = meetupDate.getYear();
+        int month = meetupDate.getMonthValue();
+        int dayOfMonth = meetupDate.getDayOfMonth();
+
+        return new DateTime(year, month, dayOfMonth, 0, 0);
     }
 
-    private Integer getStartingDay(MeetupSchedule iteration) {
-        if (iteration == MeetupSchedule.LAST) {
-            return iteration.calculateLastSevenDays(month);
-        } else {
-            return iteration.startingDay();
-        }
-    }
-
-    private void buildDateList(List<DateTime> queryDates, Integer startingDay) {
-        for (int i = 0; i < 7; i++) {
-            queryDates.add(new DateTime(year, month, startingDay + i, 0, 0));
-        }
+    private boolean isTeenth(int dayNumber, YearMonth yearMonth, int i) {
+        return yearMonth.atDay(i).getDayOfWeek() == DayOfWeek.of(dayNumber);
     }
 }
