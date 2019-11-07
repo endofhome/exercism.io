@@ -16,6 +16,14 @@ public class Hamming {
             new Pair<>(baseStrandArray[i], compareStandArray[i])
         ).collect(toList());
 
-        return (int) pairs.stream().filter(pair -> !(pair.getKey().equals(pair.getValue()))).count();
+        return countNonMatchingPairs(pairs);
+    }
+
+    private static int countNonMatchingPairs(List<Pair<String, String>> pairs) {
+        return (int) pairs.stream().filter(Hamming::doesNotMatch).count();
+    }
+
+    private static boolean doesNotMatch(Pair<String, String> pair) {
+        return !(pair.getKey().equals(pair.getValue()));
     }
 }
