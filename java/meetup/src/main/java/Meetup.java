@@ -35,6 +35,8 @@ public class Meetup {
         int numberToSkip;
         if (schedule == MeetupSchedule.SECOND) {
             numberToSkip = 1;
+        } else if (schedule == MeetupSchedule.THIRD) {
+            numberToSkip = 2;
         } else {
             numberToSkip = 0;
         }
