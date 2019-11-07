@@ -3,7 +3,6 @@ import org.joda.time.DateTime;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
-import java.time.temporal.TemporalAccessor;
 import java.util.stream.IntStream;
 
 public class Meetup {
@@ -17,10 +16,11 @@ public class Meetup {
 
     public DateTime day(int dayNumber, MeetupSchedule schedule) {
         YearMonth yearMonth = YearMonth.of(year, month);
-        int monthDay = IntStream.range(13, 20)
-                .filter(i -> isTeenth(dayNumber, yearMonth, i))
+
+        int monthDay = range(schedule, yearMonth)
+                .filter(i -> isMonthDay(dayNumber, yearMonth, i))
                 .findAny()
-                .orElseThrow(() -> new IllegalArgumentException("Could not find teenth"));
+                .orElseThrow(() -> new IllegalArgumentException("Could not find relevant day"));
 
         LocalDate meetupDate = yearMonth.atDay(monthDay);
         int year = meetupDate.getYear();
@@ -30,7 +30,20 @@ public class Meetup {
         return new DateTime(year, month, dayOfMonth, 0, 0);
     }
 
-    private boolean isTeenth(int dayNumber, YearMonth yearMonth, int i) {
+    private IntStream range(MeetupSchedule schedule, YearMonth yearMonth) {
+        IntStream teenthRange = IntStream.range(13, 20);
+        IntStream monthRange = IntStream.range(1, yearMonth.lengthOfMonth());
+
+        IntStream range;
+        if (schedule == MeetupSchedule.TEENTH) {
+            range = teenthRange;
+        } else {
+            range = monthRange;
+        }
+        return range;
+    }
+
+    private boolean isMonthDay(int dayNumber, YearMonth yearMonth, int i) {
         return yearMonth.atDay(i).getDayOfWeek() == DayOfWeek.of(dayNumber);
     }
 }

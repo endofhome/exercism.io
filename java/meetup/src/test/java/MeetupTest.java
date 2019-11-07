@@ -157,7 +157,6 @@ public class MeetupTest {
         assertThat(meetup.day(SUNDAY, MeetupSchedule.TEENTH)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_monday_of_march_2013() {
         DateTime expected = new DateTime(2013, 3, 4, 0, 0);
@@ -165,7 +164,6 @@ public class MeetupTest {
         assertThat(meetup.day(MONDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_monday_of_april_2013() {
         DateTime expected = new DateTime(2013, 4, 1, 0, 0);
@@ -173,7 +171,6 @@ public class MeetupTest {
         assertThat(meetup.day(MONDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_tuesday_of_may_2013() {
         DateTime expected = new DateTime(2013, 5, 7, 0, 0);
@@ -181,7 +178,6 @@ public class MeetupTest {
         assertThat(meetup.day(TUESDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_tuesday_of_june_2013() {
         DateTime expected = new DateTime(2013, 6, 4, 0, 0);
@@ -189,7 +185,6 @@ public class MeetupTest {
         assertThat(meetup.day(TUESDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_wednesday_of_july_2013() {
         DateTime expected = new DateTime(2013, 7, 3, 0, 0);
@@ -197,7 +192,6 @@ public class MeetupTest {
         assertThat(meetup.day(WEDNESDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_wednesday_of_august_2013() {
         DateTime expected = new DateTime(2013, 8, 7, 0, 0);
@@ -205,7 +199,6 @@ public class MeetupTest {
         assertThat(meetup.day(WEDNESDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_thursday_of_september_2013() {
         DateTime expected = new DateTime(2013, 9, 5, 0, 0);
@@ -213,7 +206,6 @@ public class MeetupTest {
         assertThat(meetup.day(THURSDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_thursday_of_october_2013() {
         DateTime expected = new DateTime(2013, 10, 3, 0, 0);
@@ -221,7 +213,6 @@ public class MeetupTest {
         assertThat(meetup.day(THURSDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_friday_of_november_2013() {
         DateTime expected = new DateTime(2013, 11, 1, 0, 0);
@@ -229,7 +220,6 @@ public class MeetupTest {
         assertThat(meetup.day(FRIDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_friday_of_december_2013() {
         DateTime expected = new DateTime(2013, 12, 6, 0, 0);
@@ -237,7 +227,6 @@ public class MeetupTest {
         assertThat(meetup.day(FRIDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_saturday_of_january_2013() {
         DateTime expected = new DateTime(2013, 1, 5, 0, 0);
@@ -245,7 +234,6 @@ public class MeetupTest {
         assertThat(meetup.day(SATURDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_saturday_of_february_2013() {
         DateTime expected = new DateTime(2013, 2, 2, 0, 0);
@@ -253,7 +241,6 @@ public class MeetupTest {
         assertThat(meetup.day(SATURDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_sunday_of_march_2013() {
         DateTime expected = new DateTime(2013, 3, 3, 0, 0);
@@ -261,7 +248,6 @@ public class MeetupTest {
         assertThat(meetup.day(SUNDAY, MeetupSchedule.FIRST)).isEqualTo(expected);
     }
 
-    @Ignore
     @Test
     public void test_first_sunday_of_april_2013() {
         DateTime expected = new DateTime(2013, 4, 7, 0, 0);
