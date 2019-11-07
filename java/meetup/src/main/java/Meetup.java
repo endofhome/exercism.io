@@ -19,6 +19,7 @@ public class Meetup {
 
         int monthDay = range(schedule, yearMonth)
                 .filter(i -> isMonthDay(dayNumber, yearMonth, i))
+                .skip(accordingTo(schedule))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("Could not find relevant day"));
 
@@ -28,6 +29,17 @@ public class Meetup {
         int dayOfMonth = meetupDate.getDayOfMonth();
 
         return new DateTime(year, month, dayOfMonth, 0, 0);
+    }
+
+    private int accordingTo(MeetupSchedule schedule) {
+        int numberToSkip;
+        if (schedule == MeetupSchedule.SECOND) {
+            numberToSkip = 1;
+        } else {
+            numberToSkip = 0;
+        }
+
+        return numberToSkip;
     }
 
     private IntStream range(MeetupSchedule schedule, YearMonth yearMonth) {
