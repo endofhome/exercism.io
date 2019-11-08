@@ -17,9 +17,8 @@ public class Meetup {
     public DateTime day(int dayNumber, MeetupSchedule schedule) {
         YearMonth yearMonth = YearMonth.of(year, month);
 
-        int monthDay = range(schedule, yearMonth)
+        int monthDay = possibleDays(schedule, yearMonth)
                 .filter(i -> isMonthDay(dayNumber, yearMonth, i))
-                .skip(accordingTo(schedule))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("Could not find relevant day"));
 
@@ -28,32 +27,27 @@ public class Meetup {
         return new DateTime(year, month, meetupDate.getDayOfMonth(), 0, 0);
     }
 
-    private int accordingTo(MeetupSchedule schedule) {
-        int numberToSkip;
-        if (schedule == MeetupSchedule.SECOND) {
-            numberToSkip = 1;
-        } else if (schedule == MeetupSchedule.THIRD) {
-            numberToSkip = 2;
-        } else if (schedule == MeetupSchedule.FOURTH || schedule == MeetupSchedule.LAST) {
-            numberToSkip = 3;
+    private IntStream possibleDays(MeetupSchedule schedule, YearMonth yearMonth) {
+        Integer firstDayOfWeek = firstDayOfWeek(schedule, yearMonth);
+
+        IntStream possibleRange;
+        if (schedule == MeetupSchedule.TEENTH) {
+            possibleRange = IntStream.range(13, 20);
         } else {
-            numberToSkip = 0;
+            possibleRange = IntStream.range(firstDayOfWeek, firstDayOfWeek + 7);
         }
 
-        return numberToSkip;
+        return possibleRange;
     }
 
-    private IntStream range(MeetupSchedule schedule, YearMonth yearMonth) {
-        IntStream allDaysInMonth = IntStream.range(1, yearMonth.lengthOfMonth());
-        IntStream onlyTeenthDays = IntStream.range(13, 20);
-
-        IntStream range;
-        if (schedule == MeetupSchedule.TEENTH) {
-            range = onlyTeenthDays;
+    private Integer firstDayOfWeek(MeetupSchedule schedule, YearMonth yearMonth) {
+        Integer firstDayOfWeek;
+        if (schedule == MeetupSchedule.LAST) {
+            firstDayOfWeek = schedule.calculateLastSevenDays(yearMonth.getMonthValue());
         } else {
-            range = allDaysInMonth;
+            firstDayOfWeek = schedule.startingDay();
         }
-        return range;
+        return firstDayOfWeek;
     }
 
     private boolean isMonthDay(int dayNumber, YearMonth yearMonth, int i) {
