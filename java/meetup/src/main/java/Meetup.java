@@ -24,11 +24,8 @@ public class Meetup {
                 .orElseThrow(() -> new IllegalArgumentException("Could not find relevant day"));
 
         LocalDate meetupDate = yearMonth.atDay(monthDay);
-        int year = meetupDate.getYear();
-        int month = meetupDate.getMonthValue();
-        int dayOfMonth = meetupDate.getDayOfMonth();
 
-        return new DateTime(year, month, dayOfMonth, 0, 0);
+        return new DateTime(year, month, meetupDate.getDayOfMonth(), 0, 0);
     }
 
     private int accordingTo(MeetupSchedule schedule) {
@@ -37,7 +34,7 @@ public class Meetup {
             numberToSkip = 1;
         } else if (schedule == MeetupSchedule.THIRD) {
             numberToSkip = 2;
-        } else if (schedule == MeetupSchedule.FOURTH) {
+        } else if (schedule == MeetupSchedule.FOURTH || schedule == MeetupSchedule.LAST) {
             numberToSkip = 3;
         } else {
             numberToSkip = 0;
@@ -47,14 +44,14 @@ public class Meetup {
     }
 
     private IntStream range(MeetupSchedule schedule, YearMonth yearMonth) {
-        IntStream teenthRange = IntStream.range(13, 20);
-        IntStream monthRange = IntStream.range(1, yearMonth.lengthOfMonth());
+        IntStream allDaysInMonth = IntStream.range(1, yearMonth.lengthOfMonth());
+        IntStream onlyTeenthDays = IntStream.range(13, 20);
 
         IntStream range;
         if (schedule == MeetupSchedule.TEENTH) {
-            range = teenthRange;
+            range = onlyTeenthDays;
         } else {
-            range = monthRange;
+            range = allDaysInMonth;
         }
         return range;
     }
