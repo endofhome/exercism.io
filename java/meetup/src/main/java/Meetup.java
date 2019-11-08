@@ -43,9 +43,9 @@ public class Meetup {
     private Integer firstDayOfWeek(MeetupSchedule schedule, YearMonth yearMonth) {
         Integer firstDayOfWeek;
         if (schedule == MeetupSchedule.LAST) {
-            firstDayOfWeek = schedule.calculateLastSevenDays(yearMonth.getMonthValue());
+            firstDayOfWeek = yearMonth.lengthOfMonth() - 6;
         } else {
-            firstDayOfWeek = schedule.startingDay();
+            firstDayOfWeek = schedule.firstDayOfWeek();
         }
         return firstDayOfWeek;
     }
