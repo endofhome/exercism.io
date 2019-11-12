@@ -1,7 +1,6 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class NucleotideTest {
@@ -64,14 +63,12 @@ public class NucleotideTest {
     );
   }
 
-  @Ignore
   @Test(expected = IllegalArgumentException.class)
   public void testValidatesNucleotides() {
     DNA dna = new DNA("GACT");
     dna.count('X');
   }
 
-  @Ignore
   @Test
   public void testCountsAllNucleotides() {
     String s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";

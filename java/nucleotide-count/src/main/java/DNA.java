@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.Map;
 
 import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 
 public class DNA {
@@ -16,6 +15,8 @@ public class DNA {
     }
 
     public int count(char dnaChar) {
+        validate(dnaChar);
+
         return (int) identifier
                 .chars()
                 .mapToObj(c -> (char) c)
@@ -27,6 +28,12 @@ public class DNA {
         return nucleotides
                 .stream()
                 .collect(toMap((c -> c), (this::count)));
+    }
+
+    private void validate(char nucleotide) {
+        if (! nucleotides.contains(nucleotide)) {
+            throw new IllegalArgumentException(nucleotide + " is not a valid nucleotide");
+        }
     }
 
 }
