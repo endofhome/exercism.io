@@ -16,10 +16,9 @@ public class DNA {
     }
 
     public int count(char dnaChar) {
-        List<Character> identifierCharacters = charactersFrom(identifier);
-
-        return (int) identifierCharacters
-                .stream()
+        return (int) identifier
+                .chars()
+                .mapToObj(c -> (char) c)
                 .filter(c -> c == dnaChar)
                 .count();
     }
@@ -30,10 +29,4 @@ public class DNA {
                 .collect(toMap((c -> c), (x -> 0)));
     }
 
-    private List<Character> charactersFrom(String identifier) {
-        return identifier
-                .chars()
-                .mapToObj(c -> (char) c)
-                .collect(toList());
-    }
 }
