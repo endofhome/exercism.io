@@ -1,18 +1,21 @@
+import java.time.YearMonth;
+import java.util.function.Function;
+
 public enum MeetupSchedule {
-    FIRST(1),
-    SECOND(8),
-    THIRD(15),
-    FOURTH(22),
-    LAST(null),
-    TEENTH(13);
+    FIRST(yearMonth -> 1),
+    SECOND(yearMonth -> 8),
+    THIRD(yearMonth -> 15),
+    FOURTH(yearMonth -> 22),
+    LAST(yearMonth -> yearMonth.lengthOfMonth() - 6),
+    TEENTH(yearMonth -> 13);
 
-    private final Integer firstDayOfWeek;
+    private final Function<YearMonth, Integer> firstDayOfWeek;
 
-    MeetupSchedule(Integer day) {
-        firstDayOfWeek = day;
+    MeetupSchedule(Function<YearMonth, Integer> firstDayOfWeek) {
+        this.firstDayOfWeek = firstDayOfWeek;
     }
 
-    public Integer firstDayOfWeek() {
-        return firstDayOfWeek;
+    public Integer firstDayOfWeek(YearMonth yearMonth) {
+        return firstDayOfWeek.apply(yearMonth);
     }
 }

@@ -28,19 +28,9 @@ public class Meetup {
     }
 
     private IntStream possibleDays(MeetupSchedule schedule, YearMonth yearMonth) {
-        Integer firstDayOfWeek = firstDayOfWeek(schedule, yearMonth);
+        Integer firstDayOfWeek = schedule.firstDayOfWeek(yearMonth);
 
         return IntStream.range(firstDayOfWeek, firstDayOfWeek + 7);
-    }
-
-    private Integer firstDayOfWeek(MeetupSchedule schedule, YearMonth yearMonth) {
-        Integer firstDayOfWeek;
-        if (schedule == MeetupSchedule.LAST) {
-            firstDayOfWeek = yearMonth.lengthOfMonth() - 6;
-        } else {
-            firstDayOfWeek = schedule.firstDayOfWeek();
-        }
-        return firstDayOfWeek;
     }
 
     private boolean isMonthDay(int dayNumber, YearMonth yearMonth, int i) {
