@@ -30,14 +30,7 @@ public class Meetup {
     private IntStream possibleDays(MeetupSchedule schedule, YearMonth yearMonth) {
         Integer firstDayOfWeek = firstDayOfWeek(schedule, yearMonth);
 
-        IntStream possibleRange;
-        if (schedule == MeetupSchedule.TEENTH) {
-            possibleRange = IntStream.range(13, 20);
-        } else {
-            possibleRange = IntStream.range(firstDayOfWeek, firstDayOfWeek + 7);
-        }
-
-        return possibleRange;
+        return IntStream.range(firstDayOfWeek, firstDayOfWeek + 7);
     }
 
     private Integer firstDayOfWeek(MeetupSchedule schedule, YearMonth yearMonth) {
