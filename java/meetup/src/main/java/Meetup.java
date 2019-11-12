@@ -28,12 +28,26 @@ public class Meetup {
     }
 
     private IntStream possibleDays(MeetupSchedule schedule, YearMonth yearMonth) {
-        Integer firstDayOfWeek = schedule.firstDayOfWeek(yearMonth);
+        int firstDayOfWeek = firstDayOfWeek(schedule, yearMonth);
 
         return IntStream.range(firstDayOfWeek, firstDayOfWeek + 7);
     }
 
     private boolean isMonthDay(int dayNumber, YearMonth yearMonth, int i) {
         return yearMonth.atDay(i).getDayOfWeek() == DayOfWeek.of(dayNumber);
+    }
+
+    private int firstDayOfWeek(MeetupSchedule schedule, YearMonth yearMonth) {
+        int firstDayOfWeek;
+
+        if (schedule == MeetupSchedule.LAST) {
+            firstDayOfWeek = yearMonth.lengthOfMonth() - 6;
+        } else if (schedule == MeetupSchedule.TEENTH) {
+            firstDayOfWeek = 13;
+        } else {
+            firstDayOfWeek = (schedule.ordinal() * 7) + 1;
+        }
+
+        return firstDayOfWeek;
     }
 }
