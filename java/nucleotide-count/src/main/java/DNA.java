@@ -1,7 +1,6 @@
+import java.util.ArrayList;
 import java.util.List;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toMap;
@@ -17,12 +16,27 @@ public class DNA {
     }
 
     public int count(char dnaChar) {
-        return 0;
+        List<Character> identifierCharacters = charactersFrom(identifier);
+
+        return (int) identifierCharacters
+                .stream()
+                .filter(x -> x == dnaChar)
+                .count();
     }
 
     public Map<Character, Integer> nucleotideCounts() {
         return nucleotides
                 .stream()
                 .collect(toMap((x -> x), (x -> 0)));
+    }
+
+    private List<Character> charactersFrom(String identifier) {
+        List<Character> identifierCharacters = new ArrayList<>();
+        char[] chars = identifier.toCharArray();
+        for (char c : chars) {
+            identifierCharacters.add(c);
+        }
+
+        return identifierCharacters;
     }
 }
