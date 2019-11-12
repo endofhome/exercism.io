@@ -1,26 +1,19 @@
-import java.util.List;
 import java.util.stream.IntStream;
-
-import static java.util.stream.Collectors.toList;
 
 public class Pangrams {
 
     public static boolean isPangram(String sentence) {
-        List<Character> characters = charactersFrom(sentence);
+        String formattedSentence = formatted(sentence);
 
         return IntStream.range(97, 123)
-                .filter(c -> characters.contains((char) c))
+                .filter(c -> formattedSentence.contains(Character.toString((char) c)))
                 .count() == 26;
     }
 
-    private static List<Character> charactersFrom(String sentence) {
+    private static String formatted(String sentence) {
         return sentence
                 .toLowerCase()
-                .replaceAll("[\"]", "")
-                .chars()
-                .mapToObj(c -> (char) c)
-                .collect(toList());
-
+                .replaceAll("[\"]", "");
     }
 
 }
