@@ -1,17 +1,19 @@
+import java.util.stream.IntStream;
+
 public class Pangrams {
 
     public static boolean isPangram(String sentence) {
-        for(int i=97; i<123; i++) {
-            Character character = (char) i;
-            if (!formatted(sentence).contains(character.toString())) {
-                return false;
-            }
-        }
-        return true;
+        String formattedSentence = formatted(sentence);
+
+        return IntStream.range(97, 123)
+                .filter(c -> formattedSentence.contains(Character.toString((char) c)))
+                .count() == 26;
     }
 
     private static String formatted(String sentence) {
-        return sentence.toLowerCase().replaceAll("[\"]", "");
+        return sentence
+                .toLowerCase()
+                .replaceAll("[\"]", "");
     }
 
 }
