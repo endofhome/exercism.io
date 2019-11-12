@@ -2,17 +2,17 @@ import java.time.YearMonth;
 import java.util.function.Function;
 
 public enum MeetupSchedule {
-    FIRST(yearMonth -> 1),
-    SECOND(yearMonth -> 8),
-    THIRD(yearMonth -> 15),
-    FOURTH(yearMonth -> 22),
+    FIRST(x -> 1),
+    SECOND(x -> 8),
+    THIRD(x -> 15),
+    FOURTH(x -> 22),
     LAST(yearMonth -> yearMonth.lengthOfMonth() - 6),
-    TEENTH(yearMonth -> 13);
+    TEENTH(x -> 13);
 
     private final Function<YearMonth, Integer> firstDayOfWeek;
 
-    MeetupSchedule(Function<YearMonth, Integer> firstDayOfWeek) {
-        this.firstDayOfWeek = firstDayOfWeek;
+    MeetupSchedule(Function<YearMonth, Integer> day) {
+        firstDayOfWeek = day;
     }
 
     public Integer firstDayOfWeek(YearMonth yearMonth) {
