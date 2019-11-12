@@ -6,7 +6,7 @@ public class Pangrams {
         String formattedSentence = formatted(sentence);
 
         return ! IntStream.range(97, 123)
-                .filter(c -> ! formattedSentence.contains(Character.toString((char) c)))
+                .filter(i -> ! formattedSentence.contains(asciiStringFor(i)))
                 .findAny()
                 .isPresent();
     }
@@ -17,4 +17,7 @@ public class Pangrams {
                 .replaceAll("[\"]", "");
     }
 
+    private static String asciiStringFor(int i) {
+        return Character.toString((char) i);
+    }
 }
