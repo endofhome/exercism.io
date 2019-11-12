@@ -1,8 +1,8 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 
 public class DNA {
@@ -20,23 +20,20 @@ public class DNA {
 
         return (int) identifierCharacters
                 .stream()
-                .filter(x -> x == dnaChar)
+                .filter(c -> c == dnaChar)
                 .count();
     }
 
     public Map<Character, Integer> nucleotideCounts() {
         return nucleotides
                 .stream()
-                .collect(toMap((x -> x), (x -> 0)));
+                .collect(toMap((c -> c), (x -> 0)));
     }
 
     private List<Character> charactersFrom(String identifier) {
-        List<Character> identifierCharacters = new ArrayList<>();
-        char[] chars = identifier.toCharArray();
-        for (char c : chars) {
-            identifierCharacters.add(c);
-        }
-
-        return identifierCharacters;
+        return identifier
+                .chars()
+                .mapToObj(c -> (char) c)
+                .collect(toList());
     }
 }
