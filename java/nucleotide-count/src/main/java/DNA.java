@@ -1,8 +1,10 @@
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.toMap;
 
 public class DNA {
 
@@ -19,6 +21,8 @@ public class DNA {
     }
 
     public Map<Character, Integer> nucleotideCounts() {
-        throw new IllegalArgumentException("");
+        return nucleotides
+                .stream()
+                .collect(toMap((x -> x), (x -> 0)));
     }
 }
