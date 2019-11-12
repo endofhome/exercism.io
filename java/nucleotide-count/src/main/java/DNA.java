@@ -26,7 +26,7 @@ public class DNA {
     public Map<Character, Integer> nucleotideCounts() {
         return nucleotides
                 .stream()
-                .collect(toMap((c -> c), (x -> 0)));
+                .collect(toMap((c -> c), (this::count)));
     }
 
 }

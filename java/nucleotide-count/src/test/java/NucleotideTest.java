@@ -28,7 +28,6 @@ public class NucleotideTest {
     assertThat(dna.count('C')).isEqualTo(5);
   }
 
-  @Ignore
   @Test
   public void testRepetitiveSequenceWithOnlyGuanosine() {
     DNA dna = new DNA("GGGGGGGG");
@@ -40,14 +39,12 @@ public class NucleotideTest {
     );
   }
 
-  @Ignore
   @Test
   public void testCountsOnlyThymidine() {
     DNA dna = new DNA("GGGGGTAACCCGG");
     assertThat(dna.count('T')).isEqualTo(1);
   }
 
-  @Ignore
   @Test
   public void testCountsANucleotideOnlyOnce() {
     DNA dna = new DNA("CGATTGGG");
@@ -55,7 +52,6 @@ public class NucleotideTest {
     assertThat(dna.count('T')).isEqualTo(2);
   }
 
-  @Ignore
   @Test
   public void testDnaCountsDoNotChangeAfterCountingAdenosine() {
     DNA dna = new DNA("GATTACA");
