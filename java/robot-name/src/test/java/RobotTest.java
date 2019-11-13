@@ -21,7 +21,6 @@ public class RobotTest {
         assertThat(robot.getName(), not(equalTo(new Robot().getName())));
     }
 
-    @Ignore
     @Test
     public void resetName() {
         final String name = robot.getName();

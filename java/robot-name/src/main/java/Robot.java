@@ -1,5 +1,5 @@
 public class Robot {
-    final private String name = initialiseName();
+    private String name = initialiseName();
 
     public Robot() {
     }
@@ -27,6 +27,6 @@ public class Robot {
     }
 
     public void reset() {
-        throw new IllegalArgumentException("");
+        name = initialiseName();
     }
 }
