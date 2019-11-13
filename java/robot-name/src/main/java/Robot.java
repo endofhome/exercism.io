@@ -1,43 +1,27 @@
-import java.util.Random;
-
 public class Robot {
 
-    private final Random random;
-    private String name;
-
     public Robot() {
-        this.name = "";
-        this.random = new Random();
-        generateName();
     }
 
     public String getName() {
-        return name.toUpperCase();
+        return String.format("%c%c%d%d%d",
+                upperCaseLetter(),
+                upperCaseLetter(),
+                digit(),
+                digit(),
+                digit()
+        );
     }
 
-    public void generateName() {
-        addLetters(2);
-        addNumbers(3);
+    private Character upperCaseLetter() {
+        return (char) ((65 + Math.random() * 26));
     }
 
-    private String addLetters(int times) {
-        for (int i=0; i < times; i++) {
-            name += (char) (random.nextInt(26) + 'a');
-        }
-        return name;
-    }
-
-    private String addNumbers(int times) {
-        for (int i=0; i < times; i++) {
-            Integer randomNum = random.nextInt(9);
-            name += randomNum.toString().charAt(0);
-        }
-        return name;
+    private Integer digit() {
+        return (int) (Math.random() * 10);
     }
 
     public void reset() {
-        name = "";
-        generateName();
+        throw new IllegalArgumentException("");
     }
-
 }
