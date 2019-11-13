@@ -8,6 +8,10 @@ public class Robot {
         return name;
     }
 
+    public void reset() {
+        name = initialiseName();
+    }
+
     private String initialiseName() {
         return String.format("%c%c%d%d%d",
                 upperCaseLetter(),
@@ -19,14 +23,14 @@ public class Robot {
     }
 
     private Character upperCaseLetter() {
-        return (char) ((65 + Math.random() * 26));
+        int firstAsciiUpperCaseLetterCode = 65;
+        int totalNumberOfLetters = 26;
+        return (char) (firstAsciiUpperCaseLetterCode + (Math.random() * totalNumberOfLetters));
     }
 
     private Integer digit() {
-        return (int) (Math.random() * 10);
-    }
-
-    public void reset() {
-        name = initialiseName();
+        int maximumDigit = 9;
+        int zeroBasedAdjustment = 1;
+        return (int) (Math.random() * (maximumDigit + zeroBasedAdjustment));
     }
 }
