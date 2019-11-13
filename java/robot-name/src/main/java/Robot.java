@@ -1,9 +1,14 @@
 public class Robot {
+    final private String name = initialiseName();
 
     public Robot() {
     }
 
     public String getName() {
+        return name;
+    }
+
+    private String initialiseName() {
         return String.format("%c%c%d%d%d",
                 upperCaseLetter(),
                 upperCaseLetter(),
