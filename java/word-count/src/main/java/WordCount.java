@@ -1,28 +1,26 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 import static java.util.Arrays.asList;
 
 class WordCount {
 
     Map<String,Integer> phrase(String phrase) {
-        HashMap<String, Integer> result = new HashMap<>();
         List<String> words = asList(phrase.split(" "));
-        words.forEach(word -> {
-            Integer count = (int) words
-                    .stream()
-                    .filter(w -> w.equals(word))
-                    .count();
-            result.put(word, count);
-        });
+        BiFunction<HashMap<String, Integer>, String, HashMap<String, Integer>> accumulator = (map, word) -> {
+            map.put(word, (map.getOrDefault(word, 0) + 1));
+            return map;
+        };
+        BinaryOperator<HashMap<String, Integer>> combiner = (map1, map2) -> {
+            map1.putAll(map2);
+            return map1;
+        };
 
-        return result;
+        return words
+                .stream()
+                .reduce(new HashMap<>(), accumulator, combiner);
     }
-
-    private String[] reformatPhrase(String phrase) {
-        throw new IllegalArgumentException("");
-    }
-
 }
