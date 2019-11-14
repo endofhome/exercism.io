@@ -10,7 +10,13 @@ class WordCount {
     Map<String,Integer> phrase(String phrase) {
         HashMap<String, Integer> result = new HashMap<>();
         List<String> words = asList(phrase.split(" "));
-        words.forEach(word -> result.put(word, 1));
+        words.forEach(word -> {
+            Integer count = (int) words
+                    .stream()
+                    .filter(w -> w.equals(word))
+                    .count();
+            result.put(word, count);
+        });
 
         return result;
     }

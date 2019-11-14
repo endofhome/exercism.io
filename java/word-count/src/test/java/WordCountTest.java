@@ -38,7 +38,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void countMultipleOccurences() {
         Map<String, Integer> actualWordCount;
