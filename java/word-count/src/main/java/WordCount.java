@@ -1,27 +1,17 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class WordCount {
+class WordCount {
 
-    public Map<String,Integer> phrase(String phrase) {
-        String[] words = reformatPhrase(phrase);
-        Map<String, Integer> wordCount = new HashMap<>();
-        for (String word:words) {
-            if (wordCount.containsKey(word)) {
-                wordCount.put(word, wordCount.get(word) + 1);
-            } else {
-                wordCount.put(word, 1);
-            }
-        }
-        return wordCount;
+    Map<String,Integer> phrase(String phrase) {
+        HashMap<String, Integer> result = new HashMap<>();
+        result.put(phrase, 1);
+
+        return result;
     }
 
     private String[] reformatPhrase(String phrase) {
-        String punctuationRemovedLowerCasePhrase = phrase
-                .replaceAll("[:!&@$%^&,]", "")
-                .replaceAll(" +", " ")
-                .toLowerCase();
-        return punctuationRemovedLowerCasePhrase.split(" ");
+        throw new IllegalArgumentException("");
     }
 
 }
