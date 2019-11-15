@@ -54,7 +54,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void ignorePunctuation() {
         Map<String, Integer> actualWordCount;
@@ -72,7 +71,6 @@ public class WordCountTest {
 
     }
 
-    @Ignore
     @Test
     public void includeNumbers() {
         Map<String, Integer> actualWordCount;
