@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.lang.Integer;
@@ -85,7 +84,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void normalizeCase() {
         Map<String, Integer> actualWordCount;

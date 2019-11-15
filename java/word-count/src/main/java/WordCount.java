@@ -27,7 +27,10 @@ class WordCount {
 
     private List<String> validWordsFrom(String phrase) {
         return Arrays.stream(phrase.split(" "))
-                .map(word -> word.replaceAll("\\p{Punct}", ""))
+                .map(word ->
+                        word.replaceAll("\\p{Punct}", "")
+                            .toLowerCase()
+                )
                 .filter(word -> ! word.isEmpty())
                 .collect(toList());
     }
