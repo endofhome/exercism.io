@@ -33,11 +33,11 @@
      ?_assertStringEqual("One for you, one for me.",
 			 two_fer:two_fer())}.
 
-%%'2_a_name_given_test_'() ->
-%%    {"a name given",
-%%     ?_assertStringEqual("One for Alice, one for me.",
-%%			 two_fer:two_fer("Alice"))}.
-%%
+'2_a_name_given_test_'() ->
+    {"a name given",
+     ?_assertStringEqual("One for Alice, one for me.",
+			 two_fer:two_fer("Alice"))}.
+
 %%'3_another_name_given_test_'() ->
 %%    {"another name given",
 %%     ?_assertStringEqual("One for Bob, one for me.",
