@@ -3,4 +3,4 @@
 -export([leap_year/1]).
 
 
-leap_year(_Year) -> false.
+leap_year(_Year) -> ((_Year rem 4) == 0) and not ((_Year rem 100) == 0).
