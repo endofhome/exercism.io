@@ -5,4 +5,4 @@
 
 two_fer() -> "One for you, one for me.".
 
-two_fer(_Name) -> "One for Alice, one for me.".
+two_fer(_Name) -> "One for " ++ _Name ++ ", one for me.".
