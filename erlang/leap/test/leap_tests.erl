@@ -44,12 +44,12 @@
     {"year divisible by 400 in leap year",
      ?_assert(leap:leap_year(2000))}.
 
-%%'8_year_divisible_by_400_but_not_by_125_is_still_a_leap_year_test_'() ->
-%%    {"year divisible by 400 but not by 125 "
-%%     "is still a leap year",
-%%     ?_assert(leap:leap_year(2400))}.
-%%
-%%'9_year_divisible_by_200_not_divisible_by_400_in_common_year_test_'() ->
-%%    {"year divisible by 200, not divisible "
-%%     "by 400 in common year",
-%%     ?_assertNot(leap:leap_year(1800))}.
+'8_year_divisible_by_400_but_not_by_125_is_still_a_leap_year_test_'() ->
+    {"year divisible by 400 but not by 125 "
+     "is still a leap year",
+     ?_assert(leap:leap_year(2400))}.
+
+'9_year_divisible_by_200_not_divisible_by_400_in_common_year_test_'() ->
+    {"year divisible by 200, not divisible "
+     "by 400 in common year",
+     ?_assertNot(leap:leap_year(1800))}.
